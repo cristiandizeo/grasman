@@ -1,0 +1,19 @@
+{
+    "name": "cristian/grasman",
+    "description": "Sitio web Grasman automotores",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Cristian Dizeo",
+            "email": "dizeoc@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models"
+        }
+    }
+}
