@@ -196,17 +196,22 @@ header {
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
-header .navbar {
-	padding: 17px 0px;
-}
 .background-header .navbar {
-	padding: 17px 0px;
+	display: inline-block;
 }
 .background-header {
 	top: 0;
 	position: fixed;
 	background-color: #fff!important;
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+
+}
+.navbar {
+	padding: 0!important;
+}
+.navbar-brand img{
+	max-width: 80px;
+	position: relative;
 }
 .background-header .navbar-brand h2 {
 	color: #121212!important;
@@ -222,8 +227,8 @@ header .navbar {
 	color: #6c757d!important;
 }
 .navbar .navbar-brand {
-	float: 	left;
-	margin-top: -12px;
+	float: left;
+	display: contents;
 	outline: none;
 }
 .navbar .navbar-brand h2 {
