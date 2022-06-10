@@ -10,8 +10,6 @@ class LoginController {
 
         $errores = [];
 
-
-
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $auth = new Admin($_POST);
             $errores = $auth->validar();

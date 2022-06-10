@@ -21,10 +21,10 @@ class Admin extends ActiveRecord {
 
     public function validar() {
         if(!$this->email) {
-            self::$errores[] = "El Email del usuario es obligatorio";
+            self::$errores[] = "* El email es obligatorio";
         }
         if(!$this->password) {
-            self::$errores[] = "El Password del usuario es obligatorio";
+            self::$errores[] = "* El password es obligatorio";
         }
         return self::$errores;
     }
@@ -50,7 +50,7 @@ class Admin extends ActiveRecord {
         if(!$this->autenticado) {
             self::$errores[] = 'El Password es Incorrecto';
             return;
-        } 384
+        }
     }
 
     public function autenticar() {

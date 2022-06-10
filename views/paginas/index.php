@@ -30,7 +30,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Featured Cars</h2>
+              <h2>Nuestros vehiculos</h2>
               <a href="/vehiculos">Ver más <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
@@ -185,9 +185,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Latest blog posts</h2>
+              <h2>Últimas entregas</h2>
 
-              <a href="blog.html">read more <i class="fa fa-angle-right"></i></a>
+              <a href="blog.html">Ver más <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 

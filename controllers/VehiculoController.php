@@ -4,21 +4,18 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Vehiculo;
-use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class VehiculoController  {
     
     public static function index(Router $router) {
         $vehiculos = Vehiculo::all();
-        $vendedores = Vendedor::all();
 
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
         $router->render('vehiculos/index', [
             'vehiculos' => $vehiculos,
-            'vendedores' => $vendedores,
             'resultado' => $resultado
         ]);
     }
@@ -27,7 +24,6 @@ class VehiculoController  {
 
         $errores = Vehiculo::getErrores();
         $vehiculo = new Vehiculo;
-        $vendedores = Vendedor::all();
 
         // Ejecutar el código después de que el usuario envia el formulario
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -69,8 +65,7 @@ class VehiculoController  {
 
         $router->render('vehiculos/crear', [
             'errores' => $errores,
-            'vehiculo' => $vehiculo,
-            'vendedores' => $vendedores
+            'vehiculo' => $vehiculo
         ]);
     }
 
@@ -80,9 +75,6 @@ class VehiculoController  {
 
         // Obtener los datos de la vehiculo
         $vehiculo = Vehiculo::find($id);
-
-        // Consultar para obtener los vendedores
-        $vendedores = Vendedor::all();
 
         // Arreglo con mensajes de errores
         $errores = Vehiculo::getErrores();
@@ -127,7 +119,6 @@ class VehiculoController  {
 
         $router->render('vehiculos/actualizar', [
             'vehiculo' => $vehiculo,
-            'vendedores' => $vendedores,
             'errores' => $errores
         ]);
     }
