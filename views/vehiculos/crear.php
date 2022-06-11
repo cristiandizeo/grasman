@@ -1,7 +1,7 @@
-<main class="contenedor seccion">
-    <h1>Crear Vehiculo</h1>
+<main class="contenedor mt-5 p-3">
+    <a href="/admin" class="btn btn-info">Volver</a>
 
-    <a href="/admin" class="boton boton-verde">Volver</a>
+    <h1>Crear Vehiculo</h1>
 
     <?php foreach($errores as $error): ?>
     <div class="alerta error">

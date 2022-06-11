@@ -1,54 +1,76 @@
-<fieldset>
-    <legend>Información General</legend>
+<div class="container">
+<form>
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Patente</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Tipo</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Marca</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Modelo</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Precio</label>
+      </div>
+    </div>
+  </div>
 
-    <label for="titulo">Titulo:</label>
-    <input type="text" id="titulo" name="vehiculo[titulo]" placeholder="Titulo Vehiculo" value="<?php echo s( $vehiculo->titulo ); ?>">
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form6Example3" class="form-control" />
+    <label class="form-label" for="form6Example3">Imagen</label>
+  </div>
 
-    <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="vehiculo[precio]" placeholder="Precio Vehiculo" value="<?php echo s($vehiculo->precio); ?>">
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form6Example4" class="form-control" />
+    <label class="form-label" for="form6Example4">Descripcion</label>
+  </div>
 
-    <label for="imagen">Imagen:</label>
-    <input type="file" id="imagen" accept="image/jpeg, image/png" name="vehiculo[imagen]">
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" id="form6Example5" class="form-control" />
+    <label class="form-label" for="form6Example5">Año</label>
+  </div>
 
-    <?php if($vehiculo->imagen) { ?>
-        <img src="/imagenes/<?php echo $vehiculo->imagen ?>" class="imagen-small">
-    <?php } ?>
+  <!-- Number input -->
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Phone</label>
+  </div>
 
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="vehiculo[descripcion]"><?php echo s($vehiculo->descripcion); ?></textarea>
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+    <label class="form-label" for="form6Example7">Additional information</label>
+  </div>
 
-</fieldset>
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+    <label class="form-check-label" for="form6Example8"> Mostrar en el sitio </label>
+  </div>
 
-<fieldset>
-    <legend>Información Vehiculo</legend>
-
-    <label for="habitaciones">Habitaciones:</label>
-    <input 
-        type="number" 
-        id="habitaciones" 
-        name="vehiculo[habitaciones]" 
-        placeholder="Ej: 3" 
-        min="1" 
-        max="9" 
-        value="<?php echo s($vehiculo->habitaciones); ?>">
-
-    <label for="wc">Baños:</label>
-    <input type="number" id="wc" name="vehiculo[wc]" placeholder="Ej: 3" min="1" max="9" value="<?php echo s($vehiculo->wc); ?>">
-
-    <label for="estacionamiento">Estacionamiento:</label>
-    <input type="number" id="estacionamiento" name="vehiculo[estacionamiento]" placeholder="Ej: 3" min="1" max="9" 
-        value="<?php echo s($vehiculo->estacionamiento); ?>">
-
-</fieldset>
-
-<fieldset>
-    <legend>Vendedor</legend>
-
-    <select name="vehiculo[vendedorId]" id="nombre_vendedor">
-        <option selected value="">-- Seleccione --</option>
-        <?php foreach($vendedores as $vendedor) { ?>
-            <option <?php echo $vehiculo->vendedorId === $vendedor->id ? 'selected' : '' ?> value="<?php echo s($vendedor->id); ?>"><?php echo s($vendedor->nombre) . " " . s($vendedor->apellido); ?>
-        <?php  } ?>
-    </select>
-
-</fieldset>
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Registrar vehiculo</button>
+</form>
+</div>

@@ -1,6 +1,4 @@
-
-<main class="contenedor seccion">
-    <h1>Lucas Automotores</h1>
+<main class="contenedor dashboard">
     <?php 
         $mensaje = mostrarNotificacion( intval( $resultado) );
         if($mensaje) { ?>
@@ -9,6 +7,8 @@
     ?>
 
     <h2>Vehiculos</h2>
+    <hr>
+    <a href="vehiculos/crear" class="btn btn-info m-1">Agregar nuevo</a>
     <table class="table">
         <thead>
             <tr>

@@ -319,7 +319,10 @@ header {
 	font-family: 'FontAwesome';
 }
 
-
+.dashboard{
+	margin-top: 100px;
+	padding: 15px;
+}
 
 /* Banner Style */
 .banner {
