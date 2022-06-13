@@ -96,7 +96,8 @@
     <?php foreach($vehiculos as $vehiculo): ?>
               <div class="col-md-6">
                 <div class="product-item">
-                  <a href="/vehiculo"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+                  <img loading="lazy" src="/imagenes/<?php echo $vehiculo->imagen; ?>" alt="anuncio">
+
                   <div class="down-content">
                     <a href="vehiculo?id=<?php echo $vehiculo->id; ?>"><h4><?php echo $vehiculo->marca ." ". $vehiculo->modelo; ?></h4></a>
 

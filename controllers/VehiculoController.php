@@ -41,6 +41,7 @@ class VehiculoController  {
                 $image = Image::make($_FILES['vehiculo']['tmp_name']['imagen'])->fit(800,600);
                 $vehiculo->setImagen($nombreImagen);
             }
+            
 
             // Validar
             $errores = $vehiculo->validar();
