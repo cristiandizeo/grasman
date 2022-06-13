@@ -1,7 +1,7 @@
-<main class="contenedor seccion">
-    <h1>Actualizar Vehiculo </h1>
+<main class="contenedor mt-5 p-3">
+    <a href="/admin" class="btn btn-info">Volver</a>
 
-    <a href="/vehiculos" class="boton boton-verde">Volver</a>
+    <h1 class="text-center p-3">Modificar Vehiculo</h1>
 
     <?php foreach($errores as $error): ?>
     <div class="alerta error">
@@ -9,8 +9,8 @@
     </div>
     <?php endforeach; ?>
 
-    <form class="formulario" method="POST"  enctype="multipart/form-data">
+    <form class="formulario" method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
-        <input type="submit" value="Actualizar Vehiculo" class="boton boton-verde">
+        <input type="submit" value="Modificar vehiculo" class="btn btn-primary btn-block mb-4">
     </form>
 </main>

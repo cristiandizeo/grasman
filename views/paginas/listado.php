@@ -1,33 +1,22 @@
+<?php foreach($vehiculos as $vehiculo): ?>
+              <div class="col-md-6">
+                <div class="product-item">
+                  <img loading="lazy" src="/imagenes/<?php echo $vehiculo->imagen; ?>" alt="anuncio">
 
-<div class="contenedor-anuncios">
-    <?php foreach($propiedades as $propiedad): ?>
-    <div class="anuncio">
-        <img loading="lazy" src="/imagenes/<?php echo $propiedad->imagen; ?>" alt="anuncio">
+                  <div class="down-content">
+                    <a href="/vehiculo?id=<?php echo $vehiculo->id; ?>"><h4><?php echo $vehiculo->marca ." ". $vehiculo->modelo; ?></h4></a>
 
-        <div class="contenido-anuncio">
-            <h3><?php echo $propiedad->titulo; ?></h3>
-            <p><?php echo $propiedad->descripcion; ?></p>
-            <p class="precio">$<?php echo $propiedad->precio; ?></p>
+                    <h6><smTodos><del> $11199.00</del></smTodos> <?php echo $vehiculo->precio; ?></h6>
 
-            <ul class="iconos-caracteristicas">
-                <li>
-                    <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                    <p><?php echo $propiedad->wc; ?></p>
-                </li>
-                <li>
-                    <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                    <p><?php echo $propiedad->estacionamiento; ?></p>
-                </li>
-                <li>
-                    <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                    <p><?php echo $propiedad->habitaciones; ?></p>
-                </li>
-            </ul>
+                    <p><?php echo $vehiculo->marca; ?> &nbsp;/&nbsp; <?php echo $vehiculo->modelo; ?> &nbsp;/&nbsp; <?php echo $vehiculo->year; ?> &nbsp;/&nbsp; <?php echo $vehiculo->tipo; ?></p>
 
-            <a href="propiedad?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
-                Ver Propiedad
-            </a>
-        </div><!--.contenido-anuncio-->
-    </div><!--anuncio-->
-    <?php endforeach; ?>
-</div> <!--.contenedor-anuncios-->
+                    <smTodos>
+                      <strong title="Author"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?></strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                      <strong title="Author"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <strong title="Views"><i class="fa fa-cog"></i> <?php echo $vehiculo->caja; ?></strong>
+                    </smTodos>
+                  </div>
+                </div>
+              </div>
+
+              <?php endforeach; ?>

@@ -5,7 +5,7 @@
           <div class="col-md-12">
             <div class="text-content">
               <h4><del>$11999.00</del> <strong class="text-primary">$11779.00</strong></h4>
-              <h2>Lorem ipsum dolor sit amet</h2>
+              <h2><?php echo $vehiculo->marca ." ". $vehiculo->modelo; ?></h2>
             </div>
           </div>
         </div>
@@ -17,8 +17,8 @@
         <div class="row">
           <div class="col-md-6">
             <div>
-              <img src="assets/images/product-details-1-740x540.jpg" alt="" class="img-fluid wc-image">
-            </div>
+            <img loading="lazy" src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="img-fluid">
+          </div>
             <br>
             <div class="row">
               <div class="col-sm-4 col-6">
@@ -66,25 +66,25 @@
               <ul class="list-group list-group-flush">
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Type</span>
+                         <span class="pull-left">Tipo</span>
 
-                         <strong class="pull-right">Used vehicle</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->tipo; ?></strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Make</span>
+                         <span class="pull-left">Marca</span>
 
-                         <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->marca; ?></strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left"> Model</span>
+                         <span class="pull-left">Modelo</span>
 
-                         <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->modelo; ?></strong>
                     </div>
                </li>
 
@@ -172,12 +172,11 @@
         <div class="row">
           <div class="col-md-6">
             <div class="section-heading">
-              <h2>Vehicle Description</h2>
+              <h2>Descripcion</h2>
             </div>
 
             <div class="left-content">
-              <p>- Colour coded bumpers<br>- Tinted glass<br>- Immobiliser<br>- Central locking - remote<br>- Passenger airbag<br>- Electric windows<br>- Rear head rests<br>- Radio<br>- CD player<br>- Ideal first car<br>- Warranty<br>- High level brake light<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+            <?php echo $vehiculo->descripcion; ?>            </div>
           </div>
 
           <div class="col-md-6">

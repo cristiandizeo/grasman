@@ -74,7 +74,7 @@ class VehiculoController  {
 
         $id = validarORedireccionar('/vehiculos');
 
-        // Obtener los datos de la vehiculo
+        // Obtener los datos del vehiculo
         $vehiculo = Vehiculo::find($id);
 
         // Arreglo con mensajes de errores
@@ -112,7 +112,7 @@ class VehiculoController  {
                     $resultado = $vehiculo->guardar();
 
                     if($resultado) {
-                        header('location: /vehiculos');
+                        header('location: /admin');
                     }
                 }
 
@@ -141,7 +141,7 @@ class VehiculoController  {
 
                 // Redireccionar
                 if($resultado) {
-                    header('location: /vehiculos');
+                    header('location: /admin');
                 }
             }
         }

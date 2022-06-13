@@ -25,13 +25,14 @@
             <tr>
                 <td scope="row"><?php echo $vehiculo->id; ?></td>
                 <td><?php echo $vehiculo->patente; ?></td>
-                <td> <img src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="imagen-tabla"> </td>
+                <td> <img src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="img-fluid"> </td>
                 <td>$ <?php echo $vehiculo->precio; ?></td>
                 <td>
                 <i class="fa-solid fa-trash-can">
-                <form method="POST" action="vehiculos/eliminar" class="w-100">
+                <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100">
                         <input type="hidden" name="id" value="<?php echo $vehiculo->id; ?>">
                         <input type="hidden" name="tipo" value="vehiculo">
+                        <input type="submit" class="boton-rojo-block" value="Eliminar">
                     </form>
                 </i>
 

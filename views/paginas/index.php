@@ -3,12 +3,9 @@
     <!-- Banner Starts Here -->
     <div class="banner header-text">
       <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
-          <div class="text-content">
-            <h4>Find your car today!</h4>
-            <h2>Lorem ipsum dolor sit amet</h2>
-          </div>
-        </div>
+      <video autoplay muted loop height="600" width="1200">
+        <source src="/assets/videos/headervideo.mp4" type="video/mp4">
+      </video>
         <div class="banner-item-02">
           <div class="text-content">
             <h4>Fugiat Aspernatur</h4>
@@ -22,6 +19,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <!-- Banner Ends Here -->
 
@@ -34,119 +32,8 @@
               <a href="/vehiculos">Ver más <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="product-item">
-              <a href="/vehiculo"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="/vehiculo"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
 
-                <h6><small><del> $11199.00</del></small> $11179.00</h6>
-
-                <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
-
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="product-item">
-              <a href="/vehiculo"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="/vehiculo"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-
-                <h6><small><del> $11199.00</del></small> $11179.00</h6>
-
-                <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
-
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="product-item">
-              <a href="/vehiculo"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="/vehiculo"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-
-                <h6><small><del> $11199.00</del></small> $11179.00</h6>
-
-                <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
-
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="product-item">
-              <a href="/vehiculo"><img src="assets/images/product-4-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="/vehiculo"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-
-                <h6><small><del> $11199.00</del></small> $11179.00</h6>
-
-                <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
-
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="product-item">
-              <a href="/vehiculo"><img src="assets/images/product-5-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="/vehiculo"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-
-                <h6><small><del> $11199.00</del></small> $11179.00</h6>
-
-                <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
-
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="product-item">
-              <a href="/vehiculo"><img src="assets/images/product-6-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="/vehiculo"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
-
-                <h6><small><del> $11199.00</del></small> $11179.00</h6>
-
-                <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
-
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-              </div>
-            </div>
-          </div>
+          <?php echo require 'listado.php';?>
         </div>
       </div>
     </div>
