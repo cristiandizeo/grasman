@@ -28,15 +28,15 @@
                 <td> <img src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="img-fluid"> </td>
                 <td>$ <?php echo $vehiculo->precio; ?></td>
                 <td>
-                <i class="fa-solid fa-trash-can">
-                <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100">
+                    <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100">
                         <input type="hidden" name="id" value="<?php echo $vehiculo->id; ?>">
                         <input type="hidden" name="tipo" value="vehiculo">
-                        <input type="submit" class="boton-rojo-block" value="Eliminar">
+                        <button type="submit" id="btn-borrar">
+                    <i class="fa-solid fa-trash-can"></i></button>
                     </form>
-                </i>
+                
 
-                <a href="vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="boton-amarillo-block">
+                <a href="vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>">
                 <i class="fa-solid fa-pen-to-square">
                     </i>
                     </a>

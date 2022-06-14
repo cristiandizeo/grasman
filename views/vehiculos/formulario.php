@@ -43,6 +43,16 @@
     </div>
 
     <div class="row mb-4">
+    <div class="col">
+            <div class="invalid-feedback">Example invalid feedback text</div>
+        <div class="form-outline">
+          <select required class="form-control" id="estado" value="<?php echo s($vehiculo->estado)?>" name="vehiculo[estado]">
+            <option>Nuevo</option>
+            <option>Usado</option>
+          </select>
+        </div>
+        <label class="form-label" for="estado">Estado</label>
+      </div>
       <div class="col">
             <div class="invalid-feedback">Example invalid feedback text</div>
         <div class="form-outline">
@@ -86,7 +96,7 @@
             <div class="invalid-feedback">Example invalid feedback text</div>
         <div class="form-outline">
           <label class="form-label" for="descripcion">Descripcion</label>
-          <textarea class="form-control" id="descripcion" value="<?php echo s($vehiculo->descripcion)?>" name="vehiculo[descripcion]" rows="3"></textarea>
+          <textarea class="form-control" id="descripcion" name="vehiculo[descripcion]" rows="3"><?php echo s($vehiculo->descripcion)?></textarea>
         </div>
       </div>
     </div>
@@ -98,7 +108,10 @@
         <div class="form-outline mb-4">
           <div class="form-group">
             <label for="imagen">Imagenes</label>
-            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" value="<?php echo s($vehiculo->imagen)?>" name="vehiculo[imagen]">
+            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="vehiculo[imagen]">
+            <?php if($vehiculo->imagen) { ?>
+        <img src="/imagenes/<?php echo $vehiculo->imagen ?>" class="imagen-small">
+    <?php } ?>
           </div>
         </div>
       </div>

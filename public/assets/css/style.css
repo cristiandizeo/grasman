@@ -1166,6 +1166,7 @@ footer .inner-content p a {
 	}
 }
 
+/* LOGIN */
 .loginBox {
 	width: 350px;
 	min-height: 200px;
@@ -1258,4 +1259,15 @@ footer .inner-content p a {
 }
 .error{
 	color: red;
+}
+
+/* ADMIN */
+table img{
+	width: 40px;
+}
+#btn-borrar{
+	background: none;
+	padding: 0px;
+	border: none;
+	cursor: pointer;
 }
