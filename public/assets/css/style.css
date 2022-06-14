@@ -16,6 +16,10 @@ p {
 
 a {
 	text-decoration: none !important;
+	color: #000000;
+}
+a:hover{
+	color: #6c757d;
 }
 
 ul {
@@ -1262,7 +1266,7 @@ footer .inner-content p a {
 }
 
 /* ADMIN */
-table img{
+.mini-img{
 	width: 40px;
 }
 #btn-borrar{

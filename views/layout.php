@@ -71,6 +71,9 @@ if (!isset($inicio)) {
             <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/nosotros' ? 'active' : '' ?>"><a class="nav-link" href="/nosotros">Nosotros</a></li>
 
             <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/contacto' ? 'active' : '' ?>"><a class="nav-link" href="/contacto">Contacto</a></li>
+            <?php if($auth): ?>
+                            <a href="/logout">Cerrar Sesión</a>
+                        <?php endif; ?>
           </ul>
         </div>
       </div>

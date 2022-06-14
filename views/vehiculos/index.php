@@ -25,7 +25,7 @@
             <tr>
                 <td scope="row"><?php echo $vehiculo->id; ?></td>
                 <td><?php echo $vehiculo->patente; ?></td>
-                <td> <img src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="img-fluid"> </td>
+                <td> <img src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="img-fluid mini-img"> </td>
                 <td>$ <?php echo $vehiculo->precio; ?></td>
                 <td>
                     <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100">
