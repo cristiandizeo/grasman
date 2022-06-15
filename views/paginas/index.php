@@ -1,23 +1,22 @@
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
-    <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
-      <video autoplay muted loop height="600" width="1200">
+    <div class="banner header-text row">
+      <div class="text-content">
+      <h2>Encontrá el auto que buscás</h2>
+      </div>
+    <div class="col">  
+    <video autoplay muted loop height="600" >
+        <source src="/assets/videos/headervideo2.mp4" type="video/mp4">
+      </video></div>
+      <div class="col">
+      <video autoplay muted loop height="600" >
         <source src="/assets/videos/headervideo.mp4" type="video/mp4">
-      </video>
-        <div class="banner-item-02">
-          <div class="text-content">
-            <h4>Fugiat Aspernatur</h4>
-            <h2>Laboriosam reprehenderit ducimus</h2>
-          </div>
-        </div>
-        <div class="banner-item-03">
-          <div class="text-content">
-            <h4>Saepe Omnis</h4>
-            <h2>Quaerat suscipit unde minus dicta</h2>
-          </div>
-        </div>
+      </video></div>
+      <div class="col">
+      <video autoplay muted loop height="600" >
+        <source src="/assets/videos/headervideo3.mp4" type="video/mp4">
+      </video></div>
       </div>
 
     </div>
@@ -29,7 +28,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Nuestros vehiculos</h2>
-              <a href="/vehiculos">Ver más <i class="fa fa-angle-right"></i></a>
+              <a href="/vehiculos">Ver todo <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 
@@ -73,8 +72,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Últimas entregas</h2>
-
-              <a href="blog.html">Ver más <i class="fa fa-angle-right"></i></a>
+              <a href="blog.html">Ver todo <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 
@@ -120,9 +118,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Happy Clients</h2>
+              <h2>Últimas entregas</h2>
 
-              <a href="testimonials.html">read more <i class="fa fa-angle-right"></i></a>
+              <a href="testimonials.html">ver todo <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-12">
@@ -184,27 +182,6 @@
                 <div class="down-content">
                   <h4>Antony Davis</h4>
                   <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <div class="row">
-                <div class="col-md-8">
-                  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 text-right">
-                  <a href="/contacto" class="filled-button">Contactanos</a>
                 </div>
               </div>
             </div>

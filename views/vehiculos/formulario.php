@@ -118,7 +118,7 @@
         <div class="form-outline mb-4">
           <label for="imagen">Imagenes</label>
           <div class="form-group">
-            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="vehiculo[imagen]">
+            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="vehiculo[imagen]" multiple="">
             <?php if($vehiculo->imagen) { ?>
               <img src="/imagenes/<?php echo $vehiculo->imagen ?>" class="mini-img m-3">
               <?php } ?>

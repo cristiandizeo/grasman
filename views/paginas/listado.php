@@ -7,7 +7,7 @@
                   <div class="down-content">
                     <h2><?php echo $vehiculo->marca ." ". $vehiculo->modelo;?></h2>
 
-                    <p><?php echo $vehiculo->tipo; ?> &nbsp;/&nbsp; <?php echo $vehiculo->estado; ?> &nbsp;/&nbsp; <?php echo $vehiculo->year; ?> &nbsp;</p>
+                    <p>&nbsp;/&nbsp; <?php echo $vehiculo->estado; ?> &nbsp;/&nbsp; <?php echo $vehiculo->year; ?> &nbsp;/&nbsp;</p>
                     <p><?php echo $vehiculo->descripcion; ?></p>
                     <smTodos>
                       <strong title="Author"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?> km</strong> &nbsp;&nbsp;&nbsp;&nbsp;

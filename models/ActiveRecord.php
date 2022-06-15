@@ -117,6 +117,15 @@ class ActiveRecord {
         return $resultado;
     }
 
+    // Buscador
+    public function buscar() {
+        // Eliminar el registro
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE estado = " . self::$db->escape_string($this->estado) . " AND tipo = " . self::$db->escape_string($this->tipo) . " AND marca = " . self::$db->escape_string($this->marca) . " AND modelo = " . self::$db->escape_string($this->modelo) . " AND precio = " . self::$db->escape_string($this->precio) . " AND km = " . self::$db->escape_string($this->km) . " AND caja = " . self::$db->escape_string($this->caja) . " AND combustible = " . self::$db->escape_string($this->combustible);
+        $resultado = self::$db->query($query);
+
+        return $resultado;
+    }
+
     public static function consultarSQL($query) {
         // Consultar la base de datos
         $resultado = self::$db->query($query);

@@ -4,8 +4,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor sit amet</h4>
-              <h2>Cars</h2>
+              <h2>Nuestros vehículos</h2>
             </div>
           </div>
         </div>
@@ -17,72 +16,76 @@
         <div class="row">
           <div class="col-md-3">
              <div class="contact-form">
-                <form action="#">
+                <form action="buscar" method="POST">
                      <label>Nuevo/usado:</label>
                      
-                     <select class="form-control">
-                          <option value="">Todos</option>
-                          <option value="new">New vehicle</option>
-                          <option value="used">Used vehicle</option>
+                     <select value="<?php echo s($vehiculo->estado);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->estado);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Tipo vehiculo:</label>
                      
-                     <select class="form-control">
-                          <option value="">Auto</option>
-                          <option value="">Pick Up</option>
-                          <option value="">Moto</option>
+                     <select value="<?php echo s($vehiculo->tipo);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->tipo);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Marca:</label>
                      
-                     <select class="form-control">
-                          <option value="">Fiat</option>
-                          <option value="">Ford</option>
-                          <option value="">Chevrolet</option>
-                          <option value="">Jeep</option>
-                          <option value="">BMW</option>
+                     <select value="<?php echo s($vehiculo->marca);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->marca);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Modelo:</label>
                      
-                     <select class="form-control">
-                          <option value="">Idea</option>
-                          <option value="">Uno</option>
-                          <option value="">Toro</option>
+                     <select value="<?php echo s($vehiculo->modelo);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->modelo);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Precio:</label>
                      
-                     <select class="form-control">
-                          <option value="">-- Todos --</option>
-                          <option value="">-- Todos --</option>
-                          <option value="">-- Todos --</option>
-                          <option value="">-- Todos --</option>
+                     <select value="<?php echo s($vehiculo->precio);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->precio);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Kms:</label>
                      
-                     <select class="form-control">
-                          <option value="">Menos de 50.000</option>
-                          <option value="">50.000 - 100.000</option>
-                          <option value="">Mas de 100.000</option>
+                     <select value="<?php echo s($vehiculo->km);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->km);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Caja:</label>
-                     
-                     <select class="form-control">
-                          <option value="">Manual</option>
-                          <option value="">Automática</option>
+                     <select value="<?php echo s($vehiculo->caja);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->caja);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <label>Combustible:</label>
                      
-                     <select class="form-control">
-                          <option value="">Nafta</option>
-                          <option value="">GNC</option>
-                          <option value="">Gasoil</option>
-                          <option value="">Electrico</option>
+                     <select value="<?php echo s($vehiculo->combustible);?>" name="vehiculo[estado]" class="form-control">
+                       <option value="">Todos</option>
+                      <?php foreach ($vehiculos as $vehiculo):?>
+                          <option><?php echo s($vehiculo->combustible);?></option>
+                          <?php endforeach;?>
                      </select>
 
                      <button type="submit" class="filled-button btn-block">Buscar</button>

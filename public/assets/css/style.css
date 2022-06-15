@@ -16,10 +16,10 @@ p {
 
 a {
 	text-decoration: none !important;
-	color: #000000;
+	color: #000;
 }
 a:hover{
-	color: #6c757d;
+	color: #999;
 }
 
 ul {
@@ -35,6 +35,7 @@ h4,
 h5,
 h6 {
 	margin: 0px;
+	color: #1e1e1e;
 }
 
 ul.social-icons li {
@@ -331,33 +332,30 @@ header {
 /* Banner Style */
 .banner {
 	position: relative;
+	width: 100%;
 	text-align: center;
 	padding-top: 80px;
+	background-color: #121212;
+	display: flexbox;
 }
-
-.banner-item-01 {
-	padding: 300px 0px;
-	background-image: url(../images/slider-image-1-1920x600.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.banner-item-02 {
-	padding: 300px 0px;
-	background-image: url(../images/slider-image-2-1920x600.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.banner-item-03 {
-	padding: 300px 0px;
-	background-image: url(../images/slider-image-3-1920x600.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
+.banner::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background-image: linear-gradient(
+		#000000,
+		rgb(0 0 0 / 65%),
+		#000000
+	  );
+  }
+  
+  video {
+	width: 100%;
+	aspect-ratio: 4/3;
+  }
 
 .banner .banner-item {
 	max-height: 600px;
@@ -369,6 +367,7 @@ header {
 	transform: translateY(-50%);
 	text-align: center;
 	width: 100%;
+	z-index: 9999;
 }
 
 .banner .text-content h4 {
