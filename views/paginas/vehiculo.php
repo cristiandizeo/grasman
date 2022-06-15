@@ -4,8 +4,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4><del>$11999.00</del> <strong class="text-primary">$11779.00</strong></h4>
               <h2><?php echo $vehiculo->marca ." ". $vehiculo->modelo; ?></h2>
+              <h4><strong class="text-white"><?php echo $vehiculo->year; ?></strong></h4>
             </div>
           </div>
         </div>
@@ -62,6 +62,9 @@
           </div>
 
           <div class="col-md-6">
+          <div class="section-heading">
+                   <h2>Información</h2>
+                 </div>
             <form action="#" method="post" class="form">
               <ul class="list-group list-group-flush">
                <li class="list-group-item">
@@ -69,6 +72,14 @@
                          <span class="pull-left">Tipo</span>
 
                          <strong class="pull-right"><?php echo $vehiculo->tipo; ?></strong>
+                    </div>
+               </li>
+
+               <li class="list-group-item">
+                    <div class="clearfix">
+                         <span class="pull-left">Estado</span>
+
+                         <strong class="pull-right"><?php echo $vehiculo->estado; ?></strong>
                     </div>
                </li>
 
@@ -90,107 +101,55 @@
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">First registration</span>
+                         <span class="pull-left">Año</span>
 
-                         <strong class="pull-right">05/2010</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->year; ?></strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Mileage</span>
+                         <span class="pull-left">Combustible</span>
 
-                         <strong class="pull-right">5000 km</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->combustible; ?></strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Fuel</span>
+                         <span class="pull-left">Caja</span>
 
-                         <strong class="pull-right">Diesel</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->caja; ?></strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Engine size</span>
+                         <span class="pull-left">Kilometraje</span>
 
-                         <strong class="pull-right">1800 cc</strong>
-                    </div>
-               </li>
-
-               <li class="list-group-item">
-                    <div class="clearfix">
-                         <span class="pull-left">Power</span>
-
-                         <strong class="pull-right">85 hp</strong>
-                    </div>
-               </li>
-
-
-               <li class="list-group-item">
-                    <div class="clearfix">
-                         <span class="pull-left">Gearbox</span>
-
-                         <strong class="pull-right">Manual</strong>
-                    </div>
-               </li>
-
-               <li class="list-group-item">
-                    <div class="clearfix">
-                         <span class="pull-left">Number of seats</span>
-
-                         <strong class="pull-right">4</strong>
-                    </div>
-               </li>
-
-               <li class="list-group-item">
-                    <div class="clearfix">
-                         <span class="pull-left">Doors</span>
-
-                         <strong class="pull-right">2/3</strong>
-                    </div>
-               </li>
-
-               <li class="list-group-item">
-                    <div class="clearfix">
-                         <span class="pull-left">Color</span>
-
-                         <strong class="pull-right">Black</strong>
+                         <strong class="pull-right"><?php echo $vehiculo->km; ?> km</strong>
                     </div>
                </li>
               </ul>
             </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
+            <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
             <div class="section-heading">
               <h2>Descripcion</h2>
             </div>
 
             <div class="left-content">
-            <?php echo $vehiculo->descripcion; ?>            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="section-heading">
-              <h2>Vehicle Extras</h2>
-            </div>
-            
-            <div class="left-content">
-              <p>- ABS <br>-Leather seats <br>-Power Assisted Steering <br>-Electric heated seats <br>-New HU and AU <br>-Xenon headlights</p>
-            </div>
+            <?php echo $vehiculo->descripcion; ?></div>
+        </div>
+      </div>
+    </div>
           </div>
         </div>
       </div>
     </div>
+
+
 
     <div class="section">
       <div class="container">

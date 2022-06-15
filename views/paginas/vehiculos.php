@@ -16,79 +16,9 @@
         <div class="row">
           <div class="col-md-3">
              <div class="contact-form">
-                <form action="buscar" method="POST">
-                     <label>Nuevo/usado:</label>
-                     
-                     <select value="<?php echo s($vehiculo->estado);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->estado);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Tipo vehiculo:</label>
-                     
-                     <select value="<?php echo s($vehiculo->tipo);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->tipo);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Marca:</label>
-                     
-                     <select value="<?php echo s($vehiculo->marca);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->marca);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Modelo:</label>
-                     
-                     <select value="<?php echo s($vehiculo->modelo);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->modelo);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Precio:</label>
-                     
-                     <select value="<?php echo s($vehiculo->precio);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->precio);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Kms:</label>
-                     
-                     <select value="<?php echo s($vehiculo->km);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->km);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Caja:</label>
-                     <select value="<?php echo s($vehiculo->caja);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->caja);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <label>Combustible:</label>
-                     
-                     <select value="<?php echo s($vehiculo->combustible);?>" name="vehiculo[estado]" class="form-control">
-                       <option value="">Todos</option>
-                      <?php foreach ($vehiculos as $vehiculo):?>
-                          <option><?php echo s($vehiculo->combustible);?></option>
-                          <?php endforeach;?>
-                     </select>
-
-                     <button type="submit" class="filled-button btn-block">Buscar</button>
+                <form>
+                     <?php include __DIR__ . '/buscar.php'; ?>
+                     <button type="submit" class="filled-button btn-block" id="buscar">Buscar</button>
                 </form>
              </div>
           </div>

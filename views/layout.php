@@ -107,6 +107,7 @@ if (!isset($inicio)) {
   <!-- Additional Scripts -->
   <script src="/assets/js/custom.js"></script>
   <script src="/assets/js/owl.js"></script>
+  <script src='/assets/js/buscador.js'></script>
 </body>
 
 </html>

@@ -146,37 +146,4 @@ class VehiculoController  {
             }
         }
     }
-    public static function buscar(Router $router) {
-
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tipo = $_POST['tipo'];
-
-            // peticiones validas
-            if(validarTipoContenido($tipo) ) {
-                // Leer el id
-                
-            $estado = $_POST['estado'];
-            $tipo = $_POST['tipo'];
-            $marca = $_POST['marca'];
-            $modelo = $_POST['modelo'];
-            $precio = $_POST['precio'];
-            $km = $_POST['km'];
-            $caja = $_POST['caja'];
-            $combustible = $_POST['combustible'];
-    
-                // encontrar y eliminar la vehiculo
-                $vehiculos = Vehiculo::buscar($estado, $tipo, $marca, $modelo, $precio, $km, $caja, $combustible);
-
-
-        // Muestra mensaje condicional
-        $resultado = $_GET['resultado'] ?? null;
-        
-                $router->render('vehiculos', [
-                    'vehiculos' => $vehiculos,
-                    'resultado' => $resultado
-                ]);
-            }
-
-}
-}
 }
