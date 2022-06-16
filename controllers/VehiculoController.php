@@ -59,7 +59,7 @@ class VehiculoController  {
                 $resultado = $vehiculo->guardar();
 
                 if($resultado) {
-                    header('location: /vehiculos');
+                    header('location: /admin');
                 }
             }
         }

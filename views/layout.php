@@ -86,17 +86,66 @@ if (!isset($inicio)) {
 
 
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="inner-content">
-            <p>Desarrollado por <a href="https://www.cristiandizeo.com/">Cristian Dizeo</a></p>
+  <div class="container-fluid flex-grow-1 flex-shrink-0">
+    <div class="px-lg-5">
+      <div class="row py-5">
+        <div class="col-lg-12 mx-auto text-white text-center">
+          <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
+          <p class="lead mb-0">No dudes en contactarnos ante cualquier consulta</p>
+          <p class="lead"><a href="https://bootstrapious.com/snippets" class="text-primary">
+                        <u>Hacé click acá y escribinos</u></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
+
+
+  <!-- Footer -->
+  <footer class="bg-white">
+    <div class="container py-5">
+      <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+          <p class="font-italic text-muted">Seguinos en nuestras redes</p>
+          <ul class="list-inline mt-4">
+            <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Secciones</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="text-muted">Home</a></li>
+            <li class="mb-2"><a href="/nosotros" class="text-muted">Nosotros</a></li>
+            <li class="mb-2"><a href="/vehiculos" class="text-muted">Vehiculos</a></li>
+            <li class="mb-2"><a href="/contacto" class="text-muted">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+          <p class="text-muted mb-4">Dejanos tu correo para recibir nuestras novedades</p>
+          <div class="p-1 rounded border">
+            <div class="input-group">
+              <input type="email" placeholder="Ingresá tu email" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">Desarrollado por Cristian Dizeo</p>
+      </div>
+    </div>
   </footer>
+  <!-- End -->
 
 
   <!-- Bootstrap core JavaScript -->
