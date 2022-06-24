@@ -4,8 +4,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor</h4>
-              <h2>Contacto</h2>
+              <h2>Contactanos</h2>
             </div>
           </div>
         </div>
@@ -18,7 +17,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Our Location on Maps</h2>
+              <h2>Encontranos acá</h2>
             </div>
           </div>
           <div class="col-md-8">
@@ -29,8 +28,8 @@
 	4. Copy only URL and paste it within the src="" field below
 -->
             <div id="map">
-              <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="330px" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12811.409010893085!2d-64.2815187!3d-36.6058673!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc58b5d9c07955edc!2sGrasman%20Automotores!5e0!3m2!1ses-419!2sar!4v1656098707248!5m2!1ses-419!2sar" width="100%" height="330px" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
           </div>
           <div class="col-md-4">
             <div class="left-content">
@@ -54,7 +53,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Send us a Message</h2>
+              <h2>Envianos tu consulta</h2>
             </div>
           </div>
           <div class="col-md-8">

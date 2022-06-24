@@ -3,7 +3,7 @@
     <!-- Banner Starts Here -->
     <div class="banner header-text row">
       <div class="text-content">
-      <h2>Tu próximo vehículo lo encontrás acá</h2>
+      <h2>Tu próximo vehículo <br> lo encontrás acá</h2>
       <a href="/vehiculos" class="btn btn-secondary bt-lg">QUIERO COMPRAR</a>
       <a href="/vehiculos" class="btn btn-secondary bt-lg">QUIERO VENDER</a>
       </div>
@@ -52,9 +52,7 @@
           <div class="col-md-12">
             <div class="owl-clients owl-carousel text-center">
               <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
+                <img src="/assets/images/entrega1.png" alt="">
                 <div class="down-content">
                   <h4>John Doe</h4>
                   <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
@@ -62,9 +60,7 @@
               </div>
               
               <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
+                <img src="/assets/images/entrega2.png" alt="">
                 <div class="down-content">
                   <h4>Jane Smith</h4>
                   <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
@@ -72,9 +68,7 @@
               </div>
               
               <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
+                <img src="/assets/images/entrega3.png" alt="">
                 <div class="down-content">
                   <h4>Antony Davis</h4>
                   <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
@@ -82,31 +76,9 @@
               </div>
               
               <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
+                <img src="/assets/images/entrega4.png" alt="">
                 <div class="down-content">
                   <h4>John Doe</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-              
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>Jane Smith</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-              
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>Antony Davis</h4>
                   <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
                 </div>
               </div>

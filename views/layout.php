@@ -85,8 +85,8 @@ if (!isset($inicio)) {
   <?php echo $contenido; ?>
 
 
-
-  <div class="container-fluid flex-grow-1 flex-shrink-0">
+<hr>
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light">
     <div class="px-lg-5">
       <div class="row py-5">
         <div class="col-lg-12 mx-auto text-white text-center">
@@ -99,6 +99,8 @@ if (!isset($inicio)) {
       </div>
     </div>
   </div>
+  
+<hr>
   <!-- End -->
 
 
