@@ -1,5 +1,5 @@
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
+    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-banner.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -82,7 +82,7 @@
                           </fieldset>
                        </div>
                   </div>
-                  <input type="text" class="form-control" placeholder="Enter full name" required="">
+                  <input type="text" class="form-control" placeholder="Nombre" required="">
 
                   <div class="row">
                        <div class="col-md-6">

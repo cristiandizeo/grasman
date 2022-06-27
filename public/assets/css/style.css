@@ -332,7 +332,6 @@ header {
 /* Banner Style */
 .banner {
 	position: relative;
-	width: 100%;
 	text-align: center;
 	padding-top: 80px;
 	display: flexbox;

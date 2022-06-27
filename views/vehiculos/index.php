@@ -14,7 +14,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Patente</th>
-                <th scope="col">Imagen</th>
+                <th scope="col">Vehiculo</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -25,7 +25,7 @@
             <tr>
                 <td scope="row"><?php echo $vehiculo->id; ?></td>
                 <td><?php echo $vehiculo->patente; ?></td>
-                <td> <img src="/imagenes/<?php echo $vehiculo->imagen; ?>" class="img-fluid mini-img"> </td>
+                <td> <?php echo $vehiculo->marca ." ". $vehiculo->modelo ." ". $vehiculo->year?> </td>
                 <td>$ <?php echo $vehiculo->precio; ?></td>
                 <td>
                     <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100">

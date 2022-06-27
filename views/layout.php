@@ -93,7 +93,7 @@ if (!isset($inicio)) {
           <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="lead mb-0">No dudes en contactarnos ante cualquier consulta</p>
           <p class="lead"><a href="https://bootstrapious.com/snippets" class="text-primary">
-                        <u>Hacé click acá y escribinos</u></a>
+                        <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>
       </div>

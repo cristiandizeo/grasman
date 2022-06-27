@@ -1,5 +1,5 @@
     <!-- Page Content -->
-    <div class="page-heading contact-heading header-text" style="background-image: url(assets/images/heading-4-1920x500.jpg);">
+    <div class="page-heading contact-heading header-text" style="background-image: url(assets/images/heading-banner.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -33,13 +33,12 @@
           </div>
           <div class="col-md-4">
             <div class="left-content">
-              <h4>About our office</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Sed voluptate nihil eumester consectetur similiqu consectetur.<br><br>Lorem ipsum dolor sit amet, consectetur adipisic elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti.</p>
+              <h4>Visitá nuestra agencia</h4>
+                <p>Nos encontramos en Santa Rosa, capital de la provincia de La Pampa. <br>La ubicación de nuestra agencia es Av. Agustín Spinetto 1135, la cual es parte de la Ruta Nacional 35 y atraviesa a la ciudad de norte a sur. <br>Estamos abiertos de lunes a sábado de 9 a 18 hs.</p>
               <ul class="social-icons">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
               </ul>
             </div>
           </div>
@@ -62,27 +61,27 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Tu nombre" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                      <input name="email" type="text" class="form-control" id="email" placeholder="Tu E-Mail" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
+                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Asunto" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Mensaje" required=""></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
+                      <button type="submit" id="form-submit" class="filled-button">Enviar mensaje</button>
                     </fieldset>
                   </div>
                 </div>
@@ -90,9 +89,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <img src="assets/images/team_01.jpg" class="img-fluid" alt="">
-
-            <h5 class="text-center" style="margin-top: 15px;">John Doe</h5>
+            <img src="assets/images/tarjeta-nosotros.jpeg" class="img-fluid" alt="">
           </div>
         </div>
       </div>
