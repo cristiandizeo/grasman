@@ -49,6 +49,28 @@ class ActiveRecord {
         return $resultado;
     }
 
+    public static function filtrar($args) {
+
+                $valores = [];
+                foreach($args as $key => $value) {
+                    if ($value != ""){
+                    $valores[] = "{$key}='{$value}'";
+                }
+                }
+
+                $query = "SELECT * FROM vehiculos";
+
+                if (count($valores) > 0) {
+                  $query .= " WHERE " . join(' AND ', $valores);
+                }
+            
+                // debuguear($query);
+
+                $resultado = self::consultarSQL($query);
+        
+                return $resultado;
+    }
+
     // Busca un registro por su id
     public static function find($id) {
         $query = "SELECT * FROM " . static::$tabla  ." WHERE id = ${id}";

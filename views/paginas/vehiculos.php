@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-md-3">
              <div class="contact-form">
-                <form>
+             <form action="/vehiculos" method="POST">
                      <?php include __DIR__ . '/buscar.php'; ?>
                      <button type="submit" class="filled-button btn-block" id="buscar">Buscar</button>
                 </form>

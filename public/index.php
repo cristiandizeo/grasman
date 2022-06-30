@@ -22,6 +22,7 @@ $router->post('/vehiculos/eliminar', [VehiculoController::class, 'eliminar']);
 $router->get('/', [PaginasController::class, 'index']);
 $router->get('/nosotros', [PaginasController::class, 'nosotros']);
 $router->get('/vehiculos', [PaginasController::class, 'vehiculos']);
+$router->post('/vehiculos', [PaginasController::class, 'vehiculos']);
 $router->get('/vehiculo', [PaginasController::class, 'vehiculo']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);

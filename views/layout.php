@@ -108,7 +108,7 @@ if (!isset($inicio)) {
   <footer class="bg-white">
     <div class="container py-5">
       <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="" width="180" class="mb-3">
           <p class="font-italic text-muted">Seguinos en nuestras redes</p>
           <ul class="list-inline mt-4">
             <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
@@ -158,7 +158,7 @@ if (!isset($inicio)) {
   <!-- Additional Scripts -->
   <script src="/assets/js/custom.js"></script>
   <script src="/assets/js/owl.js"></script>
-  <script src='/assets/js/buscador.js'></script>
+  <!-- <script src='/assets/js/buscador.js'></script> -->
 </body>
 
 </html>
