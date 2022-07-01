@@ -28,18 +28,22 @@ class PaginasController
   {
 
     $vehiculos = Vehiculo::all();
-    $resultados = Vehiculo::all();
+    $buscador = Vehiculo::buscador();
+    $resultados = [];
+    $args = [];
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       $args = $_POST['vehiculo'];
       $resultados = Vehiculo::filtrar($args);
     }
 
-    // debuguear($vehiculos);
+    // debuguear($resultados);  
 
     $router->render('paginas/vehiculos', [
       'vehiculos' => $vehiculos,
-      'resultados' => $resultados
+      'buscador' => $buscador,
+      'resultados' => $resultados,
+      'args' => $args
     ]);
   }
 

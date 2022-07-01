@@ -94,3 +94,14 @@ jQuery(document).ready(function ($) {
 function borrar() {
   return window.confirm( '¿Estas seguro de borrar el registro?' );
 }
+
+$("#limpiar").on("click", function (e) {
+  e.preventDefault();
+  $('#myselect option').each(function () {
+    if (this.value = "") {
+        this.selected = true;
+    } else {
+      this.selected = false;
+    }
+});
+});

@@ -29,12 +29,12 @@
             <div class="left-content">
               <h4>Queremos brindarte la mejor experiencia</h4>
               <p>Somos una empresa especializada en la comercializacion de vehiculos nuevos y usados, seleccionando cuidadosamente lo mejor del mercado, y ofreciendo al cliente
-                la mejor opción a la hora de comprar o vender su vehículo. Nuestro desafío en mantener en alto la calidad de nuestro servicio y ser referentes en el rubro, ofreciendo un gran
+                la mejor opción a la hora de comprar o vender su vehículo. Nuestro desafío es mantener en alto la calidad de nuestro servicio y ser referentes en el rubro, ofreciendo un gran
                 abanico de posibilidades.
               </p>
               <ul class="social-icons">
-                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></a></li>
               </ul>
             </div>
           </div>

@@ -58,7 +58,7 @@ class ActiveRecord {
                 }
                 }
 
-                $query = "SELECT * FROM vehiculos";
+                $query = "SELECT * FROM " . static::$tabla;
 
                 if (count($valores) > 0) {
                   $query .= " WHERE " . join(' AND ', $valores);
@@ -69,6 +69,23 @@ class ActiveRecord {
                 $resultado = self::consultarSQL($query);
         
                 return $resultado;
+    }
+
+    
+    public static function buscador() {
+        $valores = [];
+        foreach(static::$columnasDB as $columna) {
+            $valores[] = "$columna";
+        }
+        $resultado = [];
+        for ($i=2; $i < 11; $i++) { 
+                $query = "SELECT";
+                $query .= " DISTINCT " . $valores[$i];
+                $query .= " FROM " . static::$tabla;
+                $resultado[$i] = self::consultarSQL($query);
+            }
+            // debuguear($resultado);
+        return $resultado;
     }
 
     // Busca un registro por su id

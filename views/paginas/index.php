@@ -27,7 +27,7 @@
             </div>
           </div>
 
-          <?php echo require 'listado.php';?>
+          <?php require 'listado.php';?>
         </div>
       </div>
     </div>

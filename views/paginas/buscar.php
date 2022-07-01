@@ -1,71 +1,61 @@
-<?php $resultado = isset($_POST['resultados']) ? $_POST['resultados'] : false; ?>
-<label>Nuevo/usado:</label>
 
-<select name="vehiculo[estado]" id="estado" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo s($vehiculo->estado) === s($resultado->estado) ? 'selected' : '' ?> value="<?php echo s($vehiculo->estado); ?>"><?php echo s($vehiculo->estado); ?></option>
+<label>Nuevo/usado:</label>
+<select id="myselect" name="vehiculo[estado]" id="estado" class="form-control">
+  <option value="">Todos</option>  
+  <?php foreach($buscador as $keys) : ?>
+  <?php foreach($keys as $data) : ?>
+    <?php if($data->estado != ""){ ?>
+    <option value="<?php echo s($data->estado); ?>" <?php if ($args != null) echo s($args['estado']) === s($data->estado) ? 'selected="selected"' : '' ?>><?php echo s($data->estado); ?></option>
+  <?php } ?>
+  <?php endforeach; ?>
   <?php endforeach; ?>
 </select>
 
 <label>Tipo vehiculo:</label>
-
-<select name="vehiculo[tipo]" id="tipo" class="form-control">
+<select id="myselect" name="vehiculo[tipo]" id="tipo" class="form-control">
   <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_POST['tipo'] === s($vehiculo->tipo) ? 'selected' : '' ?> value="<?php echo s($vehiculo->tipo); ?>"><?php echo s($vehiculo->tipo); ?></option>
+  <?php foreach($buscador as $keys) : ?>
+  <?php foreach($keys as $data) : ?>
+    <?php if($data->tipo != ""){ ?>
+    <option value="<?php echo s($data->tipo); ?>" <?php if ($args != null) echo s($args['tipo']) === s($data->tipo) ? 'selected="selected"' : '' ?>><?php echo s($data->tipo); ?></option>
+  <?php } ?>
+  <?php endforeach; ?>
   <?php endforeach; ?>
 </select>
 
 <label>Marca:</label>
-
-<select name="vehiculo[marca]" id="marca" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?> value="<?php echo s($vehiculo->marca); ?>"><?php echo s($vehiculo->marca); ?></option>
+<select id="myselect" name="vehiculo[marca]" id="marca" class="form-control">
+  <option value="">Todos</option>  
+  <?php foreach($buscador as $keys) : ?>
+  <?php foreach($keys as $data) : ?>
+    <?php if($data->marca != ""){ ?>
+    <option value="<?php echo s($data->marca); ?>" <?php if ($args != null) echo s($args['marca']) === s($data->marca) ? 'selected="selected"' : '' ?>><?php echo s($data->marca); ?></option>
+  <?php } ?>
   <?php endforeach; ?>
-</select>
-
-<label>Modelo:</label>
-
-<select name="vehiculo[modelo]" id="modelo" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?> value="<?php echo s($vehiculo->modelo); ?>"><?php echo s($vehiculo->modelo); ?></option>
-  <?php endforeach; ?>
-</select>
-
-<label>Precio:</label>
-
-<select name="vehiculo[precio]" id="precio" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?> value="<?php echo s($vehiculo->precio); ?>"><?php echo s($vehiculo->precio); ?></option>
-  <?php endforeach; ?>
-</select>
-
-<label>Kms:</label>
-
-<select name="vehiculo[km]" id="km" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?> value="<?php echo s($vehiculo->km); ?>"><?php echo s($vehiculo->km); ?></option>
   <?php endforeach; ?>
 </select>
 
 <label>Caja:</label>
-<select name="vehiculo[caja]" id="caja" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?> value="<?php echo s($vehiculo->caja); ?>"><?php echo s($vehiculo->caja); ?></option>
+<select id="myselect" name="vehiculo[caja]" id="caja" class="form-control">
+  <option value="">Todos</option>  
+  <?php foreach($buscador as $keys) : ?>
+  <?php foreach($keys as $data) : ?>
+    <?php if($data->caja != ""){ ?>
+    <option value="<?php echo s($data->caja); ?>" <?php if ($args != null) echo s($args['caja']) === s($data->caja) ? 'selected="selected"' : '' ?>><?php echo s($data->caja); ?></option>
+  <?php } ?>
+  <?php endforeach; ?>
   <?php endforeach; ?>
 </select>
 
 <label>Combustible:</label>
 
-<select name="vehiculo[combustible]" id="combustible" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($vehiculos as $vehiculo) : ?>
-    <option <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?> value="<?php echo s($vehiculo->combustible); ?>"><?php echo s($vehiculo->combustible); ?></option>
+<select id="myselect" name="vehiculo[combustible]" id="combustible" class="form-control">
+  <option value="">Todos</option>  
+  <?php foreach($buscador as $keys) : ?>
+  <?php foreach($keys as $data) : ?>
+    <?php if($data->combustible != ""){ ?>
+    <option value="<?php echo s($data->combustible); ?>" <?php if ($args != null) echo s($args['combustible']) === s($data->combustible) ? 'selected="selected"' : '' ?>><?php echo s($data->combustible); ?></option>
+  <?php } ?>
+  <?php endforeach; ?>
   <?php endforeach; ?>
 </select>

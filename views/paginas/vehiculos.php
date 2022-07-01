@@ -16,17 +16,19 @@
         <div class="row">
           <div class="col-md-3">
              <div class="contact-form">
-             <form action="/vehiculos" method="POST">
+             <form action="/vehiculos" method="POST" id="formb">
                      <?php include __DIR__ . '/buscar.php'; ?>
                      <button type="submit" class="filled-button btn-block" id="buscar">Buscar</button>
-                </form>
-             </div>
+                     <button class="filled-button btn-block bg-danger" id="limpiar">Limpiar</button>
+                    </form>
+                  </div>
           </div>
 
           <div class="col-md-9">
             <div class="row">
               
-<?php echo require 'listado.php';?>
+  <div <?php echo $resultados != null ? 'hidden' : '' ?>>No se encontraron resultados</div>
+    <?php require 'listado.php';?>
 
               <div class="col-md-12">
                 <ul class="pages">
