@@ -26,8 +26,7 @@
 
           <div class="col-md-9">
             <div class="row">
-              
-  <div <?php echo $resultados != null ? 'hidden' : '' ?>>No se encontraron resultados</div>
+  <div <?php if ($resultados && $vehiculos != null) echo 'hidden';?>>No se encontraron resultados</div>
     <?php require 'listado.php';?>
 
               <div class="col-md-12">
