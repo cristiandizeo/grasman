@@ -23,38 +23,38 @@
             <div class="row">
               <div class="col-sm-4 col-6">
                 <div>
-                  <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/prueba.jpg" alt="" class="img-fluid">
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
                 <div>
-                  <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/prueba.jpg" alt="" class="img-fluid">
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
                 <div>
-                  <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/prueba.jpg" alt="" class="img-fluid">
                 </div>
                 <br>
               </div>
 
               <div class="col-sm-4 col-6">
                 <div>
-                  <img src="assets/images/product-4-370x270.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/prueba.jpg" alt="" class="img-fluid">
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
                 <div>
-                  <img src="assets/images/product-5-370x270.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/prueba.jpg" alt="" class="img-fluid">
                 </div>
                 <br>
               </div>
               <div class="col-sm-4 col-6">
                 <div>
-                  <img src="assets/images/product-6-370x270.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/prueba.jpg" alt="" class="img-fluid">
                 </div>
                 <br>
               </div>
@@ -170,6 +170,11 @@
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
                       <input name="email" type="text" class="form-control" id="email" placeholder="Tu E-Mail" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Tu telefono" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-12">

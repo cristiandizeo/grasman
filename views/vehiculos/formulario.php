@@ -118,13 +118,13 @@
         <div class="form-outline mb-4">
           <label for="imagen">Imagenes</label>
           <div class="form-group">
-            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="vehiculo[imagen]" multiple="">
-            <?php if($vehiculo->imagen) { ;?>
-              <img src="/imagenes/<?php echo $vehiculo->imagen ;?>" class="mini-img m-3">
+            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="files[]" multiple="">
+            <?php if($files->imagen) { ;?>
+              <img src="/imagenes/<?php echo $files->imagen ;?>" class="mini-img m-3">
               <?php } ;?>
             </div>
             <div class="valid-feedback">¡Listo!</div>      
-            <div class="invalid-feedback">Agregá alguna imagen</div>
+            <div class="invalid-feedback">Agregá imágenes</div>
           </div>
         </div>
       </div>

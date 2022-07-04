@@ -1,9 +1,3 @@
-<?php if ($_SERVER['PHP_SELF'] === '/index.php/vehiculos'){
-  if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $vehiculos = $resultados;
-  }
-} ; ?>
-
 <?php foreach ($vehiculos as $vehiculo) : ?>
   <div class="<?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'col-md-6' : 'col-md-4' ?>">
     <div class="product-item">

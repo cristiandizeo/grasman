@@ -1,4 +1,9 @@
-    <!-- Page Content -->
+<?php if ($_SERVER['PHP_SELF'] === '/index.php/vehiculos'){
+  if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $vehiculos = $resultados;
+  }
+} ; ?>
+   <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-banner.jpg);">
       <div class="container">
         <div class="row">
@@ -26,7 +31,7 @@
 
           <div class="col-md-9">
             <div class="row">
-  <div <?php if ($resultados && $vehiculos != null) echo 'hidden';?>>No se encontraron resultados</div>
+  <div <?php if ($vehiculos != null) echo 'hidden';?>>No se encontraron resultados</div>
     <?php require 'listado.php';?>
 
               <div class="col-md-12">

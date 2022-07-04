@@ -11,7 +11,7 @@ class PaginasController
   public static function index(Router $router)
   {
 
-    $vehiculos = Vehiculo::get(3);
+    $vehiculos = Vehiculo::get(6);
 
     $router->render('paginas/index', [
       'inicio' => true,
@@ -32,7 +32,6 @@ class PaginasController
     $resultados = [];
     $args = [];
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
       $args = $_POST['vehiculo'];
       $resultados = Vehiculo::filtrar($args);
     }

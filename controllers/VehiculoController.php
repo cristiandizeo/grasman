@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Vehiculo;
+use Model\File;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class VehiculoController  {
@@ -21,52 +22,56 @@ class VehiculoController  {
     }
 
     public static function crear(Router $router) {
-
-        $errores = Vehiculo::getErrores();
-        $vehiculo = new Vehiculo;
-
-        // Ejecutar el código después de que el usuario envia el formulario
+        $vehiculo = new Vehiculo();
+        $imagen = new File();
+        $errores = Vehiculo::getErrores();        // Ejecutar el código después de que el usuario envia el formulario
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             /** Crea una nueva instancia */
             $vehiculo = new Vehiculo($_POST['vehiculo']);
-
-            // Generar un nombre único
-            $nombreImagen = md5( uniqid( rand(), true ) ) . ".jpg";
-
-
-            // Setear la imagen
-            // Realiza un resize a la imagen con intervention
-            if($_FILES['vehiculo']['tmp_name']['imagen']) {
-                $image = Image::make($_FILES['vehiculo']['tmp_name']['imagen'])->fit(800,600);
-                $vehiculo->setImagen($nombreImagen);
-            }
             
-
             // Validar
             $errores = $vehiculo->validar();
             if(empty($errores)) {
+                // Guarda en la base de datos
+                $resultado = $vehiculo->guardar();
+                debuguear($vehiculo);
+            }
 
+            $imagenes = $_FILES['files']['tmp_name'];
+            
+            $countfiles = count($imagenes);
+            for($i = 0; $i < $countfiles; $i++) {
+                
+                $imagen = new File($imagenes[$i]);   
+                // Generar un nombre único
+                $nombreImagen = md5( uniqid( rand(), true ) ) . ".jpg";
+                // Realiza un resize a la imagen con intervention
+                $image = Image::make($imagenes[$i])->fit(800,600);
+                // Setear la imagen
+                $imagen->setImagen($nombreImagen);
                 // Crear la carpeta para subir imagenes
                 if(!is_dir(CARPETA_IMAGENES)) {
                     mkdir(CARPETA_IMAGENES);
                 }
-
+                
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
-
-                // Guarda en la base de datos
-                $resultado = $vehiculo->guardar();
-
+                
+                $imagen->vehiculoId = $vehiculo->id;
+                $imagen->guardar();
+            }
+            
+                
                 if($resultado) {
                     header('location: /admin');
                 }
             }
-        }
-
+        
+        
         $router->render('vehiculos/crear', [
             'errores' => $errores,
-            'vehiculo' => $vehiculo
+            'vehiculo' => $vehiculo,
+            'files' => $imagen
         ]);
     }
 
