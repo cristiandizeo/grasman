@@ -64,8 +64,6 @@ class ActiveRecord {
                   $query .= " WHERE " . join(' AND ', $valores);
                 }
             
-                // debuguear($query);
-
                 $resultado = self::consultarSQL($query);
         
                 return $resultado;
@@ -84,7 +82,6 @@ class ActiveRecord {
                 $query .= " FROM " . static::$tabla;
                 $resultado[$i] = self::consultarSQL($query);
             }
-            // debuguear($resultado);
         return $resultado;
     }
 
@@ -119,10 +116,14 @@ class ActiveRecord {
 
         // Resultado de la consulta
         $resultado = self::$db->query($query);
-
         return $resultado;
     }
 
+
+    public function lastId() {
+        $resultado = static::$db->insert_id;
+        return $resultado;
+     }
     public function actualizar() {
 
         // Sanitizar los datos

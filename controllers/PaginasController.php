@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Vehiculo;
+use Model\File;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController
@@ -28,6 +29,8 @@ class PaginasController
   {
 
     $vehiculos = Vehiculo::all();
+    $imagenes = File::all();
+
     $buscador = Vehiculo::buscador();
     $resultados = [];
     $args = [];
@@ -42,7 +45,8 @@ class PaginasController
       'vehiculos' => $vehiculos,
       'buscador' => $buscador,
       'resultados' => $resultados,
-      'args' => $args
+      'args' => $args,
+      'imagenes' => $imagenes
     ]);
   }
 

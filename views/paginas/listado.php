@@ -1,9 +1,11 @@
+
 <?php foreach ($vehiculos as $vehiculo) : ?>
   <div class="<?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'col-md-6' : 'col-md-4' ?>">
     <div class="product-item">
       <a href="/vehiculo?id=<?php echo $vehiculo->id; ?>">
-        <img loading="lazy" src="/imagenes/<?php echo $vehiculo->imagen; ?>" alt="anuncio">
-
+          <?php if ($vehiculo->id === $imagenes->vehiculoId){?>
+        <img loading="lazy" src="/imagenes/<?php echo array_shift($imagenes)->imagen; ?>" alt="anuncio">
+<?php }?>
         <div class="down-content">
           <h2><?php echo $vehiculo->marca . " " . $vehiculo->modelo; ?></h2>
 

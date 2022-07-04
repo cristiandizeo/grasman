@@ -13,7 +13,7 @@ class File extends ActiveRecord {
     {
         $this->id = $args['id'] ?? null;
         $this->imagen = $args['imagen'] ?? '';
-        $this->vehiculoId = $args['vehiculoId'] ?? '';
+        $this->vehiculoId = $args['vehiculoId'] ?? null;
     }
 
     public function validar()

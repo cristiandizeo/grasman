@@ -34,9 +34,9 @@ class VehiculoController  {
             if(empty($errores)) {
                 // Guarda en la base de datos
                 $resultado = $vehiculo->guardar();
-                debuguear($vehiculo);
+                $lastId = $vehiculo->LastId();
             }
-
+            
             $imagenes = $_FILES['files']['tmp_name'];
             
             $countfiles = count($imagenes);
@@ -57,7 +57,7 @@ class VehiculoController  {
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
                 
-                $imagen->vehiculoId = $vehiculo->id;
+                $imagen->vehiculoId = $lastId;
                 $imagen->guardar();
             }
             
@@ -66,7 +66,6 @@ class VehiculoController  {
                     header('location: /admin');
                 }
             }
-        
         
         $router->render('vehiculos/crear', [
             'errores' => $errores,
