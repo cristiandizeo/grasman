@@ -29,7 +29,7 @@ class PaginasController
   {
 
     $vehiculos = Vehiculo::all();
-    $imagenes = File::all();
+    $imagenes = File::imgId();
 
     $buscador = Vehiculo::buscador();
     $resultados = [];
@@ -38,8 +38,6 @@ class PaginasController
       $args = $_POST['vehiculo'];
       $resultados = Vehiculo::filtrar($args);
     }
-
-    // debuguear($resultados);  
 
     $router->render('paginas/vehiculos', [
       'vehiculos' => $vehiculos,

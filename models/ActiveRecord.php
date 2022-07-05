@@ -76,7 +76,8 @@ class ActiveRecord {
             $valores[] = "$columna";
         }
         $resultado = [];
-        for ($i=2; $i < 11; $i++) { 
+        $contador = count($valores);
+        for ($i=0; $i < $contador; $i++) { 
                 $query = "SELECT";
                 $query .= " DISTINCT " . $valores[$i];
                 $query .= " FROM " . static::$tabla;
@@ -224,6 +225,18 @@ class ActiveRecord {
         // Asignar al atributo de imagen el nombre de la imagen
         if($imagen) {
             $this->imagen = $imagen;
+        }
+    }
+    public static function imgId() {
+        foreach(static::$columnasDB as $columna) {
+            if($columna === 'vehiculoId'){
+                $query = "SELECT imagen," . $columna;
+                $query .= " FROM " . static::$tabla;
+                $query .= " GROUP BY " . $columna;
+                $resultado = self::consultarSQL($query);
+                // debuguear($resultado);
+                return $resultado;
+            }
         }
     }
 
