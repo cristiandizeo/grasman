@@ -13,10 +13,12 @@ class PaginasController
   {
 
     $vehiculos = Vehiculo::get(6);
+    $imagenes = File::imgId();
 
     $router->render('paginas/index', [
       'inicio' => true,
-      'vehiculos' => $vehiculos
+      'vehiculos' => $vehiculos,
+      'imagenes' => $imagenes
     ]);
   }
 
@@ -54,9 +56,11 @@ class PaginasController
 
     // Obtener los datos de la vehiculo
     $vehiculo = Vehiculo::find($id);
+    $imagenes = File::all();
 
     $router->render('paginas/vehiculo', [
-      'vehiculo' => $vehiculo
+      'vehiculo' => $vehiculo,
+      'imagenes' => $imagenes
     ]);
   }
 
