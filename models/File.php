@@ -3,16 +3,16 @@ namespace Model;
 
 class File extends ActiveRecord {
     protected static $tabla = 'files';
-    protected static $columnasDB = ['id', 'imagen', 'vehiculoId'];
+    protected static $columnasDB = ['id', 'name', 'vehiculoId'];
 
     public $id;
-    public $imagen;
+    public $name;
     public $vehiculoId;
 
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
-        $this->imagen = $args['imagen'] ?? '';
+        $this->name = $args['name'] ?? '';
         $this->vehiculoId = $args['vehiculoId'] ?? null;
     }
 
@@ -29,7 +29,7 @@ class File extends ActiveRecord {
 
 public function validarImagen()
 {
-    if (!$this->imagen) {
+    if (!$this->name) {
         self::$errores[] = 'Debes agregar alguna imagen';
     }
 }

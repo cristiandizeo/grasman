@@ -27,7 +27,9 @@ class VehiculoController
     {
         $vehiculo = new Vehiculo();
         $imagen = new File();
-        $errores = Vehiculo::getErrores();        // Ejecutar el código después de que el usuario envia el formulario
+        $errores = Vehiculo::getErrores(); 
+        $imagenes = [];
+        // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             /** Crea una nueva instancia */
             $vehiculo = new Vehiculo($_POST['vehiculo']);
@@ -40,7 +42,7 @@ class VehiculoController
                 $lastId = $vehiculo->LastId();
             }
 
-            $imagenes = $_FILES['files']['tmp_name'];
+            $imagenes = $_FILES['imagenes']['tmp_name'];
 
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
@@ -73,7 +75,7 @@ class VehiculoController
         $router->render('vehiculos/crear', [
             'errores' => $errores,
             'vehiculo' => $vehiculo,
-            'files' => $imagen
+            'imagenes' => $imagenes
         ]);
     }
 
@@ -91,8 +93,10 @@ class VehiculoController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            /** Crea una nueva instancia */
-            $vehiculo = new Vehiculo($_POST['vehiculo']);
+            
+                // Asignar los atributos
+                $args = $_POST['vehiculo'];
+                $vehiculo->sincronizar($args);
 
             // Validar
             $errores = $vehiculo->validar();
@@ -101,9 +105,11 @@ class VehiculoController
                 $resultado = $vehiculo->guardar();
             }
 
-            $imagenes = $_FILES['files']['tmp_name'];
-
-            $countfiles = count($imagenes);
+            $imagenes = $_FILES['imagenes']['tmp_name'];
+            // debuguear(is_null($imagenes->tmp_name));
+            
+            if (!is_null($imagenes->tmp_name)){
+                $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
 
                 $imagen = new File($imagenes[$i]);
@@ -124,6 +130,7 @@ class VehiculoController
                 $imagen->vehiculoId = $id;
                 $imagen->guardar();
             }
+        }
 
             if ($resultado) {
                 header('location: /admin');
@@ -144,17 +151,20 @@ class VehiculoController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tipo = $_POST['tipo'];
-
             // peticiones validas
             if (validarTipoContenido($tipo)) {
                 // Leer el id
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
+                
+                $imagenes = File::where('vehiculoId', $id);
+                foreach ($imagenes as $imagen){
+                    $imagen->setImagen($imagen);
+                }
 
                 // encontrar y eliminar la vehiculo
                 $vehiculo = Vehiculo::find($id);
                 $resultado = $vehiculo->eliminar();
-
                 // Redireccionar
                 if ($resultado) {
                     header('location: /admin');

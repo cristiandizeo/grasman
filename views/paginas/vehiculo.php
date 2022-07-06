@@ -19,7 +19,7 @@
             <div>
               <?php foreach ($imagenes as $imagen) : ?>
                 <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
-                  <img loading="lazy" src="/imagenes/<?php echo trim($imagen->imagen); ?>" class="img-fluid">
+                  <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
                 <?php break;
                 } ?>
               <?php endforeach; ?>
@@ -30,7 +30,7 @@
                 <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
                   <div class="col-sm-4 col-6">
                     <div>
-                      <img loading="lazy" src="/imagenes/<?php echo trim($imagen->imagen); ?>" class="img-fluid">
+                      <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
                     </div>
                     <br>
                   </div>

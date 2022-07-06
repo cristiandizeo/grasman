@@ -4,7 +4,7 @@
       <a href="/vehiculo?id=<?php echo $vehiculo->id; ?>">
           <?php foreach($imagenes as $imagen) : ?>
             <?php if ($imagen->vehiculoId === $vehiculo->id){?>
-        <img loading="lazy" src="/imagenes/<?php echo trim($imagen->imagen); ?>" alt="anuncio">
+        <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" alt="anuncio">
 <?php break; }?>
 <?php endforeach; ?>
         <div class="down-content">

@@ -118,10 +118,10 @@
         <div class="form-outline mb-4">
           <label for="imagen">Imagenes</label>
           <div class="form-group">
-            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="files[]" multiple="">
+            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="imagenes[]" multiple="">
             <?php foreach($imagenes as $imagen) : ?>
             <?php if ($imagen->vehiculoId === $vehiculo->id){?>
-        <img loading="lazy" src="/imagenes/<?php echo trim($imagen->imagen); ?>">
+        <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="mini-img m-2">
 <?php }?>
 <?php endforeach; ?>
             </div>
