@@ -35,7 +35,7 @@ class Admin extends ActiveRecord {
         $resultado = self::$db->query($query);
 
         if(!$resultado->num_rows) {
-            self::$errores[] = 'El Usuario No Existe';
+            self::$errores[] = '* Credenciales inválidas';
             return;
         }
 

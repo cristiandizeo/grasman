@@ -8,8 +8,8 @@
     <?php endforeach; ?>
     <form method="POST">
         <div class="inputBox"> 
-            <input id="email" type="text" name="email" placeholder="Email"> 
-            <input id="password" type="password" name="password" placeholder="Password"> 
+            <input id="email" type="email" name="email" placeholder="Email" required> 
+            <input id="password" type="password" name="password" placeholder="Password" required> 
         </div> 
             <input type="submit" name="" value="Ingresar">
     </form>

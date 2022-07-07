@@ -48,13 +48,14 @@ if (!isset($inicio)) {
   <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="/">
+        <div class="row">
+        <a class="navbar-brand" href="/" title="Grasman automotores">
           <img src="/assets/images/logo.png" alt="">
 
-          <h2>Grasman <em>Automotores</em></h2>
+          <h2 class="d-flex align-items-center">Grasman <em>Automotores</em></h2>
 
         </a>
-
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -72,11 +73,13 @@ if (!isset($inicio)) {
 
           </ul>
         </div>
+        <?php if($auth): ?>
+          <div class="auth">
+          <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car" style="color:#ced4da"></i></i></a>
+          <a href="/logout" title="Cerrar sesión" class="m-3"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
+        </div>
+                      <?php endif; ?>
       </div>
-      <?php if($auth): ?>
-        <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car" style="color:#ced4da"></i></i></a>
-        <a href="/logout" title="Cerrar sesión" class="m-3"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
-                    <?php endif; ?>
     </nav>
   </header>
 

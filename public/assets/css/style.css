@@ -18,7 +18,8 @@ a {
 	text-decoration: none !important;
 	color: #000;
 }
-a:hover{
+
+a:hover {
 	color: #999;
 }
 
@@ -296,7 +297,7 @@ header {
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-link.show,
 .navbar .navbar-nav .show>.nav-link {
-	color: #fff;	
+	color: #fff;
 	border-bottom: 3px solid #6c757d;
 }
 
@@ -323,57 +324,64 @@ header {
 	font-family: 'FontAwesome';
 }
 
-.dashboard{
+.dashboard {
 	margin-top: 100px;
 	padding: 15px;
 }
-
+.auth {
+	margin: auto;
+}
+.auth a{
+	margin: .5rem;
+}
 /* Banner Style */
 
-#sync1 
-	.item {
-	  background: #000;
-	  padding: 80px 0px;
-	  margin: 5px;
-	  color: #FFF;
-	  -webkit-border-radius: 3px;
-	  -moz-border-radius: 3px;
-	  border-radius: 3px;
-	  text-align: center;
-	}
-  
-  
-  #sync2 
-	.item {
-	  background: #000;
-	  padding: 10px 0px;
-	  margin: 5px;
-	  color: #FFF;
-	  -webkit-border-radius: 3px;
-	  -moz-border-radius: 3px;
-	  border-radius: 3px;
-	  text-align: center;
-	  cursor: pointer;
+#sync1 .item {
+	background: #000;
+	padding: 80px 0px;
+	margin: 5px;
+	color: #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+}
 
-	}
-  
-  /* arrows on first carousel */
-  #sync1.owl-theme {
+
+#sync2 .item {
+	background: #000;
+	padding: 10px 0px;
+	margin: 5px;
+	color: #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+
+}
+
+/* arrows on first carousel */
+#sync1.owl-theme {
 	position: relative;
-  }
-	.owl-next, .owl-prev {
-	  width: 22px;
-	  height: 40px;
-	  margin-top: -20px;
-	  position: absolute;
-	  top: 50%;
-	}
-	.owl-prev {
-	  left: 10px;
-	}
-	.owl-next {
-	  right: 10px;
-	}
+}
+
+.owl-next,
+.owl-prev {
+	width: 22px;
+	height: 40px;
+	margin-top: -20px;
+	position: absolute;
+	top: 50%;
+}
+
+.owl-prev {
+	left: 10px;
+}
+
+.owl-next {
+	right: 10px;
+}
 
 .banner {
 	position: relative;
@@ -381,6 +389,7 @@ header {
 	padding-top: 80px;
 	display: flexbox;
 }
+
 .banner::after {
 	position: absolute;
 	top: 0;
@@ -388,16 +397,14 @@ header {
 	width: 100%;
 	height: 100%;
 	content: '';
-	background-image: linear-gradient(
-		#000000,
-		rgb(0 0 0 / 35%),
-		#000000
-	  );
-  }
-  
-  video {
+	background-image: linear-gradient(#000000,
+			rgb(0 0 0 / 35%),
+			#000000);
+}
+
+video {
 	width: 100%;
-  }
+}
 
 .banner .banner-item {
 	max-height: 600px;
@@ -1072,6 +1079,17 @@ footer .inner-content p a {
 }
 
 
+@media (max-width: 425px) {
+	.navbar .navbar-brand h2 {
+		visibility: hidden;
+	}
+
+	.navbar-brand img {
+		margin-left: 50%;
+		margin-right: 50%;
+	}
+}
+
 /* Responsive Style */
 @media (max-width: 768px) {
 	.banner .text-content {
@@ -1237,7 +1255,7 @@ footer .inner-content p a {
 	margin-bottom: 20px
 }
 
-.loginBox input[type="text"],
+.loginBox input[type="email"],
 .loginBox input[type="password"] {
 	border: none;
 	border-bottom: 2px solid #262626;
@@ -1250,14 +1268,14 @@ footer .inner-content p a {
 	box-sizing: border-box
 }
 
-.loginBox input[type="text"]:hover,
+.loginBox input[type="email"]:hover,
 .loginBox input[type="password"]:hover {
 	color: #ddd;
 	border: 1px solid #ddd;
 	box-shadow: 0 0 5px rgba(175, 175, 175, 0.3), 0 0 10px rgba(53, 53, 53, 0.2), 0 0 15px rgba(5, 5, 5, 0.1), 0 2px 0 black
 }
 
-.loginBox input[type="text"]:focus,
+.loginBox input[type="email"]:focus,
 .loginBox input[type="password"]:focus {
 	border-bottom: 2px solid #ddd
 }
@@ -1299,15 +1317,17 @@ footer .inner-content p a {
 .loginBox p {
 	color: #fcfcfc
 }
-.error{
+
+.error {
 	color: red;
 }
 
 /* ADMIN */
-.mini-img{
+.mini-img {
 	width: 80px;
 }
-#btn-borrar{
+
+#btn-borrar {
 	background: none;
 	padding: 0px;
 	border: none;
