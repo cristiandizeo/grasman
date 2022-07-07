@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2022 a las 07:28:51
+-- Tiempo de generación: 07-07-2022 a las 09:29:27
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `files` (
   `id` int(11) NOT NULL,
-  `imagen` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `vehiculoId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -37,11 +37,16 @@ CREATE TABLE `files` (
 -- Volcado de datos para la tabla `files`
 --
 
-INSERT INTO `files` (`id`, `imagen`, `vehiculoId`) VALUES
-(1, ' 314b4d900137851f71a31a7a84d2364f.jpg', 0),
-(2, ' 1a0e253f0b1fbb7e2b54f00e982a5fa3.jpg', 0),
-(3, ' 45497dacefa3d0f147f92275ef860b13.jpg', 0),
-(4, ' 163a348a7309de06da1fdcac4815020e.jpg', 0);
+INSERT INTO `files` (`id`, `name`, `vehiculoId`) VALUES
+(46, ' f7cf7ed037613b2987abd73358fbd5bf.jpg', 46),
+(47, ' 192149180c090cfef71c79920c88c3ed.jpg', 46),
+(48, ' b07f95b93ffad51bec37fb71ff55abd3.jpg', 46),
+(49, ' dc3b8b2552e0720b30a7d1309e0435c7.jpg', 47),
+(50, ' a1dab44a30734686fea363573b73d4da.jpg', 47),
+(51, ' 3a768a804c583c64be9d1545b426f181.jpg', 47),
+(73, ' 71514dfef46baf7da746f62cebbafaaf.jpg', 55),
+(74, ' 6c8dbd3e8562d72fc61165a223586711.jpg', 55),
+(75, ' cfea1980a85d0fa3e1c5b9dd41568655.jpg', 55);
 
 -- --------------------------------------------------------
 
@@ -83,18 +88,18 @@ CREATE TABLE `vehiculos` (
   `caja` varchar(30) NOT NULL,
   `precio` int(15) NOT NULL,
   `km` int(30) NOT NULL,
-  `descripcion` longtext NOT NULL
+  `descripcion` longtext NOT NULL,
+  `visible` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `vehiculos`
 --
 
-INSERT INTO `vehiculos` (`id`, `patente`, `tipo`, `estado`, `marca`, `modelo`, `year`, `combustible`, `caja`, `precio`, `km`, `descripcion`) VALUES
-(4, ' ida123', 'Pickup', 'Usado', 'Chevrolet', 'Astra', 2005, 'GNC', 'Automática', 1000000, 665555, 'Listrisoasd ioajoijsad  asidj sdija oija osdj oai  jijojoij oijoasdñl{ña asd asñd{l {ñasl {ñl {l{l{asd assadasda '),
-(5, ' poi123', 'Auto', 'Usado', 'Ford', 'Fiesta', 2005, 'GNC', 'Manual', 956500, 965000, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem excepturi ducimus amet assumenda ab quo fuga obcaecati molestiae perferendis dicta alias, eligendi voluptas eveniet omnis natus? Rem perspiciatis dolorem earum. '),
-(6, ' poivbn245', 'Pickup', 'Usado', 'Fiat', 'Toro', 2015, 'Nafta', 'Automática', 9500000, 70000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.  '),
-(31, ' asdzxc', 'Auto', 'Nuevo', 'asdzxc', '234', 213213, 'Nafta', 'Manual', 34324234, 32423423, '4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd4234dasd ');
+INSERT INTO `vehiculos` (`id`, `patente`, `tipo`, `estado`, `marca`, `modelo`, `year`, `combustible`, `caja`, `precio`, `km`, `descripcion`, `visible`) VALUES
+(46, ' asd123', 'Auto', 'Nuevo', 'Ford', 'Fiesta', 1235, 'Nafta', 'Manual', 7895465, 788966541, 'sal asd dlkjlakjslkdjkas a sdlakjdlkjadljas a d sadsadñksalññaskd ', '1'),
+(47, ' asdasdas', 'Pickup', 'Nuevo', 'asdasd', 'asdad', 34242, 'Gasoil', 'Manual', 42343242, 3242423, 'asdad sad asdasdsadasdas d dsa as  sadad sa adas d', '1'),
+(55, ' asdasdas', 'Pickup', 'Nuevo', 'asdasd', 'asdad', 34242, 'Gasoil', 'Manual', 42343242, 3242423, 'asdad sad asdasdsadasdas d dsa as  sadad sa adas d', '1');
 
 --
 -- Índices para tablas volcadas
@@ -104,7 +109,8 @@ INSERT INTO `vehiculos` (`id`, `patente`, `tipo`, `estado`, `marca`, `modelo`, `
 -- Indices de la tabla `files`
 --
 ALTER TABLE `files`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `vehiculoId` (`vehiculoId`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -126,7 +132,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -138,7 +144,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `files`
+--
+ALTER TABLE `files`
+  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`vehiculoId`) REFERENCES `vehiculos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -59,6 +59,7 @@ class ActiveRecord
     public static function where($columna, $valor)
     {
         $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
+        
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
@@ -97,6 +98,8 @@ class ActiveRecord
             $query = "SELECT";
             $query .= " DISTINCT " . $valores[$i];
             $query .= " FROM " . static::$tabla;
+            $query .= " WHERE visible = 1";
+            
             $resultado[$i] = self::consultarSQL($query);
         }
         return $resultado;

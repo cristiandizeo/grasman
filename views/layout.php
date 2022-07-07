@@ -71,12 +71,14 @@ if (!isset($inicio)) {
             <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/nosotros' ? 'active' : '' ?>"><a class="nav-link" href="/nosotros">Nosotros</a></li>
 
             <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/contacto' ? 'active' : '' ?>"><a class="nav-link" href="/contacto">Contacto</a></li>
-            <?php if($auth): ?>
-                            <a href="/logout">Cerrar Sesión</a>
-                        <?php endif; ?>
+
           </ul>
         </div>
       </div>
+      <?php if($auth): ?>
+        <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car text-light"></i></i></a>
+        <a href="/logout" title="Cerrar sesión" class="m-3"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
+                    <?php endif; ?>
     </nav>
   </header>
 

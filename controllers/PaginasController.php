@@ -12,7 +12,7 @@ class PaginasController
   public static function index(Router $router)
   {
 
-    $vehiculos = Vehiculo::get(6);
+    $vehiculos = Vehiculo::where('visible', 1);
     $imagenes = File::imgId();
 
     $router->render('paginas/index', [
@@ -30,7 +30,7 @@ class PaginasController
   public static function vehiculos(Router $router)
   {
 
-    $vehiculos = Vehiculo::all();
+    $vehiculos = Vehiculo::where('visible', 1);
     $imagenes = File::imgId();
 
     $buscador = Vehiculo::buscador();

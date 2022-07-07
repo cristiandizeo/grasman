@@ -7,7 +7,7 @@ class Vehiculo extends ActiveRecord
 
     // Base DE DATOS
     protected static $tabla = 'vehiculos';
-    protected static $columnasDB = ['id', 'patente', 'tipo', 'estado', 'marca', 'modelo', 'year', 'combustible', 'caja', 'precio', 'km', 'descripcion'];
+    protected static $columnasDB = ['id', 'patente', 'tipo', 'estado', 'marca', 'modelo', 'year', 'combustible', 'caja', 'precio', 'km', 'descripcion', 'visible'];
 
 
     public $id;
@@ -22,6 +22,7 @@ class Vehiculo extends ActiveRecord
     public $precio;
     public $km;
     public $descripcion;
+    public $visible;
 
     public function __construct($args = [])
     {
@@ -37,6 +38,7 @@ class Vehiculo extends ActiveRecord
         $this->precio = $args['precio'] ?? '';
         $this->km = $args['km'] ?? '';
         $this->descripcion = $args['descripcion'] ?? '';
+        $this->visible = $args['visible'] ?? 0;
     }
 
     public function validar()

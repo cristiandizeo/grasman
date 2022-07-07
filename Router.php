@@ -20,9 +20,6 @@ class Router
         session_start();
         $auth = $_SESSION['login'] ?? null;
 
-        // Array rutas protegidas
-        $rutas_protegidas = ['/admin','/vehiculos/crear','/vehiculos/actualizar','/vehiculos/eliminar'];
-
         $currentUrl = ($_SERVER['REQUEST_URI'] === '') ? '/' :  $_SERVER['REQUEST_URI'] ;
         $method = $_SERVER['REQUEST_METHOD'];
             
