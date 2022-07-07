@@ -12,32 +12,34 @@
       </div>
     </div>
 
+
+
     <div class="products">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <div>
+    <div id="sync1" class="owl-carousel owl-theme">
               <?php foreach ($imagenes as $imagen) : ?>
                 <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
+  <div class="item">
                   <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
-                <?php break;
+            </div>
+                <?php
                 } ?>
               <?php endforeach; ?>
             </div>
-            <br>
             <div class="row">
+
+            <div id="sync2" class="owl-carousel owl-theme">
               <?php foreach ($imagenes as $imagen) : ?>
                 <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
-                  <div class="col-sm-4 col-6">
-                    <div>
-                      <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
-                    </div>
-                    <br>
-                  </div>
-
-                <?php } ?>
+  <div class="item">
+                  <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
+            </div>
+                <?php
+                } ?>
               <?php endforeach; ?>
-
+            </div>
             </div>
           </div>
 

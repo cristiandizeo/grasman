@@ -86,7 +86,7 @@ if (!isset($inicio)) {
 
 
 <hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light">
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php echo $_SERVER['PHP_SELF'] === '/index.php/admin' || '/index.php/crear' || '/index.php/actualizar'? 'hidden' : '' ?>>
     <div class="px-lg-5">
       <div class="row py-5">
         <div class="col-lg-12 mx-auto text-white text-center">

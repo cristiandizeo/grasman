@@ -8,7 +8,7 @@
       <a href="/vehiculos" class="btn btn-secondary bt-lg">QUIERO VENDER</a>
       </div>
     <div class="col">  
-    <video autoplay muted width="100%" height="600" >
+    <video autoplay muted>
         <source src="/assets/videos/headervideo.mp4" type="video/mp4">
       </video>
     </div>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="services" style="background-image: url(assets/images/banner-agencia.jpg);" >
+    <div class="services" style="background-image: url(assets/images/banner-agencia.png);" >
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -76,21 +76,32 @@
           </div>
 
           <div class="col">  
-    <video autoplay muted loop height="600" >
+    <video muted height="600" controls>
         <source src="/assets/videos/headervideo2.mp4" type="video/mp4">
       </video>
     </div>
       <div class="col">
-      <video autoplay muted loop height="600" >
+      <video muted height="600" controls>
         <source src="/assets/videos/headervideo1.mp4" type="video/mp4">
       </video>
     </div>
       <div class="col">
-      <video autoplay muted loop height="600" >
+      <video muted height="600" controls>
         <source src="/assets/videos/headervideo3.mp4" type="video/mp4">
       </video>
     </div>
         </div>
+        <div class="row">
+        <div class="col">
+          <img src="/assets/images/prueba.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col">
+          <img src="/assets/images/prueba.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col">
+          <img src="/assets/images/prueba.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
       </div>
     </div>
 
