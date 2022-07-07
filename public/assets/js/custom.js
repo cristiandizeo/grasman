@@ -173,8 +173,19 @@ $(document).ready(function() {
 
 
 function borrar() {
-  return window.confirm( '¿Estas seguro de borrar el registro?' );
+  return window.confirm( '¿Estas seguro de borrar el registro? Esta acción es irreversible' );
 }
+
+function checkb() {
+let checkb = document.getElementById("visible");
+    if (this.checked) {
+      this.checked = false;
+      checkb.value = 0;
+    } else {
+        this.checked = true;
+        checkb.value = 1;
+    }
+ }
 
 $("#limpiar").on("click", function (e) {
   e.preventDefault();

@@ -9,9 +9,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class VehiculoController
 {
-
     public static function index(Router $router)
     {
+        
+        isAuth();
         $vehiculos = Vehiculo::all();
 
         // Muestra mensaje condicional
@@ -25,6 +26,8 @@ class VehiculoController
 
     public static function crear(Router $router)
     {
+        
+        isAuth();
         $vehiculo = new Vehiculo();
         $imagen = new File();
         $errores = Vehiculo::getErrores(); 
@@ -81,6 +84,8 @@ class VehiculoController
 
     public static function actualizar(Router $router)
     {
+        
+        isAuth();
 
         $id = validarORedireccionar('/vehiculos');
 
@@ -96,17 +101,18 @@ class VehiculoController
             
                 // Asignar los atributos
                 $args = $_POST['vehiculo'];
+                if(!$args['visible']){
+                    $args['visible'] = "0";
+                }
                 $vehiculo->sincronizar($args);
-
-            // Validar
-            $errores = $vehiculo->validar();
-            if (empty($errores)) {
+                // Validar
+                $errores = $vehiculo->validar();
+                if (empty($errores)) {
                 // Guarda en la base de datos
                 $resultado = $vehiculo->guardar();
             }
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
-            // debuguear(is_null($imagenes->tmp_name));
             
             if (!is_null($imagenes->tmp_name)){
                 $countfiles = count($imagenes);
@@ -148,6 +154,8 @@ class VehiculoController
 
     public static function eliminar(Router $router)
     {
+        
+        isAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tipo = $_POST['tipo'];

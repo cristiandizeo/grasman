@@ -153,7 +153,6 @@ class ActiveRecord
 
         // Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
-
         $valores = [];
         foreach ($atributos as $key => $value) {
             $valores[] = "{$key}='{$value}'";

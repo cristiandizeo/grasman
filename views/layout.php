@@ -61,9 +61,7 @@ if (!isset($inicio)) {
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php' ? 'active' : '' ?>">
-              <a class="nav-link" href="/">Home
-                <span class="sr-only">(current)</span>
-              </a>
+              <a class="nav-link" href="/">Home</a>
             </li>
 
             <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?>"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
@@ -76,16 +74,13 @@ if (!isset($inicio)) {
         </div>
       </div>
       <?php if($auth): ?>
-        <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car text-light"></i></i></a>
+        <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car" style="color:#ced4da"></i></i></a>
         <a href="/logout" title="Cerrar sesión" class="m-3"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
                     <?php endif; ?>
     </nav>
   </header>
 
-
-
   <?php echo $contenido; ?>
-
 
 <hr>
   <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php echo $_SERVER['PHP_SELF'] === '/index.php/admin' || '/index.php/crear' || '/index.php/actualizar'? 'hidden' : '' ?>>

@@ -136,7 +136,7 @@
       </div>
       <!-- Checkbox -->
       <div class="d-flex mb-4">
-      <input class="form-check-input me-2" type="checkbox" id="visible" value="1" name="vehiculo[visible]"/>
+      <input class="form-check-input me-2" type="checkbox" id="visible" name="vehiculo[visible]" value="1" <?php if (s($vehiculo->visible) == "1") echo 'checked';?> />
       <label class="form-check-label" for="visible"> Mostrar en el sitio </label>
     </div>
 </div>

@@ -35,7 +35,7 @@
                         <td>$ <?php echo $vehiculo->precio; ?></td>
                         <td>
                         <div class="d-flex justify-content-center">
-                            <a href="vehiculo?id=<?php echo $vehiculo->id; ?>" class="mx-3" title="Ver página">
+                            <a href="vehiculo?id=<?php echo $vehiculo->id; ?>" target="blank" class="mx-3" title="Ver página">
                             <i class="fa-solid fa-eye"></i>
                                 </i>
                             </a>
