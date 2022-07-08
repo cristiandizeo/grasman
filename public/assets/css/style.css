@@ -201,7 +201,23 @@ a.filled-button:hover {
 	}
 }
 
-
+/* Zoom In #1 */
+.wsp-icon figure img {
+	position:fixed;
+	width:60px;
+	height:60px;
+	right:30px;
+	bottom:20px;
+	z-index: 99999;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.wsp-icon figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
 /* Header Style */
 header {
 	position: absolute;
@@ -334,8 +350,8 @@ header {
 .auth a{
 	margin: .5rem;
 }
-/* Banner Style */
 
+/* carousel vehiculos */
 #sync1 .item {
 	background: #000;
 	padding: 80px 0px;
@@ -383,23 +399,12 @@ header {
 	right: 10px;
 }
 
+/* Banner Style */
 .banner {
 	position: relative;
 	text-align: center;
-	padding-top: 80px;
+	margin-top: 80px;
 	display: flexbox;
-}
-
-.banner::after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	content: '';
-	background-image: linear-gradient(#000000,
-			rgb(0 0 0 / 35%),
-			#000000);
 }
 
 video {
@@ -1087,6 +1092,16 @@ footer .inner-content p a {
 	.navbar-brand img {
 		margin-left: 50%;
 		margin-right: 50%;
+	}
+
+	.auth {
+		position: fixed;
+		top: 30px;
+		left: 20px;
+		z-index: 999999;
+	}
+	table > thead > tr > th:nth-child(4), table > tbody > tr > td:nth-child(4){
+		display: none;
 	}
 }
 

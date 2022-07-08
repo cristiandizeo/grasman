@@ -44,7 +44,7 @@ class Vehiculo extends ActiveRecord
     public function validar()
     {
 
-        if (!$this->patente || !$this->tipo || !$this->estado || !$this->marca || !$this->modelo || !$this->year || !$this->combustible || !$this->caja || !$this->precio || !$this->km) {
+        if (!$this->tipo || !$this->estado || !$this->marca || !$this->year) {
             self::$errores[] = "Por favor revisá el formulario";
         }
         if (strlen($this->descripcion) < 50) {

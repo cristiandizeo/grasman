@@ -12,11 +12,13 @@
 
           <p>&nbsp;/&nbsp; <?php echo $vehiculo->estado; ?> &nbsp;/&nbsp; <?php echo $vehiculo->year; ?> &nbsp;/&nbsp;</p>
           <p><?php echo $vehiculo->descripcion; ?></p>
+          <?php if($vehiculo->tipo !== 'Bicicleta'){ ?>
           <smTodos>
             <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?> km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
             <strong title="Combustible"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
             <strong title="Caja"><i class="fa fa-cog"></i> <?php echo $vehiculo->caja; ?></strong>
           </smTodos>
+          <?php } ?>
         </div>
       </a>
   </div>

@@ -26,10 +26,11 @@ class PaginasController
   {
     $router->render('paginas/nosotros', []);
   }
-  
+
+
   public static function vehiculos(Router $router)
   {
-    
+
     $vehiculos = Vehiculo::where('visible', 1);
     $imagenes = File::imgId();
 
@@ -126,8 +127,14 @@ class PaginasController
       'mensaje' => $mensaje
     ]);
   }
+
   public static function notfound(Router $router)
-      {
-        $router->render('paginas/404', []);
-      }
+  {
+    $router->render('paginas/404', []);
+  }
+
+  public static function vender(Router $router)
+  {
+    $router->render('paginas/vender', []);
+  }
 }

@@ -87,12 +87,21 @@ if (!isset($inicio)) {
 
 <hr>
   <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/vehiculos/actualizar': echo 'hidden';break;case '/index.php/vehiculos/crear': echo 'hidden';break;}?>>
-    <div class="px-lg-5">
+  
+  <div class="wsp-icon">
+    <a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Automotores!" target="blank">
+  <figure>  
+  <img src="\assets\images\wsp-icon.svg" alt="wa" title="¡Escribinos ahora!">
+  </figure>
+  </a>
+</div>
+  
+  <div class="px-lg-5">
       <div class="row py-5">
         <div class="col-lg-12 mx-auto text-white text-center">
           <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="lead mb-0">No dudes en contactarnos ante cualquier consulta</p>
-          <p class="lead"><a href="https://bootstrapious.com/snippets" class="text-primary">
+          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Automotores!" class="text-primary" target="blank">
                         <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>

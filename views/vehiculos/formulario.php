@@ -4,7 +4,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="patente">Patente</label>
-          <input type="text" id="patente" value="<?php echo s($vehiculo->patente);?>" name="vehiculo[patente]" class="form-control" required />
+          <input type="text" id="patente" value="<?php echo s($vehiculo->patente);?>" name="vehiculo[patente]" class="form-control" />
           <div class="invalid-feedback">Agregá una patente</div>
           <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>  
         </div>
@@ -17,6 +17,7 @@
         <option value="Auto" <?php if (s($vehiculo->tipo) == "Auto") echo 'selected="selected" ';?>>Auto</option>
             <option value="Pickup" <?php if (s($vehiculo->tipo) == "Pickup") echo 'selected="selected" ';?>>Pickup</option>
             <option value="Moto" <?php if (s($vehiculo->tipo) == "Moto") echo 'selected="selected" ';?>>Moto</option>
+            <option value="Bicicleta" <?php if (s($vehiculo->tipo) == "Bicicleta") echo 'selected="selected" ';?>>Bicicleta</option>
           </select>
           <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
           <div class="invalid-feedback">Seleccioná un tipo de vehiculo</div>
@@ -33,7 +34,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="modelo">Modelo</label>
-          <input type="text" id="modelo" value="<?php echo s($vehiculo->modelo);?>" name="vehiculo[modelo]" class="form-control" required />
+          <input type="text" id="modelo" value="<?php echo s($vehiculo->modelo);?>" name="vehiculo[modelo]" class="form-control" />
           <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>      
           <div class="invalid-feedback">Agregá un modelo</div>
         </div>
@@ -64,7 +65,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="precio">Precio</label>
-          <input type="number" id="precio" value="<?php echo s($vehiculo->precio);?>" name="vehiculo[precio]" class="form-control" required />
+          <input type="number" id="precio" value="<?php echo s($vehiculo->precio);?>" name="vehiculo[precio]" class="form-control" />
           <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>      
           <div class="invalid-feedback">Agregá un precio</div>
         </div>
@@ -72,7 +73,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="km">Kilometraje</label>
-          <input type="number" id="km" value="<?php echo s($vehiculo->km);?>" name="vehiculo[km]" class="form-control" required />
+          <input type="number" id="km" value="<?php echo s($vehiculo->km);?>" name="vehiculo[km]" class="form-control" />
           <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>      
         <div class="invalid-feedback">Agregá el kilometraje</div>
         </div>
