@@ -75,21 +75,6 @@
             </div>
           </div>
 
-          <div class="col">  
-    <video muted height="600" controls>
-        <source src="/assets/videos/headervideo2.mp4" type="video/mp4">
-      </video>
-    </div>
-      <div class="col">
-      <video muted height="600" controls>
-        <source src="/assets/videos/headervideo1.mp4" type="video/mp4">
-      </video>
-    </div>
-      <div class="col">
-      <video muted height="600" controls>
-        <source src="/assets/videos/headervideo3.mp4" type="video/mp4">
-      </video>
-    </div>
         </div>
         <div class="row">
         <div class="col">

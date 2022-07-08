@@ -47,5 +47,8 @@ class Vehiculo extends ActiveRecord
         if (!$this->patente || !$this->tipo || !$this->estado || !$this->marca || !$this->modelo || !$this->year || !$this->combustible || !$this->caja || !$this->precio || !$this->km) {
             self::$errores[] = "Por favor revisá el formulario";
         }
+        if (strlen($this->descripcion) < 50) {
+            self::$errores[] = 'La descripción es obligatoria y debe tener al menos 50 caracteres';
+        }
 }
 }

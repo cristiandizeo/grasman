@@ -36,7 +36,7 @@ class VehiculoController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             /** Crea una nueva instancia */
             $vehiculo = new Vehiculo($_POST['vehiculo']);
-
+            
             // Validar
             $errores = $vehiculo->validar();
             if (empty($errores)) {
@@ -46,6 +46,7 @@ class VehiculoController
             }
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
+            $errores = $imagenes->validar();
 
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
@@ -61,10 +62,10 @@ class VehiculoController
                 if (!is_dir(CARPETA_IMAGENES)) {
                     mkdir(CARPETA_IMAGENES);
                 }
-
+                
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
-
+                
                 $imagen->vehiculoId = $lastId;
                 $imagen->guardar();
             }

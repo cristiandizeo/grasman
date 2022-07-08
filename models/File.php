@@ -21,9 +21,6 @@ class File extends ActiveRecord {
     if (!$this->id) {
         $this->validarImagen();
     }
-    if (strlen($this->descripcion) < 50) {
-        self::$errores[] = 'La descripción es obligatoria y debe tener al menos 50 caracteres';
-    }
     return self::$errores;
 }
 
