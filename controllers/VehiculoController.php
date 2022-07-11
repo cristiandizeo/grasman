@@ -46,8 +46,8 @@ class VehiculoController
             }
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
-            $errores = $imagenes->validar();
-
+            $errores = $imagenes->validarImagen();
+            
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
 

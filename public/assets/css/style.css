@@ -220,7 +220,7 @@ a.filled-button:hover {
 }
 /* Header Style */
 header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: 99999;
 	width: 100%;
@@ -422,6 +422,7 @@ video {
 	text-align: center;
 	width: 100%;
 	z-index: 9999;
+	background-color: rgba(175, 175, 175, 0.7);
 }
 
 .banner .text-content h4 {

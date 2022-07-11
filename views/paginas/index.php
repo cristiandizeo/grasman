@@ -5,7 +5,7 @@
       <div class="text-content">
       <h2>Tu próximo vehículo <br> lo encontrás acá</h2>
       <a href="/vehiculos" class="btn btn-secondary bt-lg m-3">QUIERO COMPRAR</a>
-      <a href="/vender" class="btn btn-secondary bt-lg m-3">QUIERO VENDER</a>
+      <a href="/quiero-vender" class="btn btn-secondary bt-lg m-3">QUIERO VENDER</a>
       </div>
     <div class="col">  
     <video autoplay muted>
@@ -38,8 +38,6 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Clientes felices</h2>
-
-              <a href="testimonials.html">ver todo <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-12">

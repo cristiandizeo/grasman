@@ -12,7 +12,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="tipo">Tipo vehiculo</label>
-        <select required class="form-control" required id="tipo" name="vehiculo[tipo]">
+        <select required class="form-control" id="tipo" name="vehiculo[tipo]">
         <option value=""></option>
         <option value="Auto" <?php if (s($vehiculo->tipo) == "Auto") echo 'selected="selected" ';?>>Auto</option>
             <option value="Pickup" <?php if (s($vehiculo->tipo) == "Pickup") echo 'selected="selected" ';?>>Pickup</option>
@@ -53,7 +53,7 @@
     <div class="col">
       <div class="form-outline">
         <label class="form-label" for="estado">Estado</label>
-        <select required class="form-control" required id="estado" name="vehiculo[estado]">
+        <select required class="form-control" id="estado" name="vehiculo[estado]">
         <option value=""></option>
           <option value="Nuevo" <?php if (s($vehiculo->estado) == "Nuevo") echo 'selected="selected" ';?>>Nuevo</option>
           <option value="Usado" <?php if (s($vehiculo->estado) == "Usado") echo 'selected="selected" ';?>>Usado</option>
@@ -81,7 +81,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="combustible">Combustible</label>
-          <select required class="form-control" required id="combustible" name="vehiculo[combustible]">
+          <select class="form-control" id="combustible" name="vehiculo[combustible]">
           <option value=""></option>
           <option value="Nafta" <?php if (s($vehiculo->combustible) == "Nafta") echo 'selected="selected" ';?>>Nafta</option>
             <option value="GNC" <?php if (s($vehiculo->combustible) == "GNC") echo 'selected="selected" ';?>>GNC</option>
@@ -94,7 +94,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="caja">Caja</label>
-          <select required class="form-control" required id="caja" name="vehiculo[caja]">
+          <select required class="form-control" id="caja" name="vehiculo[caja]">
           <option value=""></option>
           <option value="Manual" <?php if (s($vehiculo->caja) == "Manual") echo 'selected="selected" ';?>>Manual</option>
             <option value="Automática" <?php if (s($vehiculo->caja) == "Automática") echo 'selected="selected" ';?>>Automática</option>
@@ -123,7 +123,7 @@
         <div class="form-outline mb-4">
           <label for="imagen">Imagenes</label>
           <div class="form-group">
-            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="imagenes[]" multiple="">
+            <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="imagenes[]" multiple="" required>
             <?php foreach($imagenes as $imagen) : ?>
             <?php if ($imagen->vehiculoId === $vehiculo->id){?>
         <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="mini-img m-2">

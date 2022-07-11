@@ -27,7 +27,7 @@ $router->get('/vehiculo', [PaginasController::class, 'vehiculo']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
 $router->get('/404', [PaginasController::class, 'notfound']);
-$router->get('/vender', [PaginasController::class, 'vender']);
+$router->get('/quiero-vender', [PaginasController::class, 'vender']);
 
 $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);

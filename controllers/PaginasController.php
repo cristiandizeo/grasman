@@ -135,6 +135,6 @@ class PaginasController
 
   public static function vender(Router $router)
   {
-    $router->render('paginas/vender', []);
+    $router->render('paginas/quiero-vender', []);
   }
 }
