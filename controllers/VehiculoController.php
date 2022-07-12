@@ -47,11 +47,13 @@ class VehiculoController
             }
             
             $imagenes = $_FILES['imagenes']['tmp_name'];
+            $imgType = $_FILES['imagenes']['type'];
             
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-                
-                $
+                if($imgType[$i] != 'image/jpeg'){
+                    continue;
+                }
                 $imagen = new File($imagenes[$i]);
                 // Generar un nombre único
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";

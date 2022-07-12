@@ -16,21 +16,4 @@ class File extends ActiveRecord {
         $this->vehiculoId = $args['vehiculoId'] ?? null;
     }
 
-    public function validar()
-    {   
-    if (!$this->id) {
-        $this->validarImagen();
-    }
-    return self::$errores;
-}
-
-public function validarImagen()
-{
-    if (!$this->name) {
-        self::$errores[] = 'Debes agregar alguna imagen';
-    }
-    if($_FILES['imagenes']['type'] === 'image/jpeg'){
-        self::$errores[] = 'El formato debe ser jpeg';
-    }
-}
 }
