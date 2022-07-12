@@ -110,7 +110,7 @@
       <div class="col">
         <div class="form-outline">
           <label class="form-label" for="descripcion">Descripcion</label>
-          <textarea class="form-control" required id="descripcion" name="vehiculo[descripcion]" rows="3"><?php echo s($vehiculo->descripcion);?></textarea>
+          <textarea minlength="50" class="form-control" required id="descripcion" name="vehiculo[descripcion]" rows="3"><?php echo s($vehiculo->descripcion);?></textarea>
           <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>      
           <div class="invalid-feedback">Agregá una descripcion</div>
         </div>

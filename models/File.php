@@ -17,7 +17,7 @@ class File extends ActiveRecord {
     }
 
     public function validar()
-    {
+    {   
     if (!$this->id) {
         $this->validarImagen();
     }
@@ -28,6 +28,9 @@ public function validarImagen()
 {
     if (!$this->name) {
         self::$errores[] = 'Debes agregar alguna imagen';
+    }
+    if($_FILES['imagenes']['type'] === 'image/jpeg'){
+        self::$errores[] = 'El formato debe ser jpeg';
     }
 }
 }

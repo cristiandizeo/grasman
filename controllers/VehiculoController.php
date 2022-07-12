@@ -31,6 +31,7 @@ class VehiculoController
         $vehiculo = new Vehiculo();
         $imagen = new File();
         $errores = Vehiculo::getErrores(); 
+        $errores = File::getErrores();
         $imagenes = [];
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -44,18 +45,20 @@ class VehiculoController
                 $resultado = $vehiculo->guardar();
                 $lastId = $vehiculo->LastId();
             }
-
+            
             $imagenes = $_FILES['imagenes']['tmp_name'];
-            $errores = $imagenes->validarImagen();
             
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-
+                
+                $
                 $imagen = new File($imagenes[$i]);
                 // Generar un nombre único
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 // Realiza un resize a la imagen con intervention
                 $image = Image::make($imagenes[$i])->fit(800, 600);
+                // get file size
+                $size = $image->filesize();
                 // Setear la imagen
                 $imagen->setImagen($nombreImagen);
                 // Crear la carpeta para subir imagenes
@@ -102,6 +105,7 @@ class VehiculoController
             
                 // Asignar los atributos
                 $args = $_POST['vehiculo'];
+                // Mostrar publicacion en el sitio
                 if(!$args['visible']){
                     $args['visible'] = "0";
                 }
@@ -115,11 +119,13 @@ class VehiculoController
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
             
+            // comprobar si hay imagenes
             if (!is_null($imagenes->tmp_name)){
+                //procesar cada imagen
                 $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-
                 $imagen = new File($imagenes[$i]);
+                $errores = $imagen->validar();
                 // Generar un nombre único
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 // Realiza un resize a la imagen con intervention
@@ -133,8 +139,9 @@ class VehiculoController
 
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
-
+                // Le asigna el id del vehiculo
                 $imagen->vehiculoId = $id;
+                // Guardar en DB
                 $imagen->guardar();
             }
         }
@@ -143,8 +150,6 @@ class VehiculoController
                 header('location: /admin');
             }
         }
-
-
 
         $router->render('vehiculos/actualizar', [
             'vehiculo' => $vehiculo,
