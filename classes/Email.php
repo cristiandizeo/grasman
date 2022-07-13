@@ -2,14 +2,10 @@
 
 namespace Classes;
 use MVC\Router;
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-// use Dotenv\Dotenv as Dotenv;
-
-// $dotenv = Dotenv::createImmutable('../includes/.env');
-// $dotenv->safeLoad();
 
 class Email
 {
@@ -30,7 +26,7 @@ class Email
     public function enviarInstrucciones()
     {
         //Crear el objeto de email
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth = true;
@@ -60,20 +56,19 @@ class Email
     }
 
     public function nuevoMensaje()
-    {
-        debuguear('estas');
-        if (!empty($nombre) && !empty($email) && !empty($telefono) && !empty($mensaje)) {
-
-            //Crear el objeto de email
-            $mail = new PHPMailer();
+    {       
+        $emailv = filter_var($this->email, FILTER_VALIDATE_EMAIL);
+        if($emailv){
+        //Crear el objeto de email
+            $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = $_ENV['MAIL_HOST'];
+            $mail->Host = 'smtp.mailtrap.io';
             $mail->SMTPAuth = true;
-            $mail->Port = $_ENV['MAIL_PORT'];
-            $mail->Username = $_ENV['MAIL_USER'];
-            $mail->Password = $_ENV['MAIL_PASSWORD'];
+            $mail->Port = 2525;
+            $mail->Username = '5faeaa31a7ab36';
+            $mail->Password = 'b169c323834b2a';
 
-            $mail->setFrom($email, $nombre);
+            $mail->setFrom($this->email, $this->nombre);
             $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
             $mail->Subject = 'Mensaje desde la web';
 
@@ -86,11 +81,12 @@ class Email
             $contenido .= "<p><strong>Telefono:</strong> " . $this->telefono . "</p>";
             $contenido .= "<p><strong>Mensaje:</strong> " . $this->mensaje . "</p>";
             $contenido .= "</html>";
-
+            
             $mail->Body = $contenido;
-            debuguear($mail);
             //Enviar email
             $mail->send();
+        } else {
+            return false;
         }
     }
 }

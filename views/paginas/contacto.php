@@ -56,6 +56,19 @@
             </div>
           </div>
           <div class="col-md-8">
+          <?php foreach($errores as $error): ?>
+        <div class="alerta error">
+            <?php echo $error; ?>
+        </div>
+    <?php endforeach; ?>
+            <?php if(empty($errores)){ ?>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>¡Gracias por escribirnos!</strong> Te responderemos en breve.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+            <?php }?>
           <div class="contact-form">
   <form id="contact" action="/contacto" method="post">
           <?php include __DIR__ . '/contact-form.php'; ?>

@@ -67,18 +67,31 @@ class PaginasController
 
   public static function contacto(Router $router)
   {
-
+    $errores = [];
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $nombre = $_POST['nombre'];
       $email = $_POST['email'];
       $telefono = $_POST['telefono'];
       $mensaje = $_POST['mensaje'];
 
-      $email = new Email($nombre, $email, $telefono, $mensaje);
-      $email->nuevoMensaje();
+      $mail = new Email($nombre, $email, $telefono, $mensaje);
+      $resultado = $mail->nuevoMensaje();
+
+      if (!is_null($resultado)) {
+        $errores[] = '* Revisá el formulario';
+      } else {
+        $nombre = '';
+        $email = '';
+        $telefono = '';
+        $mensaje = '';
+      }
+
     }
 
+    
     $router->render('paginas/contacto', [
+      'errores' => $errores,
+      'mail' => $mail
     ]);
   }
 
