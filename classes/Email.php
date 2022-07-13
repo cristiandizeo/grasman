@@ -1,55 +1,30 @@
 <?php
 
 namespace Classes;
-
+use MVC\Router;
 use PHPMailer\PHPMailer\PHPMailer;
-use Dotenv\Dotenv as Dotenv;
-$dotenv = Dotenv::createImmutable('../includes/.env');
-$dotenv->safeLoad();
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+// use Dotenv\Dotenv as Dotenv;
+
+// $dotenv = Dotenv::createImmutable('../includes/.env');
+// $dotenv->safeLoad();
 
 class Email
 {
 
-    public $email;
     public $nombre;
-    public $token;
+    public $email;
+    public $telefono;
+    public $mensaje;
 
-    public function __construct($email, $nombre, $token)
-    {
-        $this->email = $email;
+    public function __construct($nombre, $email, $telefono, $mensaje)
+    {   
         $this->nombre = $nombre;
-        $this->token = $token;
-    }
-
-    public function enviarConfirmacion()
-    {
-        //Crear el objeto de email
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $_ENV['MAIL_HOST'];
-        $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['MAIL_PORT'];
-        $mail->Username = $_ENV['MAIL_USER'];
-        $mail->Password = $_ENV['MAIL_PASSWORD'];
-
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
-        $mail->Subject = 'Confirma tu cuenta';
-
-        //Set HTML
-        $mail->isHTML(TRUE);
-        $mail->CharSet = 'UTF-8';
-
-        $contenido = '<html>';
-        $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>, has creado tu cuenta en App Salon, solo debes confirmarla presionando el siguiente enlace:</p>";
-        $contenido .= "<p>Presiona aqui: <a href='" . $_ENV['SERVER_HOST'] . "confirmar-cuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
-        $contenido .= "<p>Si no has solicitado esta cuenta, ignora este mensaje</p>";
-        $contenido .= "</html>";
-
-        $mail->Body = $contenido;
-
-        //Enviar email
-        $mail->send();
+        $this->email = $email;
+        $this->telefono = $telefono;
+        $this->mensaje = $mensaje;
     }
 
     public function enviarInstrucciones()
@@ -63,8 +38,9 @@ class Email
         $mail->Username = $_ENV['MAIL_USER'];
         $mail->Password = $_ENV['MAIL_PASSWORD'];
 
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        // $mail->setFrom($nombre, $email);
+        $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
+        $mail->Subject = 'Mensaje desde la web';
         $mail->Subject = 'Reestablece tu password';
 
         //Set HTML
@@ -81,5 +57,40 @@ class Email
 
         //Enviar email
         $mail->send();
+    }
+
+    public function nuevoMensaje()
+    {
+        debuguear('estas');
+        if (!empty($nombre) && !empty($email) && !empty($telefono) && !empty($mensaje)) {
+
+            //Crear el objeto de email
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host = $_ENV['MAIL_HOST'];
+            $mail->SMTPAuth = true;
+            $mail->Port = $_ENV['MAIL_PORT'];
+            $mail->Username = $_ENV['MAIL_USER'];
+            $mail->Password = $_ENV['MAIL_PASSWORD'];
+
+            $mail->setFrom($email, $nombre);
+            $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
+            $mail->Subject = 'Mensaje desde la web';
+
+            //Set HTML
+            $mail->isHTML(TRUE);
+            $mail->CharSet = 'UTF-8';
+
+            $contenido = '<html>';
+            $contenido .= "<p><strong>Nombre:</strong> " . $this->nombre . "</p>";
+            $contenido .= "<p><strong>Telefono:</strong> " . $this->telefono . "</p>";
+            $contenido .= "<p><strong>Mensaje:</strong> " . $this->mensaje . "</p>";
+            $contenido .= "</html>";
+
+            $mail->Body = $contenido;
+            debuguear($mail);
+            //Enviar email
+            $mail->send();
+        }
     }
 }

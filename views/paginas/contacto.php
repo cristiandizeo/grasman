@@ -56,7 +56,11 @@
             </div>
           </div>
           <div class="col-md-8">
+          <div class="contact-form">
+  <form id="contact" action="/contacto" method="post">
           <?php include __DIR__ . '/contact-form.php'; ?>
+          </form>
+</div>
           </div>
           <div class="col-md-4">
             <img src="assets/images/tarjeta-nosotros.jpeg" class="img-fluid" alt="">

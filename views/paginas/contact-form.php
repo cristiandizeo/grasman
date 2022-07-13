@@ -1,5 +1,4 @@
-<div class="contact-form">
-  <form id="contact" action="" method="post">
+
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <fieldset>
@@ -8,12 +7,12 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <fieldset>
-          <input name="email" type="text" class="form-control" id="email" placeholder="Tu E-Mail">
+          <input name="email" type="email" class="form-control" id="email" placeholder="Tu E-Mail" required="">
         </fieldset>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <fieldset>
-          <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Telefono" required="">
+          <input name="telefono" type="number" class="form-control" id="telefono" placeholder="Telefono" required="">
         </fieldset>
       </div>
       <?php if($_SERVER['PHP_SELF'] === '/index.php/quiero-vender'){ ?>
@@ -35,5 +34,3 @@
         </fieldset>
       </div>
     </div>
-  </form>
-</div>
