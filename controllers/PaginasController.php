@@ -30,18 +30,21 @@ class PaginasController
 
   public static function vehiculos(Router $router)
   {
-
+    //traer vehiculos visibles
     $vehiculos = Vehiculo::where('visible', 1);
+    //traer las imagenes de ese vehiculo
     $imagenes = File::imgId();
 
+    //buscador (filtrar)
     $buscador = Vehiculo::buscador();
     $resultados = [];
     $args = [];
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $args = $_POST['vehiculo'];
+      //buscar segun filtros aplicados
       $resultados = Vehiculo::filtrar($args);
     }
-
+    
     $router->render('paginas/vehiculos', [
       'vehiculos' => $vehiculos,
       'buscador' => $buscador,
@@ -53,45 +56,59 @@ class PaginasController
 
   public static function vehiculo(Router $router)
   {
+    // debuguear($_SERVER['PHP_SELF']);
     $id = validarORedireccionar('/vehiculos');
 
     // Obtener los datos de la vehiculo
     $vehiculo = Vehiculo::find($id);
     $imagenes = File::all();
+    $mail = new Email();
+    $errores = Email::getErrores();
+    $resultado = false;
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $mail = new Email($_POST['mail']);
+      $resultado = $mail->nuevoMensaje();
+
+      if ($resultado === false) {
+        $errores[] = '* Revisá tu email';
+      } else {
+        $resultado = true;
+        $mail = new Email();
+      }
+    }
+    
     $router->render('paginas/vehiculo', [
+      'id' => $id,
       'vehiculo' => $vehiculo,
-      'imagenes' => $imagenes
+      'imagenes' => $imagenes,
+      'errores' => $errores,
+      'mail' => $mail,
+      'resultado' => $resultado
     ]);
   }
 
   public static function contacto(Router $router)
   {
-    $errores = [];
+    $mail = new Email();
+    $errores = Email::getErrores();
+    $resultado = false;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $nombre = $_POST['nombre'];
-      $email = $_POST['email'];
-      $telefono = $_POST['telefono'];
-      $mensaje = $_POST['mensaje'];
-
-      $mail = new Email($nombre, $email, $telefono, $mensaje);
+      $mail = new Email($_POST['mail']);
       $resultado = $mail->nuevoMensaje();
 
-      if (!is_null($resultado)) {
-        $errores[] = '* Revisá el formulario';
+      if ($resultado === false) {
+        $errores[] = '* Revisá tu email';
       } else {
-        $nombre = '';
-        $email = '';
-        $telefono = '';
-        $mensaje = '';
+        $mail = new Email();
+        $resultado = true;
       }
-
     }
 
-    
     $router->render('paginas/contacto', [
       'errores' => $errores,
-      'mail' => $mail
+      'mail' => $mail,
+      'resultado' => $resultado
     ]);
   }
 
@@ -102,6 +119,25 @@ class PaginasController
 
   public static function vender(Router $router)
   {
-    $router->render('paginas/quiero-vender', []);
+    $mail = new Email();
+    $errores = Email::getErrores();
+    $resultado = false;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $mail = new Email($_POST['mail']);
+      $resultado = $mail->nuevoMensaje();
+
+      if ($resultado === false) {
+        $errores[] = '* Revisá tu email';
+      } else {
+        $resultado = true;
+        $mail = new Email();
+      }
+    }
+
+    $router->render('paginas/quiero-vender', [
+      'errores' => $errores,
+      'mail' => $mail,
+      'resultado' => $resultado
+    ]);
   }
 }

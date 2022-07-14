@@ -18,28 +18,28 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-    <div id="sync1" class="owl-carousel owl-theme">
+            <div id="sync1" class="owl-carousel owl-theme">
               <?php foreach ($imagenes as $imagen) : ?>
                 <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
-  <div class="item">
-                  <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
-            </div>
+                  <div class="item">
+                    <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
+                  </div>
                 <?php
                 } ?>
               <?php endforeach; ?>
             </div>
             <div class="row">
 
-            <div id="sync2" class="owl-carousel owl-theme">
-              <?php foreach ($imagenes as $imagen) : ?>
-                <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
-  <div class="item">
-                  <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
-            </div>
-                <?php
-                } ?>
-              <?php endforeach; ?>
-            </div>
+              <div id="sync2" class="owl-carousel owl-theme">
+                <?php foreach ($imagenes as $imagen) : ?>
+                  <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
+                    <div class="item">
+                      <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
+                    </div>
+                  <?php
+                  } ?>
+                <?php endforeach; ?>
+              </div>
             </div>
           </div>
 
@@ -131,8 +131,6 @@
       </div>
     </div>
 
-
-
     <div class="section">
       <div class="container">
         <div class="row">
@@ -141,7 +139,11 @@
           </div>
 
           <div class="col-md-8">
-          <?php include __DIR__ . '/contact-form.php'; ?>
+            <div class="contact-form">
+              <form id="contact" action="/vehiculo" method="post">
+                <?php include __DIR__ . '/contact-form.php'; ?>
+              </form>
+            </div>
           </div>
         </div>
       </div>

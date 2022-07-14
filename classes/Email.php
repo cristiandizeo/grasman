@@ -1,13 +1,15 @@
 <?php
 
 namespace Classes;
+
+use Model\ActiveRecord;
 use MVC\Router;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-class Email
+class Email extends ActiveRecord
 {
 
     public $nombre;
@@ -15,12 +17,12 @@ class Email
     public $telefono;
     public $mensaje;
 
-    public function __construct($nombre, $email, $telefono, $mensaje)
-    {   
-        $this->nombre = $nombre;
-        $this->email = $email;
-        $this->telefono = $telefono;
-        $this->mensaje = $mensaje;
+    public function __construct($args = []){ 
+        
+        $this->nombre = $args['nombre'] ?? '';
+        $this->email = $args['email'] ?? '';
+        $this->telefono = $args['telefono'] ?? '';
+        $this->mensaje = $args['mensaje'] ?? '';
     }
 
     public function enviarInstrucciones()

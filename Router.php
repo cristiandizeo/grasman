@@ -20,19 +20,21 @@ class Router
         session_start();
         $auth = $_SESSION['login'] ?? null;
 
+        
+        
         $currentUrl = ($_SERVER['REQUEST_URI'] === '') ? '/' :  $_SERVER['REQUEST_URI'] ;
         $method = $_SERVER['REQUEST_METHOD'];
             
         //dividimos la URL actual cada vez que exista un '?' eso indica que se están pasando variables por la url
         $splitURL = explode('?', $currentUrl);
-        // debuguear($splitURL);
-         
+        
         if ($method === 'GET') {
             $fn = $this->getRoutes[$splitURL[0]] ?? null; //$splitURL[0] contiene la URL sin variables 
-        } else {
-          $fn = $this->postRoutes[$splitURL[0]] ?? null;
+           } else {
+            $fn = $this->postRoutes[$splitURL[0]] ?? null;
         }
         
+        // debuguear($currentUrl);
         if ( $fn ) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
@@ -44,7 +46,8 @@ class Router
     public function render($view, $datos = []) {
         // Leer lo que le pasamos  a la vista
         foreach ($datos as $key => $value) {
-            $$key = $value;  // Doble signo de dolar significa: variable variable, básicamente nuestra variable sigue siendo la original, pero al asignarla a otra no la reescribe, mantiene su valor, de esta forma el nombre de la variable se asigna dinamicamente
+        // Doble signo de dolar significa: variable variable, básicamente nuestra variable sigue siendo la original, pero al asignarla a otra no la reescribe, mantiene su valor, de esta forma el nombre de la variable se asigna dinamicamente
+            $$key = $value;  
         }
 
         ob_start(); // Almacenamiento en memoria durante un momento...
