@@ -56,7 +56,6 @@ class PaginasController
 
   public static function vehiculo(Router $router)
   {
-    // debuguear($_SERVER['PHP_SELF']);
     $id = validarORedireccionar('/vehiculos');
 
     // Obtener los datos de la vehiculo
@@ -76,16 +75,15 @@ class PaginasController
         $resultado = true;
         $mail = new Email();
       }
+      
     }
-    
     $router->render('paginas/vehiculo', [
-      'id' => $id,
       'vehiculo' => $vehiculo,
       'imagenes' => $imagenes,
       'errores' => $errores,
       'mail' => $mail,
       'resultado' => $resultado
-    ]);
+  ]);
   }
 
   public static function contacto(Router $router)
@@ -100,8 +98,8 @@ class PaginasController
       if ($resultado === false) {
         $errores[] = '* Revisá tu email';
       } else {
-        $mail = new Email();
         $resultado = true;
+        $mail = new Email();
       }
     }
 

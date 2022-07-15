@@ -171,11 +171,12 @@ $(document).ready(function() {
   });
 });
 
-
+//Alert borrar registro
 function borrar() {
   return window.confirm( '¿Estas seguro de borrar el registro? Esta acción es irreversible' );
 }
 
+//Mostrar o no en sitio
 function checkb() {
 let checkb = document.getElementById("visible");
     if (this.checked) {
@@ -187,6 +188,7 @@ let checkb = document.getElementById("visible");
     }
  }
 
+ //Reset filtros
 $("#limpiar").on("click", function (e) {
   e.preventDefault();
   $('#myselect option').each(function () {
@@ -196,4 +198,13 @@ $("#limpiar").on("click", function (e) {
       this.selected = false;
     }
 });
+});
+
+  //Evita reenviar form
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
+  //Disable boton al enviar
+  $('#contact').submit(function(){
+    $(this).find(':input[type=submit]').prop('disabled', true);
 });
