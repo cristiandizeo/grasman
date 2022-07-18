@@ -7,6 +7,7 @@ use MVC\Router;
 use Controllers\VehiculoController;
 use Controllers\PaginasController;
 use Controllers\LoginController;
+use Classes\Email;
 
 $router = new Router();
 
@@ -30,6 +31,8 @@ $router->post('/contacto', [PaginasController::class, 'contacto']);
 $router->get('/404', [PaginasController::class, 'notfound']);
 $router->get('/quiero-vender', [PaginasController::class, 'vender']);
 $router->post('/quiero-vender', [PaginasController::class, 'vender']);
+
+$router->post('/email', [Email::class, 'nuevoMensaje']);
 
 $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);

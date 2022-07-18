@@ -3,7 +3,6 @@
 namespace Classes;
 
 use Model\ActiveRecord;
-use MVC\Router;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -17,8 +16,9 @@ class Email extends ActiveRecord
     public $telefono;
     public $mensaje;
 
-    public function __construct($args = []){ 
-        
+    public function __construct($args = [])
+    {
+
         $this->nombre = $args['nombre'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->telefono = $args['telefono'] ?? '';
@@ -57,38 +57,52 @@ class Email extends ActiveRecord
         $mail->send();
     }
 
-    public function nuevoMensaje()
-    {       
-        $emailv = filter_var($this->email, FILTER_VALIDATE_EMAIL);
-        if($emailv){
-        //Crear el objeto de email
-            $mail = new PHPMailer(true);
-            $mail->isSMTP();
-            $mail->Host = 'smtp.mailtrap.io';
-            $mail->SMTPAuth = true;
-            $mail->Port = 2525;
-            $mail->Username = '5faeaa31a7ab36';
-            $mail->Password = 'b169c323834b2a';
+    public static function nuevoMensaje()
+    {
+        $msj = new Email($_POST['mail']);
 
-            $mail->setFrom($this->email, $this->nombre);
-            $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
-            $mail->Subject = 'Mensaje desde la web';
+        //comprobar si estan vacios
+        if (!empty($msj->nombre) && !empty($msj->email) && !empty($msj->telefono) && !empty($msj->mensaje)) {
+            //comprobar email
+            if (filter_var($msj->email, FILTER_VALIDATE_EMAIL)) {
 
-            //Set HTML
-            $mail->isHTML(TRUE);
-            $mail->CharSet = 'UTF-8';
+                //Instancia de PHPMailer pasando `true` para habilitar excepciones
+                $mail = new PHPMailer(true);
 
-            $contenido = '<html>';
-            $contenido .= "<p><strong>Nombre:</strong> " . $this->nombre . "</p>";
-            $contenido .= "<p><strong>Telefono:</strong> " . $this->telefono . "</p>";
-            $contenido .= "<p><strong>Mensaje:</strong> " . $this->mensaje . "</p>";
-            $contenido .= "</html>";
-            
-            $mail->Body = $contenido;
-            //Enviar email
-            $mail->send();
-        } else {
-            return false;
+                try {
+                    //Crear el objeto de email
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.mailtrap.io';
+                    $mail->SMTPAuth = true;
+                    $mail->Port = 2525;
+                    $mail->Username = '5faeaa31a7ab36';
+                    $mail->Password = 'b169c323834b2a';
+
+                    $mail->setFrom($msj->email, $msj->nombre);
+                    $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
+                    $mail->Subject = 'Mensaje desde la web';
+
+                    //Set HTML
+                    $mail->isHTML(TRUE);
+                    $mail->CharSet = 'UTF-8';
+
+                    $contenido = '<html>';
+                    $contenido .= "<p><strong>Nombre:</strong> " . $msj->nombre . "</p>";
+                    $contenido .= "<p><strong>Telefono:</strong> " . $msj->telefono . "</p>";
+                    $contenido .= "<p><strong>Mensaje:</strong> " . $msj->mensaje . "</p>";
+                    $contenido .= "</html>";
+
+                    $mail->Body = $contenido;
+                    //Enviar email
+                    $mail->send();
+
+                    echo json_encode(true);
+                } catch (Exception $e) {
+                    echo json_encode(false);
+                }
+            } else {
+                echo json_encode('errmail');
+            }
         }
     }
 }
