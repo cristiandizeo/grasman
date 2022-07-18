@@ -30,9 +30,7 @@
 
           <div class="col-md-6">
             <div class="contact-form">
-              <form id="contact" action="/quiero-vender" method="post">
                 <?php include __DIR__ . '/contact-form.php'; ?>
-              </form>
             </div>
           </div>
         </div>

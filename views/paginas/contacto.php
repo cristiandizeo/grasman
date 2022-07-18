@@ -11,7 +11,6 @@
       </div>
     </div>
 
-
     <div class="find-us">
       <div class="container">
         <div class="row">
@@ -57,9 +56,7 @@
           </div>
           <div class="col-md-8">
           <div class="contact-form">
-  <form id="contact" action="/contacto" method="post">
           <?php include __DIR__ . '/contact-form.php'; ?>
-          </form>
 </div>
           </div>
           <div class="col-md-4">

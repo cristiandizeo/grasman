@@ -109,12 +109,7 @@ class PaginasController
       'resultado' => $resultado
     ]);
   }
-
-  public static function notfound(Router $router)
-  {
-    $router->render('paginas/404', []);
-  }
-
+  
   public static function vender(Router $router)
   {
     $mail = new Email();
@@ -138,4 +133,9 @@ class PaginasController
       'resultado' => $resultado
     ]);
   }
+  
+    public static function notfound(Router $router)
+    {
+      $router->render('paginas/404', []);
+    }
 }

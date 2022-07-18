@@ -978,7 +978,10 @@ footer .inner-content p a {
 .send-message {
 	margin-top: 100px;
 }
-
+#msjEnviado, #msjNoEnviado, #alertaEnviando{
+	display: none;
+  }
+  
 .contact-form select,
 .contact-form .form-control {
 	font-size: 14px;

@@ -200,11 +200,53 @@ $("#limpiar").on("click", function (e) {
 });
 });
 
-  //Evita reenviar form
-  if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.href);
-  }
-  //Disable boton al enviar
-  $('#contact').submit(function(){
-    $(this).find(':input[type=submit]').prop('disabled', true);
-});
+ // FORMULARIO
+ let msjEnviado = document.getElementById("msjEnviado");
+ let msjNoEnviado = document.getElementById("msjNoEnviado");
+ let submit = document.getElementById("form-submit");
+  // definimos el formulario a usar formFile
+  const formFile = document.getElementById('form');
+
+  submit.addEventListener('click', function (event) {
+    // definimos la accion clic al pulsar el boton submit
+    if (formFile.checkValidity()) {
+
+      event.preventDefault(); // anulamos que boton nos lleve a otro lado
+      //usamos FormData para compilar los datos a enviar
+      const formattedFormData = new FormData(formFile);
+      // llamamos a una funcion que enviara los datos,
+      // como parametro pasamos los datos del formulario
+      postData(formattedFormData);
+
+      submit.disabled = true;
+      msjEnviado.style.display = "none";
+      msjNoEnviado.style.display = "none";
+      document.getElementById("alertaEnviando").style.display = "block";
+    }
+    
+      // nuestra función personalizada que envia datos y recibe respuesta del servidor
+      // usamos async/await para trabajar de mejor manera la respuesta por parte del servidor
+    
+      // en fetch especificamos el archivo en el servidor que captura los datos enviados
+      async function postData(formattedFormData) {
+        console.log(formattedFormData);
+        const response = await fetch('classes/email.php', {
+          // el metodo a usar
+          method: 'POST',
+          // los datos a ser enviados
+          body: formattedFormData
+        });
+    
+        document.getElementById("alertaEnviando").style.display = "none";
+        // data contendra la respuesta del servidor
+        const data = await response.text();
+    
+        if (data == 1) {
+          document.getElementById("form").reset();
+          msjEnviado.style.display = "block";
+        } else {
+          msjNoEnviado.style.display = "block";
+        }
+        submit.disabled = false;
+      }
+  });

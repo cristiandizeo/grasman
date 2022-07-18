@@ -1,19 +1,17 @@
-<?php foreach ($errores as $error) : ?>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong><?php echo $error; ?></strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-<?php endforeach; ?>
-<?php if ($resultado) { ?>
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>¡Gracias por escribirnos!</strong> Te responderemos en breve.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-<?php } ?>
+
+  <form id="form" class="form">
+
+  <div class="alert alert-success text-center alert-dismissible fade show" id="msjEnviado" role="alert">
+        <strong>¡Gracias por tu mensaje!</strong> Te responderé en breve <i class="fa-solid fa-face-grin-beam"></i>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="alert alert-danger text-center alert-dismissible fade show" id="msjNoEnviado" role="alert">
+        <strong>No se pudo enviar el mensaje <i class="fa-solid fa-face-frown"></i></strong> Por favor revisá el formulario o intentá en unos momentos.</i>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="alert alert-primary text-center alert-dismissible fade show" id="alertaEnviando" role="alert">
+        <strong>Enviando mensaje <i class="fa-solid fa-paper-plane"></i></strong>
+      </div>
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12">
@@ -50,3 +48,5 @@
     </fieldset>
   </div>
 </div>
+
+</form>

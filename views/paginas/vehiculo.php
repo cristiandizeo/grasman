@@ -140,9 +140,7 @@
 
           <div class="col-md-8">
             <div class="contact-form">
-              <form id="contact" action="/vehiculo" method="post">
                 <?php include __DIR__ . '/contact-form.php'; ?>
-              </form>
             </div>
           </div>
         </div>
