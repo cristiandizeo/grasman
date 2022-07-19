@@ -100,8 +100,6 @@ class Email extends ActiveRecord
                 } catch (Exception $e) {
                     echo json_encode(false);
                 }
-            } else {
-                echo json_encode('errmail');
             }
         }
     }

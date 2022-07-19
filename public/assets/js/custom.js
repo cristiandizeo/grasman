@@ -244,10 +244,7 @@ submit.addEventListener('click', function (event) {
     // data contendra la respuesta del servidor
     const data = await response.text();
     console.log(data);
-    if (data == 'errmail'){
-      alert('revisá el email');
-    }
-    else if(data === true) {
+    if (data){
       document.getElementById("form").reset();
       msjEnviado.style.display = "block";
     } else {
