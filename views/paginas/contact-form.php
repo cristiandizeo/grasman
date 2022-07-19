@@ -2,13 +2,13 @@
   <form id="form" class="form">
 
   <div class="alert alert-success text-center alert-dismissible fade show" id="msjEnviado" role="alert">
-        <strong>¡Gracias por tu mensaje!</strong><br> Te responderé en breve <i class="fa-solid fa-face-grin-beam"></i>
+        <strong>¡Gracias por tu mensaje!</strong><br> Te responderemos en breve <i class="fa-solid fa-car-on"></i></i>
          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
       </div>
       <div class="alert alert-danger text-center alert-dismissible fade show" id="msjNoEnviado" role="alert">
-        <strong>No se pudo enviar el mensaje <i class="fa-solid fa-face-frown"></i></strong><br> Por favor revisá el formulario o intentá en unos momentos.</i>
+        <strong>No se pudo enviar el mensaje <i class="fa-solid fa-car-burst"></i></strong><br> Por favor revisá el formulario o intentá en unos momentos.</i>
          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

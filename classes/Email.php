@@ -3,7 +3,6 @@
 namespace Classes;
 
 use Model\ActiveRecord;
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -60,7 +59,7 @@ class Email extends ActiveRecord
     public static function nuevoMensaje()
     {
         $msj = new Email($_POST['mail']);
-
+        $imagenes = $_FILES['imagenes']['tmp_name'];
         //comprobar si estan vacios
         if (!empty($msj->nombre) && !empty($msj->email) && !empty($msj->telefono) && !empty($msj->mensaje)) {
             //comprobar email
@@ -90,6 +89,13 @@ class Email extends ActiveRecord
                     $contenido .= "<p><strong>Nombre:</strong> " . $msj->nombre . "</p>";
                     $contenido .= "<p><strong>Telefono:</strong> " . $msj->telefono . "</p>";
                     $contenido .= "<p><strong>Mensaje:</strong> " . $msj->mensaje . "</p>";
+                    
+                foreach ($imagenes as $imagen){
+                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                    $mail->AddAttachment($imagen, $nombreImagen);
+                }
+
+
                     $contenido .= "</html>";
 
                     $mail->Body = $contenido;
