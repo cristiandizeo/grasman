@@ -17,7 +17,7 @@ class VehiculoController
 
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
-
+        
         $router->render('vehiculos/index', [
             'vehiculos' => $vehiculos,
             'resultado' => $resultado

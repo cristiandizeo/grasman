@@ -73,14 +73,15 @@ class ActiveRecord
                 $valores[] = "{$key}='{$value}'";
             }
         }
+        $valores[] = "visible=1";
 
         $query = "SELECT * FROM " . static::$tabla;
 
         if (count($valores) > 0) {
             $query .= " WHERE " . join(' AND ', $valores);
         }
-
         $resultado = self::consultarSQL($query);
+        // debuguear($resultado);
 
         return $resultado;
     }

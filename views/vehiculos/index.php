@@ -7,7 +7,7 @@
     ?>
     <div class="m-5">
         <div class="text-center">
-            <h2>Vehiculos</h2> 
+            <h2>Vehiculos</h2>
         </div>
         <hr>
         <a href="vehiculos/crear" class="btn btn-lg btn-floating" title="Agregar vehículo">
@@ -34,22 +34,22 @@
                         <td> <?php echo $vehiculo->marca . " " . $vehiculo->modelo . " " . $vehiculo->year ?> </td>
                         <td>$ <?php echo $vehiculo->precio; ?></td>
                         <td>
-                        <div class="d-flex justify-content-center">
-                            <a href="vehiculo?id=<?php echo $vehiculo->id; ?>" target="blank" class="mx-3" title="Ver página">
-                            <i class="fa-solid fa-eye"></i>
-                                </i>
-                            </a>
-     
-                            <a href="vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="mx-3" title="Modificar">
-                                <i class="fa-solid fa-pen-to-square">
-                                </i>
-                            </a>
+                            <div class="d-flex justify-content-center">
+                                <a href="vehiculo?id=<?php echo $vehiculo->id; ?>" target="blank" class="mx-3" title="Ver página">
+                                    <i class="fa-solid fa-eye"></i>
+                                    </i>
+                                </a>
 
-                            <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100 mx-3" title="Eliminar">
-                                <input type="hidden" name="id" value="<?php echo $vehiculo->id; ?>">
-                                <input type="hidden" name="tipo" value="vehiculo">
-                                <button type="submit" id="btn-borrar">
-                                    <i class="fa-solid fa-trash-can"></i></button>
+                                <a href="vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="mx-3" title="Modificar">
+                                    <i class="fa-solid fa-pen-to-square">
+                                    </i>
+                                </a>
+
+                                <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100 mx-3" title="Eliminar">
+                                    <input type="hidden" name="id" value="<?php echo $vehiculo->id; ?>">
+                                    <input type="hidden" name="tipo" value="vehiculo">
+                                    <button type="submit" id="btn-borrar">
+                                        <i class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </div>
                         </td>

@@ -27,6 +27,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  //carousel clientes felices
   if ($(".owl-clients").length) {
     $(".owl-clients").owlCarousel({
       loop: true,
@@ -57,7 +58,9 @@ jQuery(document).ready(function ($) {
       },
     });
   }
+// fin carousel
 
+//
   if ($(".owl-banner").length) {
     $(".owl-banner").owlCarousel({
       loop: true,
@@ -91,6 +94,7 @@ jQuery(document).ready(function ($) {
 
 });
 
+// Inicio carrousel vehiculo
 $(document).ready(function () {
 
   var sync1 = $("#sync1");
@@ -170,13 +174,14 @@ $(document).ready(function () {
     sync1.data('owl.carousel').to(number, 300, true);
   });
 });
+// fin carrousel
 
 //Alert borrar registro
 function borrar() {
   return window.confirm('¿Estas seguro de borrar el registro? Esta acción es irreversible');
 }
 
-//Mostrar o no en sitio
+//Mostrar resultados o no en sitio
 function checkb() {
   let checkb = document.getElementById("visible");
   if (this.checked) {
@@ -188,7 +193,7 @@ function checkb() {
   }
 }
 
-//Reset filtros
+//Reset filtros busqueda
 $("#limpiar").on("click", function (e) {
   e.preventDefault();
   $('#myselect option').each(function () {
@@ -207,49 +212,55 @@ let submit = document.getElementById("form-submit");
 // definimos el formulario a usar formFile
 const formFile = document.getElementById('form');
 
-submit.addEventListener('click', function (event) {
-  // definimos la accion clic al pulsar el boton submit
-  if (formFile.checkValidity()) {
+if (submit) {
+  submit.addEventListener('click', function (event) {
+    // definimos la accion clic al pulsar el boton submit
+    if (formFile.checkValidity()) {
 
-    // event.preventDefault(); // anulamos que boton nos lleve a otro lado
-    //usamos FormData para compilar los datos a enviar
-    // llamamos a una funcion que enviara los datos,
-    // como parametro pasamos los datos del formulario
-    var formData = new FormData(formFile);
+      // anulamos que boton nos lleve a otro lado
+      event.preventDefault();
 
-    for (var i = 0; i < formData.length; i++) {
-      formData.append('mail[]', arr[i]);
+      //usamos FormData para compilar los datos a enviar
+      // como parametro pasamos los datos del formulario
+      var formData = new FormData(formFile);
+
+      //contador para compilar los datos
+      for (var i = 0; i < formData.length; i++) {
+        formData.append('mail[]', arr[i]);
+      }
+
+      // le pasamos el metodo async postdata
+      postData(formData);
+
+      // deshabilitamos y habilitamos botones y alertas
+      submit.disabled = true;
+      msjEnviado.style.display = "none";
+      msjNoEnviado.style.display = "none";
+      document.getElementById("alertaEnviando").style.display = "block";
     }
 
-    postData(formData);
-
-    submit.disabled = true;
-    msjEnviado.style.display = "none";
-    msjNoEnviado.style.display = "none";
-    document.getElementById("alertaEnviando").style.display = "block";
-  }
-
-  // nuestra función personalizada que envia datos y recibe respuesta del servidor
-  // usamos async/await para trabajar de mejor manera la respuesta por parte del servidor
-
-  // en fetch especificamos el archivo en el servidor que captura los datos enviados
-  async function postData(formData) {
-    const response = await fetch('/email', {
-      // el metodo a usar
-      method: 'POST',
-      // los datos a ser enviados
-      body: formData
-    });
-    document.getElementById("alertaEnviando").style.display = "none";
-    // data contendra la respuesta del servidor
-    const data = await response.text();
-    console.log(data);
-    if (data){
-      document.getElementById("form").reset();
-      msjEnviado.style.display = "block";
-    } else {
-      msjNoEnviado.style.display = "block";
+    // async/await para enviar y recibir peticiones al servidor de forma asíncrona
+    async function postData(formData) {
+      // en fetch especificamos el archivo que captura los datos enviados
+      const response = await fetch('/email', {
+        // el metodo a usar
+        method: 'POST',
+        // los datos a ser enviados
+        body: formData
+      });
+      //ocultamos alerta enviando
+      document.getElementById("alertaEnviando").style.display = "none";
+      // data contendra la respuesta del servidor
+      const data = await response.text();
+      console.log(data);
+      // muestra alerta según corresponde (true o false, enviado o no enviado)
+      if (data) {
+        document.getElementById("form").reset();
+        msjEnviado.style.display = "block";
+      } else {
+        msjNoEnviado.style.display = "block";
+      }
+      submit.disabled = false;
     }
-    submit.disabled = false;
-  }
-});
+  })
+};

@@ -34,7 +34,8 @@ class PaginasController
     $vehiculos = Vehiculo::where('visible', 1);
     //traer las imagenes de ese vehiculo
     $imagenes = File::imgId();
-
+    
+    
     //buscador (filtrar)
     $buscador = Vehiculo::buscador();
     $resultados = [];
@@ -43,9 +44,16 @@ class PaginasController
       $args = $_POST['vehiculo'];
       //buscar segun filtros aplicados
       $resultados = Vehiculo::filtrar($args);
+      if ($_SERVER['PHP_SELF'] === '/index.php/vehiculos'){ 
+        //traer los vehiculos buscados
+        $vehiculos = $resultados;
+      }
     }
+
+    $paginas = ceil(count($vehiculos) / 4);
     
     $router->render('paginas/vehiculos', [
+      'paginas' => $paginas,
       'vehiculos' => $vehiculos,
       'buscador' => $buscador,
       'resultados' => $resultados,
