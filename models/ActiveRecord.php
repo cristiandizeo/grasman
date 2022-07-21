@@ -116,13 +116,13 @@ class ActiveRecord
         return array_shift($resultado);
     }
 
-    public static function get($limite)
+    public static function get($limite, $offset)
     {
-        $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite}";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE visible = 1 LIMIT ${limite} OFFSET ${offset}";
 
         $resultado = self::consultarSQL($query);
-
         return $resultado;
+
     }
 
     // crea un nuevo registro

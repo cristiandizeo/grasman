@@ -42,19 +42,23 @@
       <div class="col-md-12">
         <div class="owl-clients owl-carousel text-center">
           <div class="service-item">
-            <img src="/assets/images/entrega1.png" alt="">
+            <img src="/assets/images/cf1.png" alt="">
           </div>
 
           <div class="service-item">
-            <img src="/assets/images/entrega2.png" alt="">
+            <img src="/assets/images/cf2.png" alt="">
           </div>
 
           <div class="service-item">
-            <img src="/assets/images/entrega3.png" alt="">
+            <img src="/assets/images/cf3.png" alt="">
           </div>
 
           <div class="service-item">
-            <img src="/assets/images/entrega4.png" alt="">
+            <img src="/assets/images/cf4.png" alt="">
+          </div>
+
+          <div class="service-item">
+            <img src="/assets/images/cf5.png" alt="">
           </div>
         </div>
       </div>

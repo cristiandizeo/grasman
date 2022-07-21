@@ -94,13 +94,12 @@
     <div class="col">
       <div class="form-outline">
         <label class="form-label" for="caja">Caja</label>
-        <select required class="form-control" id="caja" name="vehiculo[caja]">
+        <select class="form-control" id="caja" name="vehiculo[caja]">
           <option value=""></option>
           <option value="Manual" <?php if (s($vehiculo->caja) == "Manual") echo 'selected="selected" '; ?>>Manual</option>
           <option value="Automática" <?php if (s($vehiculo->caja) == "Automática") echo 'selected="selected" '; ?>>Automática</option>
         </select>
         <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
-        <div class="invalid-feedback">Agregá el tipo de caja </div>
       </div>
     </div>
   </div>

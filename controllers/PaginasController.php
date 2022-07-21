@@ -50,9 +50,17 @@ class PaginasController
       }
     }
 
-    $paginas = ceil(count($vehiculos) / 4);
-    
+    $prodporpagina = 4;
+    $pagina = 1;
+    if (isset($_GET["pagina"])) {
+      $pagina = $_GET["pagina"];
+  }
+    $offset = ($pagina - 1) * $prodporpagina;
+    $paginas = ceil(count($vehiculos) / $prodporpagina);
+    $vehiculos = Vehiculo::get($prodporpagina, $offset);
+
     $router->render('paginas/vehiculos', [
+      'pagina' => $pagina,
       'paginas' => $paginas,
       'vehiculos' => $vehiculos,
       'buscador' => $buscador,

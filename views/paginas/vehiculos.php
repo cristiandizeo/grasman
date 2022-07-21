@@ -30,13 +30,24 @@
     <?php require 'listado.php';?>
               <div class="col-md-12">
                 <ul class="pages">
-                  <?php for ($i=0; $i < $paginas; $i++) { ?>                    
-                  
-                  <li class="active"><a href="#"><?php echo ($i+1); ?></a></li>
-
-                <?php }?>
-                  <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                </ul>
+                  <?php if ($pagina > 1) { ?>
+                    <li><a href="/vehiculos?pagina=<?php echo $pagina - 1 ?>"><i class="fa fa-angle-double-left"></i></a></li>
+                    <?php } ?>
+                    <?php for ($i=1; $i <= $paginas; $i++) { ?>                    
+                      
+                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="/vehiculos?pagina=<?php echo $i;?>"><?php echo $i; ?></a></li>
+                      
+                      <?php }?>
+                      <!-- Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante -->
+                      <?php if ($pagina < $paginas) { ?>
+                        <li>
+                          <a href="vehiculos?pagina=<?php echo $pagina + 1 ?>">
+                            <i class="fa fa-angle-double-right"></i>
+                          </a>
+                        </li>
+                        <?php } ?>
+                        <p>Página <?php echo $pagina ?> de <?php echo $paginas ?> </p>
+                      </ul>
               </div>
 
               
