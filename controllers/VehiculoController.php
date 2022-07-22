@@ -17,7 +17,7 @@ class VehiculoController
 
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
-        
+
         $router->render('vehiculos/index', [
             'vehiculos' => $vehiculos,
             'resultado' => $resultado
@@ -31,6 +31,7 @@ class VehiculoController
         $vehiculo = new Vehiculo();
         $imagen = new File();
         $errores = Vehiculo::getErrores(); 
+        $errores = File::getErrores();
         $imagenes = [];
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -47,10 +48,9 @@ class VehiculoController
             
             $imagenes = $_FILES['imagenes']['tmp_name'];
             $imgType = $_FILES['imagenes']['type'];
-
+            
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-
                 if($imgType[$i] != 'image/jpeg'){
                     continue;
                 }
@@ -59,6 +59,8 @@ class VehiculoController
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 // Realiza un resize a la imagen con intervention
                 $image = Image::make($imagenes[$i])->fit(800, 600);
+                // get file size
+                $size = $image->filesize();
                 // Setear la imagen
                 $imagen->setImagen($nombreImagen);
                 // Crear la carpeta para subir imagenes
@@ -72,6 +74,7 @@ class VehiculoController
                 $imagen->vehiculoId = $lastId;
                 $imagen->guardar();
             }
+
 
             if ($resultado) {
                 header('location: /admin');
@@ -87,7 +90,7 @@ class VehiculoController
 
     public static function actualizar(Router $router)
     {
-
+        
         isAuth();
 
         $id = validarORedireccionar('/vehiculos');
@@ -101,7 +104,7 @@ class VehiculoController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            
                 // Asignar los atributos
                 $args = $_POST['vehiculo'];
                 // Mostrar publicacion en el sitio
@@ -117,31 +120,29 @@ class VehiculoController
             }
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
-
             // comprobar si hay imagenes
-            if (!is_null($imagenes->tmp_name)){
+            if (!is_null($imagenes)){
                 //procesar cada imagen
                 $countfiles = count($imagenes);
-            for ($i = 0; $i < $countfiles; $i++) {
-                $imagen = new File($imagenes[$i]);
-                $errores = $imagen->validar();
-                // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                // Realiza un resize a la imagen con intervention
-                $image = Image::make($imagenes[$i])->fit(800, 600);
-                // Setear la imagen
-                $imagen->setImagen($nombreImagen);
-                // Crear la carpeta para subir imagenes
-                if (!is_dir(CARPETA_IMAGENES)) {
-                    mkdir(CARPETA_IMAGENES);
-                }
-
-                // Guarda la imagen en el servidor
-                $image->save(CARPETA_IMAGENES . $nombreImagen);
-                // Le asigna el id del vehiculo
-                $imagen->vehiculoId = $id;
-                // Guardar en DB
-                $imagen->guardar();
+                for ($i = 0; $i < $countfiles; $i++) {
+                    $imagen = new File($imagenes[$i]);
+                    // Generar un nombre único
+                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                    // Realiza un resize a la imagen con intervention
+                    $image = Image::make($imagenes[$i])->fit(800, 600);
+                    // Setear la imagen
+                    $imagen->setImagen($nombreImagen);
+                    // Crear la carpeta para subir imagenes
+                    if (!is_dir(CARPETA_IMAGENES)) {
+                        mkdir(CARPETA_IMAGENES);
+                    }
+                    
+                    // Guarda la imagen en el servidor
+                    $image->save(CARPETA_IMAGENES . $nombreImagen);
+                    // Le asigna el id del vehiculo
+                    $imagen->vehiculoId = $id;
+                    // Guardar en DB
+                    $imagen->guardar();
             }
         }
 
@@ -156,6 +157,7 @@ class VehiculoController
             'errores' => $errores
         ]);
     }
+
     public static function eliminar(Router $router)
     {
         
