@@ -58,7 +58,7 @@ class VehiculoController
                 // Generar un nombre único
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 // Realiza un resize a la imagen con intervention
-                $image = Image::make($imagenes[$i])->fit(800, 600);
+                $image = Image::make($imagen)->getRealPath()->fit(800, 600);
                 // get file size
                 $size = $image->filesize();
                 // Setear la imagen
@@ -129,7 +129,9 @@ class VehiculoController
                     // Generar un nombre único
                     $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                     // Realiza un resize a la imagen con intervention
+                    
                     $image = Image::make($imagenes[$i])->fit(800, 600);
+                    
                     // Setear la imagen
                     $imagen->setImagen($nombreImagen);
                     // Crear la carpeta para subir imagenes

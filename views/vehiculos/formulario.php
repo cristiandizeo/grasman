@@ -5,8 +5,6 @@
       <div class="form-outline">
         <label class="form-label" for="patente">Patente</label>
         <input type="text" id="patente" value="<?php echo s($vehiculo->patente); ?>" name="vehiculo[patente]" class="form-control" />
-        <div class="invalid-feedback">Agregá una patente</div>
-        <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
       </div>
     </div>
     <div class="col">
@@ -35,8 +33,6 @@
       <div class="form-outline">
         <label class="form-label" for="modelo">Modelo</label>
         <input type="text" id="modelo" value="<?php echo s($vehiculo->modelo); ?>" name="vehiculo[modelo]" class="form-control" />
-        <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
-        <div class="invalid-feedback">Agregá un modelo</div>
       </div>
     </div>
     <div class="col">
@@ -66,16 +62,12 @@
       <div class="form-outline">
         <label class="form-label" for="precio">Precio</label>
         <input type="number" id="precio" value="<?php echo s($vehiculo->precio); ?>" name="vehiculo[precio]" class="form-control" />
-        <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
-        <div class="invalid-feedback">Agregá un precio</div>
       </div>
     </div>
     <div class="col">
       <div class="form-outline">
         <label class="form-label" for="km">Kilometraje</label>
         <input type="number" id="km" value="<?php echo s($vehiculo->km); ?>" name="vehiculo[km]" class="form-control" />
-        <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
-        <div class="invalid-feedback">Agregá el kilometraje</div>
       </div>
     </div>
     <div class="col">
@@ -87,8 +79,6 @@
           <option value="GNC" <?php if (s($vehiculo->combustible) == "GNC") echo 'selected="selected" '; ?>>GNC</option>
           <option value="Gasoil" <?php if (s($vehiculo->combustible) == "Gasoil") echo 'selected="selected" '; ?>>Gasoil</option>
         </select>
-        <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
-        <div class="invalid-feedback">Agregá el tipo de combustible</div>
       </div>
     </div>
     <div class="col">
@@ -99,7 +89,6 @@
           <option value="Manual" <?php if (s($vehiculo->caja) == "Manual") echo 'selected="selected" '; ?>>Manual</option>
           <option value="Automática" <?php if (s($vehiculo->caja) == "Automática") echo 'selected="selected" '; ?>>Automática</option>
         </select>
-        <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
       </div>
     </div>
   </div>

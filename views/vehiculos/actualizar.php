@@ -9,7 +9,7 @@
         </div>
     <?php endforeach; ?>
 
-    <form class="was-validated" method="POST" enctype="multipart/form-data">
+    <form class="needs-validation" method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
         <input type="submit" value="Modificar vehiculo" class="btn btn-primary m-3">
         <a href="/admin" class="btn btn-danger">Cancelar</a>
