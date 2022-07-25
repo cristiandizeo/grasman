@@ -1343,9 +1343,17 @@ footer .inner-content p a {
 
 /* ADMIN */
 .mini-img {
+    position:relative;
+	display: inline-flex;
+}
+.mini-img img{
 	width: 80px;
 }
-
+#close-btn{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+}
 #btn-borrar {
 	background: none;
 	padding: 0px;

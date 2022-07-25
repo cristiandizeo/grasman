@@ -178,7 +178,7 @@ class VehiculoController
                     $imagen->setImagen($imagen);
                 }
 
-                // encontrar y eliminar la vehiculo
+                // encontrar y eliminar el vehiculo
                 $vehiculo = Vehiculo::find($id);
                 $resultado = $vehiculo->eliminar();
                 // Redireccionar
@@ -188,4 +188,16 @@ class VehiculoController
             }
         }
     }
+
+    
+
+    
+    public static function eliminarImg($imgId){
+        echo $_POST;
+        $imagen = $_POST['imgId'];
+        $imagen->setImagen($imgId);
+        echo json_encode($_POST);
+
+}
+    
 }

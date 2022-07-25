@@ -114,8 +114,10 @@
           <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="imagenes[]" multiple="">
           <?php foreach ($imagenes as $imagen) : ?>
             <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
-              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="mini-img m-2">
-            <?php } ?>
+              <div class="mini-img">
+              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> <button type="submit" id="eliminarImg" data-id="<?php echo trim($imagen->name);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></button>  
+              </div>
+              <?php } ?>
           <?php endforeach; ?>
         </div>
         <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>

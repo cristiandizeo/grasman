@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../includes/app.php';
 
-
 use MVC\Router;
 use Controllers\VehiculoController;
 use Controllers\PaginasController;
@@ -18,6 +17,7 @@ $router->post('/vehiculos/crear', [VehiculoController::class, 'crear']);
 $router->get('/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
 $router->post('/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
 $router->post('/vehiculos/eliminar', [VehiculoController::class, 'eliminar']);
+$router->post('/vehiculos/eliminarimg', [VehiculoController::class, 'eliminarImg']);
 
 // Publicas
 $router->get('/', [PaginasController::class, 'index']);
