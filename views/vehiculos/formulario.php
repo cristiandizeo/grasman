@@ -115,7 +115,7 @@
           <?php foreach ($imagenes as $imagen) : ?>
             <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
               <div class="mini-img">
-              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> <button type="submit" id="eliminarImg" data-id="<?php echo trim($imagen->name);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></button>  
+              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
               </div>
               <?php } ?>
           <?php endforeach; ?>

@@ -270,35 +270,43 @@ if (submit) {
   });
 }
 
-eliminarImg = document.getElementById("eliminarImg");
+// btn miniaturas eliminar
+eliminarImg = document.getElementsByClassName("eliminarImg");
 
 if (eliminarImg) {
-  eliminarImg.addEventListener("click", function (event) {
+    for (var i = 0; i < eliminarImg.length; i++) {
+      eliminarImg[i].addEventListener("click", function (event) {
     // anulamos que boton nos lleve a otro lado
     event.preventDefault();
 
     let imgId = $(this).attr("data-id");
-    
+
     if (confirm("¿Desea eliminar permanentemente esta imagen?")) {
+      // pasamos el id a la fn borrar
       borrarImg(imgId);
     }
   });
 }
+}
 
 async function borrarImg(imgId) {
-
-        try {
-          // en fetch especificamos el archivo que captura los datos enviados
-          const response = await fetch("/vehiculos/eliminarimg", {
-            // el metodo a usar
-            method: "POST",
-            // los datos a ser enviados
-            body: imgId,
-          });
-          
-          const data = await response.text();
-        } catch (err) {
-          console.error(err);
-          // Handle errors here
-        }
-      }
+  //agrego el id al form datos
+  const datos = new FormData();
+  datos.append('imgId', imgId);
+  try {
+    // en fetch especificamos el archivo que captura los datos enviados
+    const response = await fetch("/vehiculos/eliminarimg", {
+      // el metodo a usar
+      method: "POST",
+      // los datos a ser enviados
+      body: datos,
+    });
+    const data = await response.text();
+    if(data) {
+      location.reload();
+    }
+  } catch (err) {
+    console.error(err);
+    // Handle errors here
+  }
+}

@@ -11,7 +11,7 @@ class VehiculoController
 {
     public static function index(Router $router)
     {
-        
+
         isAuth();
         $vehiculos = Vehiculo::all();
 
@@ -26,18 +26,18 @@ class VehiculoController
 
     public static function crear(Router $router)
     {
-        
+
         isAuth();
         $vehiculo = new Vehiculo();
         $imagen = new File();
-        $errores = Vehiculo::getErrores(); 
+        $errores = Vehiculo::getErrores();
         $errores = File::getErrores();
         $imagenes = [];
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             /** Crea una nueva instancia */
             $vehiculo = new Vehiculo($_POST['vehiculo']);
-            
+
             // Validar
             $errores = $vehiculo->validar();
             if (empty($errores)) {
@@ -45,32 +45,33 @@ class VehiculoController
                 $resultado = $vehiculo->guardar();
                 $lastId = $vehiculo->LastId();
             }
-            
+
             $imagenes = $_FILES['imagenes']['tmp_name'];
             $imgType = $_FILES['imagenes']['type'];
-            
+
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-                if($imgType[$i] != 'image/jpeg'){
+                if ($imgType[$i] != 'image/jpeg') {
                     continue;
                 }
                 $imagen = new File($imagenes[$i]);
                 // Generar un nombre único
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 // Realiza un resize a la imagen con intervention
-                $image = Image::make($imagen)->getRealPath()->fit(800, 600);
-                // get file size
-                $size = $image->filesize();
+
+                $image = Image::make($imagenes[$i])->fit(800, 600);
+                                // get file size
+                $image->filesize();
                 // Setear la imagen
                 $imagen->setImagen($nombreImagen);
                 // Crear la carpeta para subir imagenes
                 if (!is_dir(CARPETA_IMAGENES)) {
                     mkdir(CARPETA_IMAGENES);
                 }
-                
+
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
-                
+
                 $imagen->vehiculoId = $lastId;
                 $imagen->guardar();
             }
@@ -90,7 +91,7 @@ class VehiculoController
 
     public static function actualizar(Router $router)
     {
-        
+
         isAuth();
 
         $id = validarORedireccionar('/vehiculos');
@@ -104,24 +105,25 @@ class VehiculoController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
-                // Asignar los atributos
-                $args = $_POST['vehiculo'];
-                // Mostrar publicacion en el sitio
-                if(!$args['visible']){
-                    $args['visible'] = "0";
-                }
-                $vehiculo->sincronizar($args);
-                // Validar
-                $errores = $vehiculo->validar();
-                if (empty($errores)) {
+
+            // Asignar los atributos
+            $args = $_POST['vehiculo'];
+            // Mostrar publicacion en el sitio
+            if (!$args['visible']) {
+                $args['visible'] = "0";
+            }
+            $vehiculo->sincronizar($args);
+            // Validar
+            $errores = $vehiculo->validar();
+            if (empty($errores)) {
                 // Guarda en la base de datos
                 $resultado = $vehiculo->guardar();
             }
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
+            
             // comprobar si hay imagenes
-            if (!is_null($imagenes)){
+            if ($imagenes !== ['']) {
                 //procesar cada imagen
                 $countfiles = count($imagenes);
                 for ($i = 0; $i < $countfiles; $i++) {
@@ -129,24 +131,24 @@ class VehiculoController
                     // Generar un nombre único
                     $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                     // Realiza un resize a la imagen con intervention
-                    
+
                     $image = Image::make($imagenes[$i])->fit(800, 600);
-                    
+
                     // Setear la imagen
                     $imagen->setImagen($nombreImagen);
                     // Crear la carpeta para subir imagenes
                     if (!is_dir(CARPETA_IMAGENES)) {
                         mkdir(CARPETA_IMAGENES);
                     }
-                    
+
                     // Guarda la imagen en el servidor
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del vehiculo
                     $imagen->vehiculoId = $id;
                     // Guardar en DB
                     $imagen->guardar();
+                }
             }
-        }
 
             if ($resultado) {
                 header('location: /admin');
@@ -162,7 +164,7 @@ class VehiculoController
 
     public static function eliminar(Router $router)
     {
-        
+
         isAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -172,9 +174,9 @@ class VehiculoController
                 // Leer el id
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
-                
+
                 $imagenes = File::where('vehiculoId', $id);
-                foreach ($imagenes as $imagen){
+                foreach ($imagenes as $imagen) {
                     $imagen->setImagen($imagen);
                 }
 
@@ -189,15 +191,14 @@ class VehiculoController
         }
     }
 
-    
+    public static function eliminarImg()
+    {
+        $imgId = trim($_POST['imgId']);
+        $imagenes = File::where('id', $imgId);
+        foreach ($imagenes as $imagen) {
+            $imagen->eliminar();
+        }
 
-    
-    public static function eliminarImg($imgId){
-        echo $_POST;
-        $imagen = $_POST['imgId'];
-        $imagen->setImagen($imgId);
-        echo json_encode($_POST);
-
-}
-    
+        echo json_encode($imagen);
+    }
 }
