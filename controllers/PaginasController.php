@@ -30,41 +30,34 @@ class PaginasController
 
   public static function vehiculos(Router $router)
   {
-    //traer vehiculos visibles
-    $vehiculos = Vehiculo::where('visible', 1);
-    //traer las imagenes de ese vehiculo
-    $imagenes = File::imgId();
-    
     
     //buscador (filtrar)
     $buscador = Vehiculo::buscador();
-    $resultados = [];
     $args = [];
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $args = $_POST['vehiculo'];
-      //buscar segun filtros aplicados
-      $resultados = Vehiculo::filtrar($args);
-      if ($_SERVER['PHP_SELF'] === '/index.php/vehiculos'){ 
-        //traer los vehiculos buscados
-        $vehiculos = $resultados;
-      }
-    }
-
+    
     $prodporpagina = 4;
     $pagina = 1;
+    $offset = ($pagina - 1) * $prodporpagina;
+    //traer vehiculos visibles
+    $vehiculos = Vehiculo::filtrar($args, $prodporpagina, $offset);
+    //traer las imagenes de ese vehiculo
+    $imagenes = File::imgId();
+    $paginas = ceil(count($vehiculos) / $prodporpagina);
+    // debuguear($vehiculos);
     if (isset($_GET["pagina"])) {
       $pagina = $_GET["pagina"];
-  }
-    $offset = ($pagina - 1) * $prodporpagina;
-    $paginas = ceil(count($vehiculos) / $prodporpagina);
-    $vehiculos = Vehiculo::get($prodporpagina, $offset);
+    }
+    if (isset($_GET["vehiculo"])) {
+      $args = $_GET['vehiculo'];
+      //buscar segun filtros aplicados
+      $vehiculos = Vehiculo::filtrar($args, $prodporpagina, $offset);
+    }
 
     $router->render('paginas/vehiculos', [
       'pagina' => $pagina,
       'paginas' => $paginas,
       'vehiculos' => $vehiculos,
       'buscador' => $buscador,
-      'resultados' => $resultados,
       'args' => $args,
       'imagenes' => $imagenes
     ]);

@@ -64,7 +64,7 @@ class ActiveRecord
         return $resultado;
     }
 
-    public static function filtrar($args)
+    public static function filtrar($args,$limite, $offset)
     {
 
         $valores = [];
@@ -79,13 +79,13 @@ class ActiveRecord
 
         if (count($valores) > 0) {
             $query .= " WHERE " . join(' AND ', $valores);
+            $query .= " LIMIT ${limite} OFFSET ${offset}";
         }
-        $resultado = self::consultarSQL($query);
-        // debuguear($resultado);
+        $resultados = self::consultarSQL($query);
+        debuguear($resultados);
 
-        return $resultado;
+        return $resultados;
     }
-
 
     public static function buscador()
     {
@@ -114,15 +114,6 @@ class ActiveRecord
         $resultado = self::consultarSQL($query);
 
         return array_shift($resultado);
-    }
-
-    public static function get($limite, $offset)
-    {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE visible = 1 LIMIT ${limite} OFFSET ${offset}";
-
-        $resultado = self::consultarSQL($query);
-        return $resultado;
-
     }
 
     // crea un nuevo registro

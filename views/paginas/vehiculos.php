@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-md-3">
              <div class="contact-form">
-             <form action="/vehiculos" method="POST" id="formb">
+             <form action="/vehiculos" method="GET" id="formb">
                      <?php include __DIR__ . '/buscar.php'; ?>
                      <button type="submit" class="filled-button btn-block" id="buscar">Buscar</button>
                      <button class="filled-button btn-block bg-danger" id="limpiar">Limpiar</button>
@@ -31,17 +31,17 @@
               <div class="col-md-12">
                 <ul class="pages">
                   <?php if ($pagina > 1) { ?>
-                    <li><a href="/vehiculos?pagina=<?php echo $pagina - 1 ?>"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li><a href="<?php echo $_SERVER['REQUEST_URI']."&pagina=". $pagina - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
                     <?php } ?>
                     <?php for ($i=1; $i <= $paginas; $i++) { ?>                    
                       
-                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="/vehiculos?pagina=<?php echo $i;?>"><?php echo $i; ?></a></li>
+                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo $_SERVER['REQUEST_URI']."&pagina=". $i;?>"><?php echo $i; ?></a></li>
                       
                       <?php }?>
                       <!-- Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante -->
                       <?php if ($pagina < $paginas) { ?>
                         <li>
-                          <a href="vehiculos?pagina=<?php echo $pagina + 1 ?>">
+                          <a href="<?php echo $_SERVER['REQUEST_URI']."&pagina=". $pagina + 1;?>">
                             <i class="fa fa-angle-double-right"></i>
                           </a>
                         </li>
