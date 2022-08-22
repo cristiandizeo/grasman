@@ -12,7 +12,7 @@ class PaginasController
   public static function index(Router $router)
   {
 
-    $vehiculos = Vehiculo::where('visible', 1);
+    $vehiculos = Vehiculo::where('visible', 1, 3);
     $imagenes = File::imgId();
 
     $router->render('paginas/index', [
@@ -30,29 +30,32 @@ class PaginasController
 
   public static function vehiculos(Router $router)
   {
+
+    //traer las imagenes de ese vehiculo
+    $imagenes = File::imgId();
     
     //buscador (filtrar)
     $buscador = Vehiculo::buscador();
+    // parametros del buscador
     $args = [];
-    
-    $prodporpagina = 4;
-    $pagina = 1;
-    $offset = ($pagina - 1) * $prodporpagina;
-    //traer vehiculos visibles
-    $vehiculos = Vehiculo::filtrar($args, $prodporpagina, $offset);
-    //traer las imagenes de ese vehiculo
-    $imagenes = File::imgId();
-    $paginas = ceil(count($vehiculos) / $prodporpagina);
-    // debuguear($vehiculos);
+    if (isset($_GET["vehiculo"])) {
+      // extrae parametros del buscador
+      $args = $_GET['vehiculo'];
+    } 
     if (isset($_GET["pagina"])) {
       $pagina = $_GET["pagina"];
+    } else {
+      $pagina = 1;
     }
-    if (isset($_GET["vehiculo"])) {
-      $args = $_GET['vehiculo'];
-      //buscar segun filtros aplicados
-      $vehiculos = Vehiculo::filtrar($args, $prodporpagina, $offset);
-    }
-
+    // cantidad de vehiculos por pagina
+    $prodporpagina = 4;
+    // cantidad de registros ignorados, permite dividir paginas
+    $offset = ($pagina - 1) * $prodporpagina;
+    $vehiculos = Vehiculo::where('visible', 1, $prodporpagina, $offset, $args);
+    // calcula cantidad de paginas
+    $paginas = ceil(count($vehiculos) / $prodporpagina);
+    // realizar filtro
+    // debuguear($vehiculos);
     $router->render('paginas/vehiculos', [
       'pagina' => $pagina,
       'paginas' => $paginas,
@@ -84,7 +87,6 @@ class PaginasController
         $resultado = true;
         $mail = new Email();
       }
-      
     }
     $router->render('paginas/vehiculo', [
       'vehiculo' => $vehiculo,
@@ -92,7 +94,7 @@ class PaginasController
       'errores' => $errores,
       'mail' => $mail,
       'resultado' => $resultado
-  ]);
+    ]);
   }
 
   public static function contacto(Router $router)
@@ -118,7 +120,7 @@ class PaginasController
       'resultado' => $resultado
     ]);
   }
-  
+
   public static function vender(Router $router)
   {
     $mail = new Email();
@@ -142,9 +144,9 @@ class PaginasController
       'resultado' => $resultado
     ]);
   }
-  
-    public static function notfound(Router $router)
-    {
-      $router->render('paginas/404', []);
-    }
+
+  public static function notfound(Router $router)
+  {
+    $router->render('paginas/404', []);
+  }
 }

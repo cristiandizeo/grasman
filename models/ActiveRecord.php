@@ -55,36 +55,31 @@ class ActiveRecord
         return $resultado;
     }
 
-    // Busca un registro por su id
-    public static function where($columna, $valor)
+    // Buscar registros 
+    public static function where($columna, $valor, $limit = null, $offset = null, $args = null)
     {
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
-        
-        $resultado = self::consultarSQL($query);
-        return $resultado;
-    }
-
-    public static function filtrar($args,$limite, $offset)
-    {
-
         $valores = [];
+        if($args){
         foreach ($args as $key => $value) {
             if ($value != "") {
                 $valores[] = "{$key}='{$value}'";
             }
         }
-        $valores[] = "visible=1";
+    }
 
-        $query = "SELECT * FROM " . static::$tabla;
-
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
+        
         if (count($valores) > 0) {
-            $query .= " WHERE " . join(' AND ', $valores);
-            $query .= " LIMIT ${limite} OFFSET ${offset}";
+            $query .= " AND " . join(' AND ', $valores);
         }
-        $resultados = self::consultarSQL($query);
-        debuguear($resultados);
-
-        return $resultados;
+        if($limit){
+        $query .= " LIMIT ${limit}";
+    }
+        if($offset){
+        $query .= " OFFSET ${offset}";
+    }
+        $resultado = self::consultarSQL($query);
+        return $resultado;
     }
 
     public static function buscador()

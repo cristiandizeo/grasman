@@ -31,17 +31,17 @@
               <div class="col-md-12">
                 <ul class="pages">
                   <?php if ($pagina > 1) { ?>
-                    <li><a href="<?php echo $_SERVER['REQUEST_URI']."&pagina=". $pagina - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li><a href="<?php echo "?pagina=". $pagina - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
                     <?php } ?>
                     <?php for ($i=1; $i <= $paginas; $i++) { ?>                    
                       
-                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo $_SERVER['REQUEST_URI']."&pagina=". $i;?>"><?php echo $i; ?></a></li>
+                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo "?pagina=". $i;?>"><?php echo $i; ?></a></li>
                       
                       <?php }?>
                       <!-- Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante -->
                       <?php if ($pagina < $paginas) { ?>
                         <li>
-                          <a href="<?php echo $_SERVER['REQUEST_URI']."&pagina=". $pagina + 1;?>">
+                          <a href="<?php echo "?pagina=". $pagina + 1;?>">
                             <i class="fa fa-angle-double-right"></i>
                           </a>
                         </li>
