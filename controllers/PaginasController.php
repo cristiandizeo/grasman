@@ -51,11 +51,12 @@ class PaginasController
     $prodporpagina = 4;
     // cantidad de registros ignorados, permite dividir paginas
     $offset = ($pagina - 1) * $prodporpagina;
-    $vehiculos = Vehiculo::where('visible', 1, $prodporpagina, $offset, $args);
+    $vehiculos = Vehiculo::where('visible', 1, $args);
     // calcula cantidad de paginas
     $paginas = ceil(count($vehiculos) / $prodporpagina);
-    // realizar filtro
+    $vehiculos = Vehiculo::where('visible', 1, $args, $prodporpagina, $offset);
     // debuguear($vehiculos);
+    // realizar filtro
     $router->render('paginas/vehiculos', [
       'pagina' => $pagina,
       'paginas' => $paginas,

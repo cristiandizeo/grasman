@@ -30,12 +30,16 @@
     <?php require 'listado.php';?>
               <div class="col-md-12">
                 <ul class="pages">
+    <?php if (isset($_GET['vehiculo'])){
+      $actual_link = $_SERVER['REQUEST_URI'];} else{
+        $actual_link = '?';  
+      }?>
                   <?php if ($pagina > 1) { ?>
                     <li><a href="<?php echo "?pagina=". $pagina - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
                     <?php } ?>
                     <?php for ($i=1; $i <= $paginas; $i++) { ?>                    
                       
-                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo "?pagina=". $i;?>"><?php echo $i; ?></a></li>
+                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo $actual_link."&pagina=". $i;?>"><?php echo $i; ?></a></li>
                       
                       <?php }?>
                       <!-- Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante -->

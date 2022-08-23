@@ -56,13 +56,15 @@ class ActiveRecord
     }
 
     // Buscar registros 
-    public static function where($columna, $valor, $limit = null, $offset = null, $args = null)
+    public static function where($columna, $valor, $args = null, $limit = null, $offset = null)
     {
         $valores = [];
         if($args){
         foreach ($args as $key => $value) {
             if ($value != "") {
                 $valores[] = "{$key}='{$value}'";
+                $urlparams = join('&', $valores);
+                debuguear($urlparams);
             }
         }
     }
@@ -72,6 +74,7 @@ class ActiveRecord
         if (count($valores) > 0) {
             $query .= " AND " . join(' AND ', $valores);
         }
+        
         if($limit){
         $query .= " LIMIT ${limit}";
     }
