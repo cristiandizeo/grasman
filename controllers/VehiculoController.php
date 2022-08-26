@@ -51,7 +51,7 @@ class VehiculoController
 
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-                if ($imgType[$i] != 'image/jpeg') {
+                if ($imgType[$i] !== 'image/jpeg' || $imgType[$i] !== 'image/png') {
                     continue;
                 }
                 $imagen = new File($imagenes[$i]);

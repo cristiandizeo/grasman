@@ -23,34 +23,31 @@
                     </form>
                   </div>
           </div>
-
           <div class="col-md-9">
             <div class="row">
-  <div <?php if ($vehiculos != null) echo 'hidden';?>>No se encontraron resultados</div>
+  <div <?php if ($vehiculos[0] != null) echo 'hidden';?>>No se encontraron resultados</div>
     <?php require 'listado.php';?>
               <div class="col-md-12">
                 <ul class="pages">
-    <?php if (isset($_GET['vehiculo'])){
-      $actual_link = $_SERVER['REQUEST_URI'];} else{
-        $actual_link = '?';  
-      }?>
-                  <?php if ($pagina > 1) { ?>
-                    <li><a href="<?php echo "?pagina=". $pagina - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
+
+                <?php $args = http_build_query($args);?>
+                <?php if ($vehiculos[2] > 1) { ?>
+                    <li><a href="<?php echo "vehiculos?".$args."&pagina=". $vehiculos[2] - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
                     <?php } ?>
-                    <?php for ($i=1; $i <= $paginas; $i++) { ?>                    
+                    <?php for ($i=1; $i <= $vehiculos[1]; $i++) { ?>                    
                       
-                      <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo $actual_link."&pagina=". $i;?>"><?php echo $i; ?></a></li>
+                      <li class="<?php if ($i == $vehiculos[2]) echo 'active'; ?>"><a href="<?php echo "vehiculos?".$args."&pagina=". $i;?>"><?php echo $i; ?></a></li>
                       
                       <?php }?>
                       <!-- Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante -->
-                      <?php if ($pagina < $paginas) { ?>
+                      <?php if ($vehiculos[2] < $vehiculos[1]) { ?>
                         <li>
-                          <a href="<?php echo "?pagina=". $pagina + 1;?>">
+                          <a href="<?php echo "vehiculos?".$args."&pagina=". $vehiculos[2] + 1;?>">
                             <i class="fa fa-angle-double-right"></i>
                           </a>
                         </li>
                         <?php } ?>
-                        <p>Página <?php echo $pagina ?> de <?php echo $paginas ?> </p>
+                        <p>Página <?php echo $vehiculos[2] ?> de <?php echo $vehiculos[1] ?> </p>
                       </ul>
               </div>
 

@@ -1,4 +1,4 @@
-<?php foreach ($vehiculos as $vehiculo) : ?>
+<?php foreach ($vehiculos[0] as $vehiculo) : ?>
   <div class="<?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'col-md-6' : 'col-md-4' ?>">
     <div class="product-item">
       <a href="/vehiculo?id=<?php echo $vehiculo->id; ?>">

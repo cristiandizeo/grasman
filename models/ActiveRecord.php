@@ -54,42 +54,62 @@ class ActiveRecord
 
         return $resultado;
     }
-
-    // Buscar registros 
-    public static function where($columna, $valor, $args = null, $limit = null, $offset = null)
+    public static function where($columna, $valor, $limit = null)
+    {
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
+        $query .= " ORDER BY id DESC ";
+        if ($limit) {
+            $query .= " LIMIT ${limit}";
+        }
+        $resultado = [self::consultarSQL($query)];
+        return $resultado;
+        // Buscar registros 
+    }
+    public static function filtrar($args)
     {
         $valores = [];
-        if($args){
         foreach ($args as $key => $value) {
-            if ($value != "") {
+            if ($value !== '' && $key !== 'pagina') {
                 $valores[] = "{$key}='{$value}'";
-                $urlparams = join('&', $valores);
-                debuguear($urlparams);
             }
         }
-    }
 
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
-        
-        if (count($valores) > 0) {
-            $query .= " AND " . join(' AND ', $valores);
+        //pagina seteada o pagina 1 por defecto
+        if (isset($args['pagina'])) {
+            $pagina = $args['pagina'];
+        } else {
+            $pagina = 1;
         }
-        
-        if($limit){
-        $query .= " LIMIT ${limit}";
-    }
-        if($offset){
-        $query .= " OFFSET ${offset}";
-    }
-        $resultado = self::consultarSQL($query);
+
+        // cantidad de vehiculos por pagina
+        $limit = 4;
+        // cantidad de registros ignorados, permite dividir paginas
+        $offset = ($pagina - 1) * $limit;
+        // calcula paginas
+        $query = "SELECT * FROM " . static::$tabla;
+
+        if (count($valores) > 0) {
+            $query .= " WHERE " . join(' AND ', $valores);
+        }
+        $consulta = self::consultarSQL($query);
+        $paginas = ceil(count($consulta) / $limit);
+        $query .= " ORDER BY id DESC ";
+        $query .= " LIMIT ${limit} OFFSET ${offset}";
+        $consulta = self::consultarSQL($query);
+        $resultado = [$consulta, $paginas, $pagina];
+
         return $resultado;
     }
 
     public static function buscador()
     {
         $valores = [];
-        foreach (static::$columnasDB as $columna) {
-            $valores[] = "$columna";
+        $columnas = static::$columnasDB;
+
+        foreach ($columnas as $columna) {
+            if ($columna == 'estado' || $columna == 'tipo' || $columna == 'marca' || $columna == 'caja' || $columna == 'combustible') {
+                $valores[] = "$columna";
+            }
         }
         $resultado = [];
         $contador = count($valores);
@@ -98,7 +118,7 @@ class ActiveRecord
             $query .= " DISTINCT " . $valores[$i];
             $query .= " FROM " . static::$tabla;
             $query .= " WHERE visible = 1";
-            
+
             $resultado[$i] = self::consultarSQL($query);
         }
         return $resultado;
@@ -255,7 +275,6 @@ class ActiveRecord
                 $query .= " FROM " . static::$tabla;
                 $query .= " GROUP BY " . $columna;
                 $resultado = self::consultarSQL($query);
-                // debuguear($resultado);
                 return $resultado;
             }
         }
@@ -266,7 +285,7 @@ class ActiveRecord
     {
         // Comprobar si existe el archivo
         $existeArchivo = file_exists(CARPETA_IMAGENES . trim($this->name));
-        
+
         if ($existeArchivo) {
             unlink(CARPETA_IMAGENES . trim($this->name));
         }

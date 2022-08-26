@@ -14,7 +14,7 @@ class PaginasController
 
     $vehiculos = Vehiculo::where('visible', 1, 3);
     $imagenes = File::imgId();
-
+    
     $router->render('paginas/index', [
       'inicio' => true,
       'vehiculos' => $vehiculos,
@@ -30,36 +30,25 @@ class PaginasController
 
   public static function vehiculos(Router $router)
   {
-
-    //traer las imagenes de ese vehiculo
-    $imagenes = File::imgId();
     
-    //buscador (filtrar)
-    $buscador = Vehiculo::buscador();
+    //traer las imagenes de agrupadas por vehiculo
+    $imagenes = File::imgId();
+
     // parametros del buscador
     $args = [];
-    if (isset($_GET["vehiculo"])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       // extrae parametros del buscador
-      $args = $_GET['vehiculo'];
-    } 
-    if (isset($_GET["pagina"])) {
-      $pagina = $_GET["pagina"];
+      $args = ($_GET);
+      // fitra resultados
+      $vehiculos = Vehiculo::filtrar($args);
+      //filtra resultados para cada pagina
     } else {
-      $pagina = 1;
+      // fitra resultados
+      $vehiculos = Vehiculo::filtrar($args);
     }
-    // cantidad de vehiculos por pagina
-    $prodporpagina = 4;
-    // cantidad de registros ignorados, permite dividir paginas
-    $offset = ($pagina - 1) * $prodporpagina;
-    $vehiculos = Vehiculo::where('visible', 1, $args);
-    // calcula cantidad de paginas
-    $paginas = ceil(count($vehiculos) / $prodporpagina);
-    $vehiculos = Vehiculo::where('visible', 1, $args, $prodporpagina, $offset);
-    // debuguear($vehiculos);
-    // realizar filtro
+    //buscador (filtrar)
+    $buscador = Vehiculo::buscador();
     $router->render('paginas/vehiculos', [
-      'pagina' => $pagina,
-      'paginas' => $paginas,
       'vehiculos' => $vehiculos,
       'buscador' => $buscador,
       'args' => $args,
