@@ -30,7 +30,9 @@
               <div class="col-md-12">
                 <ul class="pages">
 
-                <?php $args = http_build_query($args);?>
+                <?php 
+                if(isset($args['pagina'])){if ($args['pagina'] > $vehiculos[1]){header('Location: /404');}};
+                $args = http_build_query($args);?>
                 <?php if ($vehiculos[2] > 1) { ?>
                     <li><a href="<?php echo "vehiculos?".$args."&pagina=". $vehiculos[2] - 1;?>"><i class="fa fa-angle-double-left"></i></a></li>
                     <?php } ?>

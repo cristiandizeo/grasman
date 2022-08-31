@@ -62,6 +62,9 @@ class PaginasController
 
     // Obtener los datos de la vehiculo
     $vehiculo = Vehiculo::find($id);
+    if($_GET['id'] != $vehiculo->id || $vehiculo->visible == '0'){
+      header('Location: /404');
+    }
     $imagenes = File::all();
     $mail = new Email();
     $errores = Email::getErrores();
