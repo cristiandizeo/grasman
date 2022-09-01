@@ -46,10 +46,15 @@ class PaginasController
       // fitra resultados
       $vehiculos = Vehiculo::filtrar($args);
     }
+    $consulta = $vehiculos[0];
+    $paginas = $vehiculos[1];
+    $pagina = $vehiculos[2];
     //buscador (filtrar)
     $buscador = Vehiculo::buscador();
     $router->render('paginas/vehiculos', [
-      'vehiculos' => $vehiculos,
+      'consulta' => $consulta,
+      'paginas' => $paginas,
+      'pagina' => $pagina,
       'buscador' => $buscador,
       'args' => $args,
       'imagenes' => $imagenes

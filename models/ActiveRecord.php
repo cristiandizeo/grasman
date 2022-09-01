@@ -68,6 +68,7 @@ class ActiveRecord
     public static function filtrar($args)
     {
         $valores = [];
+        //tomar los args como key-value y formatearlos para luego realizar consulta, ignorar pagina
         foreach ($args as $key => $value) {
             if ($value !== '' && $key !== 'pagina') {
                 $valores[] = "{$key}='{$value}'";
@@ -82,22 +83,29 @@ class ActiveRecord
         }
 
         // cantidad de vehiculos por pagina
-        $limit = 4;
+        $limit = 6;
         // cantidad de registros ignorados, permite dividir paginas
         $offset = ($pagina - 1) * $limit;
         // calcula paginas
         $query = "SELECT * FROM " . static::$tabla;
 
+        //si hay valores, agregarlos a la consulta
         if (count($valores) > 0) {
             $query .= " WHERE " . join(' AND ', $valores);
         }
+        //realizar consulta
         $consulta = self::consultarSQL($query);
+        //calcular las páginas teniendo en cuenta count de resultados y el limite establecido
         $paginas = ceil(count($consulta) / $limit);
+        //agregar a la consulta el orden de resultados
         $query .= " ORDER BY id DESC ";
+        //agregar a la consulta limit y offset para segmentar resultados y paginar
         $query .= " LIMIT ${limit} OFFSET ${offset}";
+        //realizar consulta
         $consulta = self::consultarSQL($query);
+        //crear un arr con datos
         $resultado = [$consulta, $paginas, $pagina];
-
+        //devolver datos
         return $resultado;
     }
 
