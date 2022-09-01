@@ -118,11 +118,7 @@ if (!isset($inicio)) {
     <div class="container py-5">
       <div class="row py-4">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="" width="180" class="mb-3">
-          <p class="font-italic text-muted">Seguinos en nuestras redes</p>
-          <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
-          </ul>
+        <p class="lead"><strong>Grasman Automotores</strong></p>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Secciones</h6>
@@ -135,16 +131,11 @@ if (!isset($inicio)) {
         </div>
 
         <div class="col-lg-4 col-md-6 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
-          <p class="text-muted mb-4">Dejanos tu correo para recibir nuestras novedades</p>
-          <div class="p-1 rounded border">
-            <div class="input-group">
-              <input type="email" placeholder="Ingresá tu email" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
-              </div>
-            </div>
-          </div>
+        <p class="font-italic text-muted">Seguinos en nuestras redes</p>
+          <ul class="list-inline mt-4 display-4">
+            <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
+          </ul>
         </div>
       </div>
     </div>

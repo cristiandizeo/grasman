@@ -15,10 +15,29 @@ class PaginasController
     $vehiculos = Vehiculo::where('visible', 1, 3);
     $imagenes = File::imgId();
     
+    $mail = new Email();
+    $errores = Email::getErrores();
+    $resultado = false;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $mail = new Email($_POST['mail']);
+      debuguear($mail);
+      $resultado = $mail->nuevoMensaje();
+
+      if ($resultado === false) {
+        $errores[] = '* Revisá tu email';
+      } else {
+        $resultado = true;
+        $mail = new Email();
+      }
+    }
+
     $router->render('paginas/index', [
       'inicio' => true,
       'vehiculos' => $vehiculos,
-      'imagenes' => $imagenes
+      'imagenes' => $imagenes,
+      'errores' => $errores,
+      'mail' => $mail,
+      'resultado' => $resultado
     ]);
   }
 
