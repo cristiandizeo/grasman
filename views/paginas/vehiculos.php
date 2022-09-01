@@ -25,36 +25,43 @@
          </div>
          <div class="col-md-9">
            <div class="row">
-             <div <?php if ($vehiculos[0] != null) echo 'hidden'; ?>>No se encontraron resultados</div>
+            
+             <div <?php //Si no hay resultados de vehiculos mostrar mensaje
+              if ($consulta != null) echo 'hidden'; ?>>No se encontraron resultados</div>
              <?php require 'listado.php'; ?>
              <div class="col-md-12">
                <ul class="pages">
 
                  <?php
+  // Si la página solicitada es mayor a la cantidad, 404
                   if (isset($args['pagina'])) {
-                    if ($args['pagina'] > $vehiculos[1]) {
+                    if ($args['pagina'] > $paginas) {
                       header('Location: /404');
                     }
                   };
+                  // Quitar del arr la página para crear los proximos links
                   unset($args['pagina']);
-                  $args = http_build_query($args); ?>
-                 <?php if ($vehiculos[2] > 1) { ?>
-                   <li><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $vehiculos[2] - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>
-                 <?php } ?>
-                 <?php for ($i = 1; $i <= $vehiculos[1]; $i++) { ?>
+                  $args = http_build_query($args);
 
-                   <li class="<?php if ($i == $vehiculos[2]) echo 'active'; ?>"><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $i; ?>"><?php echo $i; ?></a></li>
+                  //si la página es mayor a 1, muestra el link para retroceder 
+                   if ($pagina > 1) { ?>
+                   <li><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $pagina - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>
+                 <?php } 
+                 //links de las páginas
+              for ($i = 1; $i <= $paginas; $i++) { ?>
 
-                 <?php } ?>
-                 <!-- Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante -->
-                 <?php if ($vehiculos[2] < $vehiculos[1]) { ?>
+                   <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $i; ?>"><?php echo $i; ?></a></li>
+
+                 <?php }
+                 // Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante 
+                 if ($pagina < $paginas) { ?>
                    <li>
-                     <a href="<?php echo "vehiculos?" . $args . "&pagina=" . $vehiculos[2] + 1; ?>">
+                     <a href="<?php echo "vehiculos?" . $args . "&pagina=" . $pagina + 1; ?>">
                        <i class="fa fa-angle-double-right"></i>
                      </a>
                    </li>
                  <?php } ?>
-                 <p>Página <?php echo $vehiculos[2] ?> de <?php echo $vehiculos[1] ?> </p>
+                 <p>Página <?php echo $pagina ?> de <?php echo $paginas ?> </p>
                </ul>
              </div>
            </div>
