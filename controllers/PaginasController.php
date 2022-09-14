@@ -32,9 +32,29 @@ class PaginasController
       }
     }
     
+    $mail = new Email();
+    $errores = Email::getErrores();
+    $resultado = false;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $mail = new Email($_POST['mail']);
+      debuguear($mail);
+      $resultado = $mail->nuevoMensaje();
+
+      if ($resultado === false) {
+        $errores[] = '* Revisá tu email';
+      } else {
+        $resultado = true;
+        $mail = new Email();
+      }
+    }
+
     $router->render('paginas/index', [
       'inicio' => true,
+<<<<<<< HEAD
       'consulta' => $consulta,
+=======
+      'vehiculos' => $vehiculos,
+>>>>>>> 14c36ae6dcff8605a070a83f819719621e6acc7d
       'imagenes' => $imagenes,
       'errores' => $errores,
       'mail' => $mail,
