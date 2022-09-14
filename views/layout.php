@@ -131,7 +131,6 @@ if (!isset($inicio)) {
         </div>
 
         <div class="col-lg-4 col-md-6 mb-lg-0">
-<<<<<<< HEAD
           <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
           <p class="text-muted mb-4">Dejanos tu correo para recibir nuestras novedades</p>
           
@@ -161,13 +160,11 @@ if (!isset($inicio)) {
     <div class="alert alert-primary text-center alert-dismissible fade show" id="alertaEnviando" role="alert">
       <strong>Enviando mensaje <i class="fa-solid fa-paper-plane"></i></strong>
     </div>
-=======
         <p class="font-italic text-muted">Seguinos en nuestras redes</p>
           <ul class="list-inline mt-4 display-4">
             <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
             <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
           </ul>
->>>>>>> 14c36ae6dcff8605a070a83f819719621e6acc7d
         </div>
       </div>
     </div>
