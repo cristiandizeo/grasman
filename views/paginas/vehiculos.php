@@ -41,8 +41,8 @@
                   };
                   // Quitar del arr la página para crear los proximos links
                   unset($args['pagina']);
+                  // Codificar arr
                   $args = http_build_query($args);
-
                   //si la página es mayor a 1, muestra el link para retroceder 
                    if ($pagina > 1) { ?>
                    <li><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $pagina - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>

@@ -1,5 +1,4 @@
-
-  <form id="form" class="form">
+<form id="form" class="form">
 
   <div class="alert alert-success text-center alert-dismissible fade show" id="msjEnviado" role="alert">
         <strong>¡Gracias por tu mensaje!</strong><br> Te responderemos en breve <i class="fa-solid fa-car-on"></i></i>

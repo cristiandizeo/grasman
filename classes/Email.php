@@ -109,4 +109,46 @@ class Email extends ActiveRecord
             }
         }
     }
+
+    public static function newsletter()
+    {
+        $msj = new Email($_POST['mail']);
+        //comprobar si estan vacios
+            //comprobar email
+            if (filter_var($msj->email, FILTER_VALIDATE_EMAIL) || !empty($msj->email)) {
+
+                //Instancia de PHPMailer pasando `true` para habilitar excepciones
+                $mail = new PHPMailer(true);
+
+                try {
+                    //Crear el objeto de email
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.mailtrap.io';
+                    $mail->SMTPAuth = true;
+                    $mail->Port = 2525;
+                    $mail->Username = '5faeaa31a7ab36';
+                    $mail->Password = 'b169c323834b2a';
+
+                    $mail->setFrom($msj->email);
+                    $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
+                    $mail->Subject = 'Nuevo newsletter';
+
+                    //Set HTML
+                    $mail->isHTML(TRUE);
+                    $mail->CharSet = 'UTF-8';
+
+                    $contenido = '<html>';
+                    $contenido .= "<p>El siguiente email quiere recibir tus novedades: <strong> " . $msj->email . "</strong></p>";
+                    $contenido .= "</html>";
+
+                    $mail->Body = $contenido;
+                    //Enviar email
+                    $mail->send();
+
+                    echo json_encode(true);
+                } catch (Exception $e) {
+                    echo json_encode(false);
+                }
+            }
+        }
 }

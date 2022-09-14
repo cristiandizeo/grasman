@@ -2,17 +2,12 @@
 <!-- Banner Starts Here -->
 <div class="banner header-text row">
   <div class="text-content">
-    <h2>Tu próximo vehículo <br> lo encontrás acá</h2>
+    <h2>Tu próximo vehículo <br> esta acá</h2>
+  </div>
+    <div class="quiero">
     <a href="/vehiculos" class="btn btn-secondary bt-lg m-3">QUIERO COMPRAR</a>
     <a href="/quiero-vender" class="btn btn-secondary bt-lg m-3">QUIERO VENDER</a>
-  </div>
-  <div class="col">
-    <video autoplay muted>
-      <source src="/assets/videos/headervideo.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-
+    </div>
 </div>
 <!-- Banner Ends Here -->
 
