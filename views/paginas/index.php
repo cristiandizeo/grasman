@@ -5,8 +5,8 @@
     <h2>Tu próximo vehículo <br> esta acá</h2>
   </div>
     <div class="quiero">
-    <a href="/vehiculos" class="btn btn-secondary bt-lg m-3">QUIERO COMPRAR</a>
-    <a href="/quiero-vender" class="btn btn-secondary bt-lg m-3">QUIERO VENDER</a>
+    <a href="/vehiculos" class="button-50">QUIERO COMPRAR</a>
+    <a href="/quiero-vender" class="button-50">QUIERO VENDER</a>
     </div>
 </div>
 <!-- Banner Ends Here -->
@@ -74,13 +74,13 @@
     </div>
     <div class="row">
       <div class="col">
-        <img src="/assets/images/prueba.jpg" class="img-fluid" alt="">
+        <img src="/assets/images/cuadro1.png" class="img-fluid" alt="">
       </div>
       <div class="col">
-        <img src="/assets/images/prueba.jpg" class="img-fluid" alt="">
+        <img src="/assets/images/cuadro2.png" class="img-fluid" alt="">
       </div>
       <div class="col">
-        <img src="/assets/images/prueba.jpg" class="img-fluid" alt="">
+        <img src="/assets/images/cuadro3.png" class="img-fluid" alt="">
       </div>
     </div>
   </div>

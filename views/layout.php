@@ -20,7 +20,7 @@ if (!isset($inicio)) {
   <link rel="icon" href="/assets/images/logo.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>Grasman Automotores</title>
+  <title>Grasman Autos</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,10 +49,10 @@ if (!isset($inicio)) {
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <div class="row">
-        <a class="navbar-brand" href="/" title="Grasman automotores">
+        <a class="navbar-brand" href="/" title="Grasman Autos">
           <img src="/assets/images/logo.png" alt="">
 
-          <h2 class="d-flex align-items-center">Grasman <em>Automotores</em></h2>
+          <h2 class="d-flex align-items-center">Grasman <em>Autos</em></h2>
 
         </a>
         </div>
@@ -89,7 +89,7 @@ if (!isset($inicio)) {
   <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/vehiculos/actualizar': echo 'hidden';break;case '/index.php/vehiculos/crear': echo 'hidden';break;}?>>
   
   <div class="wsp-icon">
-    <a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Automotores!" target="blank">
+    <a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" target="blank">
   <figure>  
   <img src="\assets\images\wsp-icon.svg" alt="wa" title="¡Escribinos ahora!">
   </figure>
@@ -101,7 +101,7 @@ if (!isset($inicio)) {
         <div class="col-lg-12 mx-auto text-white text-center">
           <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="lead mb-0">No dudes en contactarnos</p>
-          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Automotores!" class="text-primary" target="blank">
+          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
                         <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>
@@ -118,7 +118,7 @@ if (!isset($inicio)) {
     <div class="container py-5">
       <div class="row py-4">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="" width="180" class="mb-3">
-        <p class="lead"><strong>Grasman Automotores</strong></p>
+        <p class="lead"><strong>Grasman Autos</strong></p>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Secciones</h6>
@@ -162,8 +162,8 @@ if (!isset($inicio)) {
     </div>
         <p class="font-italic text-muted">Seguinos en nuestras redes</p>
           <ul class="list-inline mt-4 display-4">
-            <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Autos-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautos/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
           </ul>
         </div>
       </div>

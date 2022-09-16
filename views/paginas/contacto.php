@@ -35,9 +35,9 @@
               <h4>Visitá nuestra agencia</h4>
               <p>Nos encontramos en Santa Rosa, capital de la provincia de La Pampa. <br>La ubicación de nuestra agencia es Av. Agustín Spinetto 1135<br>Estamos de lunes a sábado de 9 a 18 hs.</p>
               <ul class="social-icons">
-                <li><a href="https://www.facebook.com/Grasman-Automotores-103164144977354" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/grasmanautomotores/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Automotores!" target="_blank" title="Whatsapp"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100047535112495" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/grasmanautos/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" target="_blank" title="Whatsapp"><i class="fa-brands fa-whatsapp"></i></a></li>
               </ul>
             </div>
           </div>
