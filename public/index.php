@@ -21,7 +21,6 @@ $router->post('/vehiculos/eliminarimg', [VehiculoController::class, 'eliminarImg
 
 // Publicas
 $router->get('/', [PaginasController::class, 'index']);
-$router->post('/', [Email::class, 'newsletter']);
 $router->get('/nosotros', [PaginasController::class, 'nosotros']);
 $router->get('/vehiculos', [PaginasController::class, 'vehiculos']);
 $router->post('/vehiculos', [PaginasController::class, 'vehiculos']);

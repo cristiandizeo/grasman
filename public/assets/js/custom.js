@@ -257,7 +257,6 @@ if (submit) {
       document.getElementById("alertaEnviando").style.display = "none";
       // data contendra la respuesta del servidor
       const data = await response.text();
-      console.log(data);
       // muestra alerta según corresponde (true o false, enviado o no enviado)
       if (data) {
         document.getElementById("form").reset();

@@ -13,5 +13,4 @@
         </div> 
             <input type="submit" name="" value="Ingresar">
     </form>
-    <a href="#">Olvidé mi contraseña<br> </a>
 </div>

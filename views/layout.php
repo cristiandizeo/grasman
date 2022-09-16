@@ -131,35 +131,6 @@ if (!isset($inicio)) {
         </div>
 
         <div class="col-lg-4 col-md-6 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
-          <p class="text-muted mb-4">Dejanos tu correo para recibir nuestras novedades</p>
-          
-  <form id="form" class="form">
-          <div class="p-1 rounded border">
-            <div class="input-group">
-              <input name="mail[email]" type="email" class="form-control" id="email" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="form-submit" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
-              </div> 
-            </div>
-          </div>
-          </form>
-
-<div class="alert alert-success text-center alert-dismissible fade show" id="msjEnviado" role="alert">
-      <strong>¡Gracias por tu mensaje!</strong><br> Te responderemos en breve <i class="fa-solid fa-car-on"></i></i>
-       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-    </div>
-    <div class="alert alert-danger text-center alert-dismissible fade show" id="msjNoEnviado" role="alert">
-      <strong>No se pudo enviar el mensaje <i class="fa-solid fa-car-burst"></i></strong><br> Por favor revisá el formulario o intentá en unos momentos.</i>
-       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-    </div>
-    <div class="alert alert-primary text-center alert-dismissible fade show" id="alertaEnviando" role="alert">
-      <strong>Enviando mensaje <i class="fa-solid fa-paper-plane"></i></strong>
-    </div>
         <p class="font-italic text-muted">Seguinos en nuestras redes</p>
           <ul class="list-inline mt-4 display-4">
             <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Autos-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
