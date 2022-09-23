@@ -1,15 +1,19 @@
-<!-- Page Content -->
-<!-- Banner Starts Here -->
-<div class="banner header-text row">
-  <div class="text-content">
-    <h2>Tu próximo vehículo <br> esta acá</h2>
+<div class="banner">
+  <div class="box box1 location-listing">
+  <a class="location-title" href="/vehiculos?tipo=Auto">
+					AUTOS					</a>
   </div>
-    <div class="quiero">
-    <a href="/vehiculos" class="button-50">QUIERO COMPRAR</a>
-    <a href="/quiero-vender" class="button-50">QUIERO VENDER</a>
-    </div>
+  <div class="box box2 location-listing">
+  <a class="location-title" href="/vehiculos?tipo=Pickup">
+					PICK UP					</a>
+  </div>
+  <div class="box box3 location-listing">
+  <a class="location-title" href="/vehiculos?tipo=Bicicleta">
+					BICICLETAS					</a>
+  </div>
+
 </div>
-<!-- Banner Ends Here -->
+
 
 <div class="latest-products">
   <div class="container">
