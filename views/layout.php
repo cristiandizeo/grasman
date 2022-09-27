@@ -89,7 +89,7 @@ if (!isset($inicio)) {
   <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/vehiculos/actualizar': echo 'hidden';break;case '/index.php/vehiculos/crear': echo 'hidden';break;}?>>
   
   <div class="wsp-icon">
-    <a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" target="blank">
+    <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">
   <figure>  
   <img src="\assets\images\wsp-icon.svg" alt="wa" title="¡Escribinos ahora!">
   </figure>
@@ -101,7 +101,7 @@ if (!isset($inicio)) {
         <div class="col-lg-12 mx-auto text-white text-center">
           <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="lead mb-0">No dudes en contactarnos</p>
-          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
+          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
                         <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>
