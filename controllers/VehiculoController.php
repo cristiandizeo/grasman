@@ -168,9 +168,6 @@ class VehiculoController
         isAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tipo = $_POST['tipo'];
-            // peticiones validas
-            if (validarTipoContenido($tipo)) {
                 // Leer el id
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -187,7 +184,6 @@ class VehiculoController
                 if ($resultado) {
                     header('location: /admin');
                 }
-            }
         }
     }
 
@@ -196,7 +192,7 @@ class VehiculoController
         $imgId = trim($_POST['imgId']);
         $imagenes = File::where('id', $imgId);
         foreach ($imagenes as $imagen) {
-            $imagen->eliminar();
+            $imagen->borrarImagen();
         }
 
         echo json_encode($imagen);

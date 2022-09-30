@@ -22,13 +22,6 @@ function s($html) : string {
     return $s;
 }
 
-
-// Valida tipo de petición
-function validarTipoContenido($tipo){
-    $tipos = ['vendedor', 'vehiculo'];
-    return in_array($tipo, $tipos);
-}
-
 // Muestra los mensajes
 function mostrarNotificacion($codigo) {
     $mensaje = '';

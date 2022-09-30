@@ -7,7 +7,6 @@ use Controllers\VehiculoController;
 use Controllers\PaginasController;
 use Controllers\LoginController;
 use Classes\Email;
-use Controllers\ImagenesController;
 
 $router = new Router();
 
@@ -18,9 +17,6 @@ $router->post('/vehiculos/crear', [VehiculoController::class, 'crear']);
 $router->get('/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
 $router->post('/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
 $router->post('/vehiculos/eliminar', [VehiculoController::class, 'eliminar']);
-$router->post('/vehiculos/eliminarimg', [VehiculoController::class, 'eliminarImg']);
-$router->get('/clientes', [ImagenesController::class, 'clientes']);
-$router->post('/clientes', [ImagenesController::class, 'agregar']);
 $router->post('/vehiculos/eliminarimg', [VehiculoController::class, 'eliminarImg']);
 
 // Publicas

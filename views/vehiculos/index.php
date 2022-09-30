@@ -47,7 +47,6 @@
 
                                 <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100 mx-3" title="Eliminar">
                                     <input type="hidden" name="id" value="<?php echo $vehiculo->id; ?>">
-                                    <input type="hidden" name="tipo" value="vehiculo">
                                     <button type="submit" id="btn-borrar">
                                         <i class="fa-solid fa-trash-can"></i></button>
                                 </form>
