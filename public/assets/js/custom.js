@@ -311,15 +311,17 @@ async function borrarImg(imgId) {
   //agrego el id al form datos
   const datos = new FormData();
   datos.append('imgId', imgId);
+  iurl = window.location.pathname;
   try {
     // en fetch especificamos el archivo que captura los datos enviados
-    const response = await fetch("/admin/vehiculos/eliminarimg", {
+    const response = await fetch(iurl+"/eliminarimg", {
       // el metodo a usar
       method: "POST",
       // los datos a ser enviados
       body: datos,
     });
     const data = await response.text();
+    // console.log(data);
     if(data) {
       location.reload();
     }

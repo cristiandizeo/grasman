@@ -47,7 +47,7 @@ if (!isset($inicio)) {
   <!-- Header -->
   <header class="">
     <nav class="navbar navbar-expand-lg">
-      <div class="container">
+      <div class="container p-0">
         <div class="row">
         <a class="navbar-brand" href="/" title="Grasman Autos">
           <img src="/assets/images/logo.png" alt="">

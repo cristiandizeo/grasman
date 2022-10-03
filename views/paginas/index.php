@@ -38,27 +38,16 @@
           <h2>Clientes felices</h2>
         </div>
       </div>
-      <div class="col-md-12">
-        <div class="owl-clients owl-carousel text-center">
+            
+            <div class="col-md-12">
+              <div class="owl-clients owl-carousel text-center">
+          <?php foreach ($imgclientes as $imgcliente) : ?>
           <div class="service-item">
-            <img src="/assets/images/cf1.png" alt="">
+          <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid">
           </div>
+          
+          <?php endforeach; ?>
 
-          <div class="service-item">
-            <img src="/assets/images/cf2.png" alt="">
-          </div>
-
-          <div class="service-item">
-            <img src="/assets/images/cf3.png" alt="">
-          </div>
-
-          <div class="service-item">
-            <img src="/assets/images/cf4.png" alt="">
-          </div>
-
-          <div class="service-item">
-            <img src="/assets/images/cf5.png" alt="">
-          </div>
         </div>
       </div>
     </div>

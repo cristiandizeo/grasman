@@ -55,7 +55,7 @@ class ImagenesController
     public static function eliminarImg()
     {
         $imgId = trim($_POST['imgId']);
-        $imagenes = Imagenes::where('id', $imgId);
+        $imagenes = Imagenes::whereImg('id', $imgId);
         foreach ($imagenes as $imagen) {
             $imagen->eliminar();
         }
