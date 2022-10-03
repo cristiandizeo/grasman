@@ -51,7 +51,8 @@ class VehiculoController
 
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-                if ($imgType[$i] !== 'image/jpeg' || $imgType[$i] !== 'image/png') {
+                if ($imgType[$i] !== 'image/jpeg' && $imgType[$i] !== 'image/png') {
+                    // debuguear($imgType[$i]);
                     continue;
                 }
                 $imagen = new File($imagenes[$i]);
@@ -172,7 +173,7 @@ class VehiculoController
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                $imagenes = File::where('vehiculoId', $id);
+                $imagenes = File::whereImg('vehiculoId', $id);
                 foreach ($imagenes as $imagen) {
                     $imagen->setImagen($imagen);
                 }
@@ -190,9 +191,9 @@ class VehiculoController
     public static function eliminarImg()
     {
         $imgId = trim($_POST['imgId']);
-        $imagenes = File::where('id', $imgId);
+        $imagenes = File::whereImg('id', $imgId);
         foreach ($imagenes as $imagen) {
-            $imagen->borrarImagen();
+            $imagen->eliminar();
         }
 
         echo json_encode($imagen);

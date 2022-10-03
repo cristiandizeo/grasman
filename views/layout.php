@@ -61,15 +61,17 @@ if (!isset($inicio)) {
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php' ? 'active' : '' ?>">
+            <li class="nav-item ">
               <a class="nav-link" href="/">Home</a>
             </li>
 
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?>"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
+            <li class="nav-item"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
 
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/nosotros' ? 'active' : '' ?>"><a class="nav-link" href="/nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="/vehiculos?tipo=Bicicleta">Bicicletas</a></li>
 
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/contacto' ? 'active' : '' ?>"><a class="nav-link" href="/contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="/nosotros">Nosotros</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
 
           </ul>
         </div>
@@ -126,6 +128,7 @@ if (!isset($inicio)) {
             <li class="mb-2"><a href="/" class="text-muted">Home</a></li>
             <li class="mb-2"><a href="/nosotros" class="text-muted">Nosotros</a></li>
             <li class="mb-2"><a href="/vehiculos" class="text-muted">Vehiculos</a></li>
+            <li class="mb-2"><a href="/vehiculos?tipo=Bicicleta" class="text-muted">Bicicletas</a></li>
             <li class="mb-2"><a href="/contacto" class="text-muted">Contacto</a></li>
           </ul>
         </div>
