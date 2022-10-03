@@ -88,7 +88,7 @@ if (!isset($inicio)) {
   <?php echo $contenido; ?>
 
 <hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/vehiculos/actualizar': echo 'hidden';break;case '/index.php/vehiculos/crear': echo 'hidden';break;}?>>
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/admin/vehiculos/actualizar': echo 'hidden';break;case '/index.php/admin/vehiculos/crear': echo 'hidden';break;}?>>
   
   <div class="wsp-icon">
     <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">

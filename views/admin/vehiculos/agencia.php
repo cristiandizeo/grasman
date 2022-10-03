@@ -10,7 +10,7 @@
             <h2>Vehiculos</h2>
         </div>
         <hr>
-        <a href="vehiculos/crear" class="btn btn-lg btn-floating" title="Agregar vehículo">
+        <a href="admin/vehiculos/crear" class="btn btn-lg btn-floating" title="Agregar vehículo">
             <i class="fa-solid fa-car"></i>
             <i class="fa-solid fa-circle-plus"></i>
         </a>
@@ -40,12 +40,12 @@
                                     </i>
                                 </a>
 
-                                <a href="vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="mx-3" title="Modificar">
+                                <a href="admin/vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="mx-3" title="Modificar">
                                     <i class="fa-solid fa-pen-to-square">
                                     </i>
                                 </a>
 
-                                <form method="POST" onsubmit="return borrar()" action="vehiculos/eliminar" class="w-100 mx-3" title="Eliminar">
+                                <form method="POST" onsubmit="return borrar()" action="admin/vehiculos/eliminar" class="w-100 mx-3" title="Eliminar">
                                     <input type="hidden" name="id" value="<?php echo $vehiculo->id; ?>">
                                     <input type="hidden" name="tipo" value="vehiculo">
                                     <button type="submit" id="btn-borrar">

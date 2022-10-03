@@ -8,22 +8,11 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class ImagenesController
 {
-    public static function clientes(Router $router)
+    public static function index(Router $router)
     {
 
         isAuth();
         $imagenes = Imagenes::all();
-
-        $router->render('vehiculos/clientes', [
-            'imagenes' => $imagenes
-        ]);
-    }
-
-    public static function agregar(Router $router)
-    {
-
-        isAuth();
-        $imagenes = [];
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $imagenes = $_FILES['imagenes']['tmp_name'];
@@ -31,7 +20,7 @@ class ImagenesController
             
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-                if ($imgType[$i] !== 'image/jpeg' || $imgType[$i] !== 'image/png') {
+                if ($imgType[$i] !== 'image/jpeg' && $imgType[$i] !== 'image/png') {
                     continue;
                 }
                 $imagen = new Imagenes($imagenes[$i]);
@@ -50,21 +39,20 @@ class ImagenesController
                 
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
-                debuguear($imagen);
 
                 $imagen->seccion = 1;
                 $imagen->guardar();
             }
 
-                header('location: /clientes');
+                header('location: /admin/clientes-felices');
         }
 
-        $router->render('vehiculos/clientes', [
+        $router->render('admin/clientes-felices', [
             'imagenes' => $imagenes
         ]);
     }
 
-    public static function eliminar()
+    public static function eliminarImg()
     {
         $imgId = trim($_POST['imgId']);
         $imagenes = Imagenes::where('id', $imgId);

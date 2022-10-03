@@ -18,7 +18,7 @@ class VehiculoController
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
-        $router->render('vehiculos/index', [
+        $router->render('admin/index', [
             'vehiculos' => $vehiculos,
             'resultado' => $resultado
         ]);
@@ -83,7 +83,7 @@ class VehiculoController
             }
         }
 
-        $router->render('vehiculos/crear', [
+        $router->render('admin/vehiculos/crear', [
             'errores' => $errores,
             'vehiculo' => $vehiculo,
             'imagenes' => $imagenes
@@ -156,7 +156,7 @@ class VehiculoController
             }
         }
 
-        $router->render('vehiculos/actualizar', [
+        $router->render('admin/vehiculos/actualizar', [
             'vehiculo' => $vehiculo,
             'imagenes' => $imagenes,
             'errores' => $errores

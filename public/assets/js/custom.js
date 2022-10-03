@@ -313,7 +313,7 @@ async function borrarImg(imgId) {
   datos.append('imgId', imgId);
   try {
     // en fetch especificamos el archivo que captura los datos enviados
-    const response = await fetch("/vehiculos/eliminarimg", {
+    const response = await fetch("/admin/vehiculos/eliminarimg", {
       // el metodo a usar
       method: "POST",
       // los datos a ser enviados
