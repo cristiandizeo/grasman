@@ -47,7 +47,7 @@ if (!isset($inicio)) {
   <!-- Header -->
   <header class="">
     <nav class="navbar navbar-expand-lg">
-      <div class="container">
+      <div class="container p-0">
         <div class="row">
         <a class="navbar-brand" href="/" title="Grasman Autos">
           <img src="/assets/images/logo.png" alt="">
@@ -61,15 +61,17 @@ if (!isset($inicio)) {
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php' ? 'active' : '' ?>">
+            <li class="nav-item ">
               <a class="nav-link" href="/">Home</a>
             </li>
 
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/vehiculos' ? 'active' : '' ?>"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
+            <li class="nav-item"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
 
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/nosotros' ? 'active' : '' ?>"><a class="nav-link" href="/nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="/vehiculos?tipo=Bicicleta">Bicicletas</a></li>
 
-            <li class="nav-item <?php echo $_SERVER['PHP_SELF'] === '/index.php/contacto' ? 'active' : '' ?>"><a class="nav-link" href="/contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="/nosotros">Nosotros</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
 
           </ul>
         </div>
@@ -86,10 +88,10 @@ if (!isset($inicio)) {
   <?php echo $contenido; ?>
 
 <hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/vehiculos/actualizar': echo 'hidden';break;case '/index.php/vehiculos/crear': echo 'hidden';break;}?>>
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/admin/vehiculos/actualizar': echo 'hidden';break;case '/index.php/admin/vehiculos/crear': echo 'hidden';break;}?>>
   
   <div class="wsp-icon">
-    <a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" target="blank">
+    <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">
   <figure>  
   <img src="\assets\images\wsp-icon.svg" alt="wa" title="¡Escribinos ahora!">
   </figure>
@@ -101,7 +103,7 @@ if (!isset($inicio)) {
         <div class="col-lg-12 mx-auto text-white text-center">
           <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="lead mb-0">No dudes en contactarnos</p>
-          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954369499&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
+          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
                         <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>
@@ -126,6 +128,7 @@ if (!isset($inicio)) {
             <li class="mb-2"><a href="/" class="text-muted">Home</a></li>
             <li class="mb-2"><a href="/nosotros" class="text-muted">Nosotros</a></li>
             <li class="mb-2"><a href="/vehiculos" class="text-muted">Vehiculos</a></li>
+            <li class="mb-2"><a href="/vehiculos?tipo=Bicicleta" class="text-muted">Bicicletas</a></li>
             <li class="mb-2"><a href="/contacto" class="text-muted">Contacto</a></li>
           </ul>
         </div>

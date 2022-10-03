@@ -65,6 +65,13 @@ class ActiveRecord
         return $resultado;
         // Buscar registros 
     }
+    public static function whereImg($columna, $valor)
+    {
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+        // Buscar registros 
+    }
     public static function filtrar($args)
     {
         $valores = [];

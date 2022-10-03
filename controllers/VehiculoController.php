@@ -18,7 +18,7 @@ class VehiculoController
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
-        $router->render('vehiculos/index', [
+        $router->render('admin/index', [
             'vehiculos' => $vehiculos,
             'resultado' => $resultado
         ]);
@@ -51,7 +51,8 @@ class VehiculoController
 
             $countfiles = count($imagenes);
             for ($i = 0; $i < $countfiles; $i++) {
-                if ($imgType[$i] !== 'image/jpeg' || $imgType[$i] !== 'image/png') {
+                if ($imgType[$i] !== 'image/jpeg' && $imgType[$i] !== 'image/png') {
+                    // debuguear($imgType[$i]);
                     continue;
                 }
                 $imagen = new File($imagenes[$i]);
@@ -82,7 +83,7 @@ class VehiculoController
             }
         }
 
-        $router->render('vehiculos/crear', [
+        $router->render('admin/vehiculos/crear', [
             'errores' => $errores,
             'vehiculo' => $vehiculo,
             'imagenes' => $imagenes
@@ -155,7 +156,7 @@ class VehiculoController
             }
         }
 
-        $router->render('vehiculos/actualizar', [
+        $router->render('admin/vehiculos/actualizar', [
             'vehiculo' => $vehiculo,
             'imagenes' => $imagenes,
             'errores' => $errores
@@ -168,14 +169,11 @@ class VehiculoController
         isAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tipo = $_POST['tipo'];
-            // peticiones validas
-            if (validarTipoContenido($tipo)) {
                 // Leer el id
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                $imagenes = File::where('vehiculoId', $id);
+                $imagenes = File::whereImg('vehiculoId', $id);
                 foreach ($imagenes as $imagen) {
                     $imagen->setImagen($imagen);
                 }
@@ -187,14 +185,13 @@ class VehiculoController
                 if ($resultado) {
                     header('location: /admin');
                 }
-            }
         }
     }
 
     public static function eliminarImg()
     {
         $imgId = trim($_POST['imgId']);
-        $imagenes = File::where('id', $imgId);
+        $imagenes = File::whereImg('id', $imgId);
         foreach ($imagenes as $imagen) {
             $imagen->eliminar();
         }

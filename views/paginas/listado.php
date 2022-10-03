@@ -12,16 +12,14 @@ foreach ($consulta as $vehiculo) : ?>
         <?php endforeach; ?>
         <div class="down-content">
           <h2><?php echo $vehiculo->marca . " " . $vehiculo->modelo; ?></h2>
-
-          <p>&nbsp;/&nbsp; <?php echo $vehiculo->estado; ?> &nbsp;/&nbsp; <?php echo $vehiculo->year; ?> &nbsp;/&nbsp;</p>
-          <p><?php echo $vehiculo->descripcion; ?></p>
           <?php if ($vehiculo->tipo !== 'Bicicleta') { ?>
             <smTodos>
-              <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?> km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-              <strong title="Combustible"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
-              <strong title="Caja"><i class="fa fa-cog"></i> <?php echo $vehiculo->caja; ?></strong>
+              <strong title="Year"><i class="fa-solid fa-calendar-days"></i></i> <?php echo $vehiculo->year; ?></strong> &nbsp;&nbsp;
+              <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?> km</strong> &nbsp;&nbsp;
+              <strong title="Combustible"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;
             </smTodos>
           <?php } ?>
+          <p><?php echo $vehiculo->descripcion; ?></p>
         </div>
       </a>
     </div>

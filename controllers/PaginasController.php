@@ -6,6 +6,7 @@ use Classes\Email;
 use MVC\Router;
 use Model\Vehiculo;
 use Model\File;
+use Model\Imagenes;
 
 class PaginasController
 {
@@ -15,11 +16,13 @@ class PaginasController
     $vehiculos = Vehiculo::where('visible', 1, 3);
     $consulta = $vehiculos[0];
     $imagenes = File::imgId();
+    $imgclientes = Imagenes::all();
 
     $router->render('paginas/index', [
       'inicio' => true,
       'consulta' => $consulta,
-      'imagenes' => $imagenes
+      'imagenes' => $imagenes,
+      'imgclientes' => $imgclientes
     ]);
   }
 

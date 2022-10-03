@@ -6,18 +6,22 @@ use MVC\Router;
 use Controllers\VehiculoController;
 use Controllers\PaginasController;
 use Controllers\LoginController;
+use Controllers\ImagenesController;
 use Classes\Email;
 
 $router = new Router();
 
 //Privadas
 $router->get('/admin', [VehiculoController::class, 'index']);
-$router->get('/vehiculos/crear', [VehiculoController::class, 'crear']);
-$router->post('/vehiculos/crear', [VehiculoController::class, 'crear']);
-$router->get('/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
-$router->post('/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
-$router->post('/vehiculos/eliminar', [VehiculoController::class, 'eliminar']);
-$router->post('/vehiculos/eliminarimg', [VehiculoController::class, 'eliminarImg']);
+$router->get('/admin/vehiculos/crear', [VehiculoController::class, 'crear']);
+$router->post('/admin/vehiculos/crear', [VehiculoController::class, 'crear']);
+$router->get('/admin/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
+$router->post('/admin/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
+$router->post('/admin/vehiculos/actualizar/eliminarimg', [VehiculoController::class, 'eliminarImg']);
+$router->post('/admin/vehiculos/eliminar', [VehiculoController::class, 'eliminar']);
+$router->get('/admin/clientes-felices', [ImagenesController::class, 'index']);
+$router->post('/admin/clientes-felices', [ImagenesController::class, 'index']);
+$router->post('/admin/clientes-felices/eliminarimg', [ImagenesController::class, 'eliminarImg']);
 
 // Publicas
 $router->get('/', [PaginasController::class, 'index']);
