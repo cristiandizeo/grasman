@@ -14,12 +14,7 @@
             <i class="fa-solid fa-car"></i>
             <i class="fa-solid fa-circle-plus"></i>
         </a>
-        <a href="admin/clientes-felices" class="btn btn-lg btn-floating" title="Clientes felices">
-        <i class="fa-solid fa-users"></i>
-        </a>
-        <a href="admin/agencia" class="btn btn-lg btn-floating" title="Agencia">
-        <i class="fa-solid fa-house-flag"></i>
-        </a>
+
         <table class="table">
             <thead>
                 <tr>

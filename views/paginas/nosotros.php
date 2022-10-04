@@ -47,20 +47,44 @@
             <h2>La agencia</h2>
           </div>
         </div>
-        <div class="col">
-          <video muted height="600" controls>
-            <source src="/assets/videos/headervideo2.mp4" type="video/mp4">
-          </video>
         </div>
-        <div class="col">
-          <video muted height="600" controls>
-            <source src="/assets/videos/headervideo1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="col">
-          <video muted height="600" controls>
-            <source src="/assets/videos/headervideo3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
+        
     </div>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    
+
+    <div class="carousel-item active">
+      
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+    <!-- Banner Starts Here -->
+      <div class="owl-banner owl-carousel">
+      <?php foreach ($imgclientes as $imgcliente) : ?>
+          <?php if ($imgcliente->seccion == 2) { ?>
+        <div class="banner-item">
+          <div class="text-content">
+          <img class="d-block w-100" src="/imagenes/<?php echo trim($imgcliente->name); ?>" alt="First slide">
+          </div>
+        </div>    
+    <?php } ?>
+          <?php endforeach; ?>
+      </div>
+    <!-- Banner Ends Here -->

@@ -8,11 +8,11 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class ImagenesController
 {
-    public static function index(Router $router)
+    public static function clientesfelices(Router $router)
     {
 
         isAuth();
-        $imagenes = Imagenes::all();
+        $imagenes = Imagenes::whereImg('seccion', 1);
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $imagenes = $_FILES['imagenes']['tmp_name'];
@@ -48,6 +48,50 @@ class ImagenesController
         }
 
         $router->render('admin/clientes-felices', [
+            'imagenes' => $imagenes
+        ]);
+    }
+
+    public static function agencia(Router $router)
+    {
+
+        isAuth();
+        $imagenes = Imagenes::whereImg('seccion', 2);
+        // Ejecutar el código después de que el usuario envia el formulario
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $imagenes = $_FILES['imagenes']['tmp_name'];
+            $imgType = $_FILES['imagenes']['type'];
+            
+            $countfiles = count($imagenes);
+            for ($i = 0; $i < $countfiles; $i++) {
+                if ($imgType[$i] !== 'image/jpeg' && $imgType[$i] !== 'image/png') {
+                    continue;
+                }
+                $imagen = new Imagenes($imagenes[$i]);
+                // Generar un nombre único
+                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                // Realiza un resize a la imagen con intervention
+                $image = Image::make($imagenes[$i])->fit(800, 600);
+                // get file size
+                $image->filesize();
+                // Setear la imagen
+                $imagen->setImagen($nombreImagen);
+                // Crear la carpeta para subir imagenes
+                if (!is_dir(CARPETA_IMAGENES)) {
+                    mkdir(CARPETA_IMAGENES);
+                }
+                
+                // Guarda la imagen en el servidor
+                $image->save(CARPETA_IMAGENES . $nombreImagen);
+
+                $imagen->seccion = 2;
+                $imagen->guardar();
+            }
+
+                header('location: /admin/agencia');
+        }
+
+        $router->render('admin/agencia', [
             'imagenes' => $imagenes
         ]);
     }
