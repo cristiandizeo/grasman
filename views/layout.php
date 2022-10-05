@@ -76,13 +76,13 @@ if (!isset($inicio)) {
           </ul>
         </div>
         <?php if ($auth) : ?>
-         
+
           <div class="icon-bar">
-            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
-            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
+            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a>
+            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a>
             <a href="/admin/agencia" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
             <a href="/logout" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
-</div>
+          </div>
         <?php endif; ?>
       </div>
     </nav>

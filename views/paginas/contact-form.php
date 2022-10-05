@@ -32,15 +32,12 @@
       <input value="<?php echo s($mail->telefono); ?>" name="mail[telefono]" type="number" class="form-control" id="telefono" placeholder="Telefono" required="">
     </fieldset>
   </div>
-  <?php echo $_SERVER['HTTP_REFERER'];?>
-  <?php if ($_SERVER['HTTP_REFERER'] === 'https://grasman-autos.herokuapp.com/quiero-vender') { ?>
-    <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="col-lg-12 col-md-12 col-sm-12" id="vender" style="display: none;">
       <fieldset>
         <label for="imagen">Fotos del vehículo (máximo 5)</label>
         <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="imagenes[]" multiple="">
       </fieldset>
     </div>
-  <?php } ?>
   <div class="col-lg-12">
     <fieldset>
       <textarea name="mail[mensaje]" rows="6" class="form-control" id="mensaje" placeholder="Tu mensaje" required=""><?php if ($_SERVER['PHP_SELF'] === '/index.php/vehiculo'){ echo 'Hola, quería saber más información sobre ' . $vehiculo->marca . ' ' . $vehiculo->modelo . ' ' . $vehiculo->year;}?><?php echo s($mail->mensaje); ?></textarea>
