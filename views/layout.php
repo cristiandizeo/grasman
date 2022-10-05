@@ -49,12 +49,12 @@ if (!isset($inicio)) {
     <nav class="navbar navbar-expand-lg">
       <div class="container p-0">
         <div class="row">
-        <a class="navbar-brand" href="/" title="Grasman Autos">
-          <img src="/assets/images/logo.png" alt="">
+          <a class="navbar-brand" href="/" title="Grasman Autos">
+            <img src="/assets/images/logo.png" alt="">
 
-          <h2 class="d-flex align-items-center">Grasman <em>Autos</em></h2>
+            <h2 class="d-flex align-items-center">Grasman <em>Autos</em></h2>
 
-        </a>
+          </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -75,43 +75,56 @@ if (!isset($inicio)) {
 
           </ul>
         </div>
-        <?php if($auth): ?>
-          <div class="auth">
-          <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car" style="color:#ced4da"></i></i></a>
-          <a href="/logout" title="Cerrar sesión" class="m-3"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
-        </div>
-                      <?php endif; ?>
+        <?php if ($auth) : ?>
+         
+          <div class="icon-bar">
+            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
+            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
+            <a href="/admin/agencia" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
+            <a href="/logout" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
+</div>
+        <?php endif; ?>
       </div>
     </nav>
   </header>
 
   <?php echo $contenido; ?>
 
-<hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch($_SERVER['PHP_SELF']) {case '/index.php/admin': echo 'hidden';break;case '/index.php/admin/vehiculos/actualizar': echo 'hidden';break;case '/index.php/admin/vehiculos/crear': echo 'hidden';break;}?>>
-  
-  <div class="wsp-icon">
-    <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">
-  <figure>  
-  <img src="\assets\images\wsp-icon.svg" alt="wa" title="¡Escribinos ahora!">
-  </figure>
-  </a>
-</div>
-  
-  <div class="px-lg-5">
+  <hr>
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch ($_SERVER['PHP_SELF']) {
+                                                                    case '/index.php/admin':
+                                                                      echo 'hidden';
+                                                                      break;
+                                                                    case '/index.php/admin/vehiculos/actualizar':
+                                                                      echo 'hidden';
+                                                                      break;
+                                                                    case '/index.php/admin/vehiculos/crear':
+                                                                      echo 'hidden';
+                                                                      break;
+                                                                  } ?>>
+
+    <div class="wsp-icon">
+      <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">
+        <figure>
+          <img src="\assets\images\wsp-icon.svg" alt="wa" title="¡Escribinos ahora!">
+        </figure>
+      </a>
+    </div>
+
+    <div class="px-lg-5">
       <div class="row py-5">
         <div class="col-lg-12 mx-auto text-white text-center">
           <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="lead mb-0">No dudes en contactarnos</p>
           <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
-                        <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
+              <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>
       </div>
     </div>
   </div>
-  
-<hr>
+
+  <hr>
   <!-- End -->
 
 
@@ -120,7 +133,7 @@ if (!isset($inicio)) {
     <div class="container py-5">
       <div class="row py-4">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="" width="180" class="mb-3">
-        <p class="lead"><strong>Grasman Autos</strong></p>
+          <p class="lead"><strong>Grasman Autos</strong></p>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Secciones</h6>
@@ -134,7 +147,7 @@ if (!isset($inicio)) {
         </div>
 
         <div class="col-lg-4 col-md-6 mb-lg-0">
-        <p class="font-italic text-muted">Seguinos en nuestras redes</p>
+          <p class="font-italic text-muted">Seguinos en nuestras redes</p>
           <ul class="list-inline mt-4 display-4">
             <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Autos-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
             <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautos/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
@@ -159,5 +172,7 @@ if (!isset($inicio)) {
   <!-- Additional Scripts -->
   <script src="/assets/js/custom.js"></script>
   <script src="/assets/js/owl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js" integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>

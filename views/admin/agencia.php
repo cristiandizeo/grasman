@@ -2,7 +2,7 @@
     <main class="contenedor dashboard">
       <div class="m-5">
         <div class="text-center">
-          <h2>Clientes felices</h2>
+          <h2>Agencia</h2>
         </div>
         <hr>
         

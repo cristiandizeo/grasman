@@ -28,7 +28,10 @@ class PaginasController
 
   public static function nosotros(Router $router)
   {
-    $router->render('paginas/nosotros', []);
+    $imgclientes = Imagenes::whereImg('seccion', 2);
+    $router->render('paginas/nosotros', [
+      'imgclientes' => $imgclientes
+    ]);
   }
 
 

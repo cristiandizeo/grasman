@@ -47,20 +47,22 @@
             <h2>La agencia</h2>
           </div>
         </div>
-        <div class="col">
-          <video muted height="600" controls>
-            <source src="/assets/videos/headervideo2.mp4" type="video/mp4">
-          </video>
         </div>
-        <div class="col">
-          <video muted height="600" controls>
-            <source src="/assets/videos/headervideo1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="col">
-          <video muted height="600" controls>
-            <source src="/assets/videos/headervideo3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
+        
     </div>
+
+<div class="container">
+    <!-- Banner Starts Here -->
+      <div class="owl-banner owl-carousel">
+      <?php foreach ($imgclientes as $imgcliente) : ?>
+          <?php if ($imgcliente->seccion == 2) { ?>
+        <div class="banner-item">
+          <div class="text-content">
+          <img class="d-block w-100" src="/imagenes/<?php echo trim($imgcliente->name); ?>" alt="First slide">
+          </div>
+        </div>    
+    <?php } ?>
+          <?php endforeach; ?>
+      </div>
+      </div>
+    <!-- Banner Ends Here -->

@@ -344,12 +344,6 @@ header {
 	margin-top: 100px;
 	padding: 15px;
 }
-.auth {
-	margin: auto;
-}
-.auth a{
-	margin: .5rem;
-}
 
 /* carousel vehiculos */
 #myImg {
@@ -361,7 +355,7 @@ header {
   #myImg:hover {opacity: 0.7;}
   
   /* The Modal (background) */
-  .modal {
+  .modal1 {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
@@ -440,7 +434,7 @@ header {
   
 #sync1 .item {
 	background: #000;
-	padding: 80px 0px;
+	padding: 5px;
 	margin: 5px;
 	color: #FFF;
 	-webkit-border-radius: 3px;
@@ -452,7 +446,7 @@ header {
 
 #sync2 .item {
 	background: #000;
-	padding: 10px 0px;
+	padding: 5px;
 	margin: 5px;
 	color: #FFF;
 	-webkit-border-radius: 3px;
@@ -611,20 +605,22 @@ header {
 		  background-size: cover;
   }
 
+  .close {
+	font-size: 1.5rem;
+  }
+  
+  .col-12 img {
+	opacity: 0.7;
+	cursor: pointer;
+	margin: 2rem;
+	width: 100%;
+  }
+  
+  .col-12 img:hover {
+	opacity: 1;
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 /* Banner Style */
-.banner {
-	  /* The image used */
-	  background-image: url("/assets/images/principal");
-
-	  /* Full height */
-	  height:100vh;
-	
-	  /* Center and scale the image nicely */
-	  background-position: center;
-	  background-repeat: no-repeat;
-	  background-size: cover;
-}
-
 .banner .banner-item {
 	max-height: 600px;
 }
@@ -695,7 +691,7 @@ header {
 /* Latest Produtcs */
 
 .latest-products {
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 .section-heading a {
@@ -1312,12 +1308,6 @@ footer .inner-content p a {
 		margin-right: 50%;
 	}
 
-	.auth {
-		position: fixed;
-		top: 30px;
-		left: 20px;
-		z-index: 999999;
-	}
 	table > thead > tr > th:nth-child(4), table > tbody > tr > td:nth-child(4){
 		display: none;
 	}
@@ -1574,3 +1564,28 @@ footer .inner-content p a {
 	border: none;
 	cursor: pointer;
 }
+
+.icon-bar {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: #cacaca;
+	color: white;
+  }
+  
+  .icon-bar a {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 20px;
+  }
+  
+  .icon-bar a:hover {
+	background-color: #000;
+  }
+  
