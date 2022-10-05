@@ -98,6 +98,7 @@
                   </div>
                 </li>
 
+                <?php if($vehiculo->tipo !== "Bicicleta"){?>
                 <li class="list-group-item">
                   <div class="clearfix">
                     <span class="pull-left">Combustible</span>
@@ -121,6 +122,8 @@
                     <strong class="pull-right"><?php echo $vehiculo->km; ?> km</strong>
                   </div>
                 </li>
+
+                <?php }?>
               </ul>
             </form>
             <div class="section">

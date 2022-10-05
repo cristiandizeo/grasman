@@ -40,7 +40,7 @@
     </div>
   <div class="col-lg-12">
     <fieldset>
-      <textarea name="mail[mensaje]" rows="6" class="form-control" id="mensaje" placeholder="Tu mensaje" required=""><?php if ($_SERVER['PHP_SELF'] === '/index.php/vehiculo'){ echo 'Hola, quería saber más información sobre ' . $vehiculo->marca . ' ' . $vehiculo->modelo . ' ' . $vehiculo->year;}?><?php echo s($mail->mensaje); ?></textarea>
+      <textarea name="mail[mensaje]" rows="6" class="form-control" id="mensaje" placeholder="Tu mensaje" required=""><?php if ($vehiculo->marca){ echo 'Hola, quería saber más información sobre ' . $vehiculo->marca . ' ' . $vehiculo->modelo . ' ' . $vehiculo->year;}?><?php echo s($mail->mensaje); ?></textarea>
     </fieldset>
   </div>
   <div class="col-lg-12">

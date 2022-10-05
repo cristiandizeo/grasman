@@ -122,7 +122,7 @@ class ActiveRecord
         $columnas = static::$columnasDB;
 
         foreach ($columnas as $columna) {
-            if ($columna == 'estado' || $columna == 'tipo' || $columna == 'marca' || $columna == 'caja' || $columna == 'combustible') {
+            if ($columna == 'estado' || $columna == 'tipo' || $columna == 'marca') {
                 $valores[] = "$columna";
             }
         }

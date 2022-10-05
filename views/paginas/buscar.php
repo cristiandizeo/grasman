@@ -33,28 +33,3 @@
     <?php endforeach; ?>
   <?php endforeach; ?>
 </select>
-
-<label>Caja:</label>
-<select id="myselect" name="caja" id="caja" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($buscador as $keys) : ?>
-    <?php foreach ($keys as $data) : ?>
-      <?php if ($data->caja != "") { ?>
-        <option value="<?php echo s($data->caja); ?>" <?php if ($args != null  && isset($args['caja'])) echo s($args['caja']) === s($data->caja) ? 'selected="selected"' : '' ?>><?php echo s($data->caja); ?></option>
-      <?php } ?>
-    <?php endforeach; ?>
-  <?php endforeach; ?>
-</select>
-
-<label>Combustible:</label>
-
-<select id="myselect" name="combustible" id="combustible" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($buscador as $keys) : ?>
-    <?php foreach ($keys as $data) : ?>
-      <?php if ($data->combustible != "") { ?>
-        <option value="<?php echo s($data->combustible); ?>" <?php if ($args != null  && isset($args['combustible'])) echo s($args['combustible']) === s($data->combustible) ? 'selected="selected"' : '' ?>><?php echo s($data->combustible); ?></option>
-      <?php } ?>
-    <?php endforeach; ?>
-  <?php endforeach; ?>
-</select>
