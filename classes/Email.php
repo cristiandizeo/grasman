@@ -60,6 +60,7 @@ class Email extends ActiveRecord
                     $contenido = '<html>';
                     $contenido .= "<p><strong>Nombre:</strong> " . $msj->nombre . "</p>";
                     $contenido .= "<p><strong>Telefono:</strong> " . $msj->telefono . "</p>";
+                    $contenido .= "<p><strong>Email:</strong> " . $msj->email . "</p>";
                     $contenido .= "<p><strong>Mensaje:</strong> " . $msj->mensaje . "</p>";
                     
                     if(isset($imagenes)){
