@@ -44,6 +44,7 @@ class Email extends ActiveRecord
                     $mail->isSMTP();
                     $mail->Host = $_ENV['MAIL_HOST'];
                     $mail->SMTPAuth = true;
+                    $mail->SMTPSecure = $_ENV['MAIL_SECURE'];
                     $mail->Port = $_ENV['MAIL_PORT'];
                     $mail->Username = $_ENV['MAIL_USERNAME'];
                     $mail->Password = $_ENV['MAIL_PASSWORD'];
