@@ -350,5 +350,5 @@ async function borrarImg(imgId) {
 }
 
 if(window.location.pathname == '/quiero-vender'){
-  document.getElementById(vender).style.display = 'block';
+  document.getElementById('vender').style.display = 'block';
 }
