@@ -344,12 +344,6 @@ header {
 	margin-top: 100px;
 	padding: 15px;
 }
-.auth {
-	margin: auto;
-}
-.auth a{
-	margin: .5rem;
-}
 
 /* carousel vehiculos */
 #myImg {
@@ -361,7 +355,7 @@ header {
   #myImg:hover {opacity: 0.7;}
   
   /* The Modal (background) */
-  .modal {
+  .modal1 {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
@@ -611,6 +605,21 @@ header {
 		  background-size: cover;
   }
 
+  .close {
+	font-size: 1.5rem;
+  }
+  
+  .col-12 img {
+	opacity: 0.7;
+	cursor: pointer;
+	margin: 2rem;
+	width: 100%;
+  }
+  
+  .col-12 img:hover {
+	opacity: 1;
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 /* Banner Style */
 .banner .banner-item {
 	max-height: 600px;
@@ -682,7 +691,7 @@ header {
 /* Latest Produtcs */
 
 .latest-products {
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 .section-heading a {
@@ -1299,12 +1308,6 @@ footer .inner-content p a {
 		margin-right: 50%;
 	}
 
-	.auth {
-		position: fixed;
-		top: 30px;
-		left: 20px;
-		z-index: 999999;
-	}
 	table > thead > tr > th:nth-child(4), table > tbody > tr > td:nth-child(4){
 		display: none;
 	}
@@ -1576,7 +1579,7 @@ footer .inner-content p a {
   .icon-bar a {
 	display: block;
 	text-align: center;
-	padding: 16px;
+	padding: 10px;
 	transition: all 0.3s ease;
 	color: white;
 	font-size: 20px;

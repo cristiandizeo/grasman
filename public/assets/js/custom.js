@@ -36,8 +36,41 @@ jQuery(document).ready(function ($) {
       items: 1,
       margin: 30,
       autoplay: true,
-      smartSpeed: 700,
-      autoplayTimeout: 3000,
+      smartSpeed: 800,
+      autoplayTimeout: 2500,
+      responsive: {
+        0: {
+          items: 1,
+          margin: 0,
+        },
+        460: {
+          items: 1,
+          margin: 0,
+        },
+        576: {
+          items: 2,
+          margin: 20,
+        },
+        992: {
+          items: 3,
+          margin: 30,
+        },
+      },
+    });
+  }
+  // fin carousel
+
+  //carousel clientes felices
+  if ($(".owl-agencia").length) {
+    $(".owl-agencia").owlCarousel({
+      loop: true,
+      nav: false,
+      dots: true,
+      items: 1,
+      margin: 30,
+      autoplay: true,
+      smartSpeed: 4000,
+      autoplayTimeout: 4500,
       responsive: {
         0: {
           items: 1,
@@ -64,13 +97,13 @@ jQuery(document).ready(function ($) {
   if ($(".owl-banner").length) {
     $(".owl-banner").owlCarousel({
       loop: true,
-      nav: false,
+      nav: true,
       dots: true,
       items: 1,
-      margin: 0,
       autoplay: true,
-      smartSpeed: 700,
-      autoplayTimeout: 4000,
+      smartSpeed: 1700,
+      autoplayTimeout: 3000,
+      responsiveClass:true,
       responsive: {
         0: {
           items: 1,
@@ -91,6 +124,12 @@ jQuery(document).ready(function ($) {
       },
     });
   }
+});
+
+$('data-slide-to').click(function(e) {
+  //e.preventDefault();
+  $('carousel-item').removeClass('active');
+  $(this).addClass('active');
 });
 
 // Inicio carrousel vehiculo

@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal1">
 
   <!-- The Close Button -->
   <span class="close">&times;</span>

@@ -49,7 +49,7 @@ class Email extends ActiveRecord
                     $mail->Password = 'b169c323834b2a';
 
                     $mail->setFrom($msj->email, $msj->nombre);
-                    $mail->addAddress('dizeoc@gmail.com', 'Cristian Dizeo');
+                    $mail->addAddress('grasmanautomotores@gmail.com', 'Grasman Autos');
                     $mail->Subject = 'Mensaje desde la web';
 
                     //Set HTML

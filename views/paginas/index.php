@@ -13,7 +13,7 @@
   </div>
 
 </div>
-
+<a href="/quiero-vender"><div class="container-fluid bg-secondary text-center m-3 p-2 font-weight-bold display-4 text-light"><i class="fa-solid fa-car-on"></i> QUIERO VENDER MI VEHICULO <i class="fa-solid fa-comments-dollar"></i></div></a>
 
 <div class="latest-products">
   <div class="container">
@@ -66,15 +66,17 @@
       </div>
 
     </div>
-    <div class="row">
+    <div class="col-md-12">
+        <div class="owl-agencia owl-carousel text-center">
+          <?php foreach ($imgclientes as $imgcliente) : ?>
+            <?php if ($imgcliente->seccion == 2) { ?>
+              <div class="service-item">
+                <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid">
+              </div>
+            <?php } ?>
+          <?php endforeach; ?>
 
-      <?php foreach ($imgclientes as $imgcliente) : ?>
-        <?php if ($imgcliente->seccion == 2) { ?>
-          <div class="col">
-            <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid">
-</div>
-        <?php } ?>
-      <?php endforeach; ?>
-    </div>
+        </div>
+      </div>
   </div>
 </div>

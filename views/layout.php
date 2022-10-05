@@ -76,16 +76,12 @@ if (!isset($inicio)) {
           </ul>
         </div>
         <?php if ($auth) : ?>
-          <div class="auth">
-            <a href="/admin" title="Ir al panel" class="m-3"><i class="fas fa-car" style="color:#ced4da"></i></i></a>
-            <a href="/logout" title="Cerrar sesión" class="m-3"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
-          </div>
-
-              
-  <div class="icon-bar">
-  <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
-  <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
-  <a href="/admin/agencia" class="google" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
+         
+          <div class="icon-bar">
+            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
+            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
+            <a href="/admin/agencia" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
+            <a href="/logout" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
 </div>
         <?php endif; ?>
       </div>
