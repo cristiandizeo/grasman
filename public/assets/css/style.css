@@ -535,75 +535,47 @@ header {
 	}
   }
 
-  .location-title {
-	font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity .5s;
-    background: rgba(80, 80, 80, 0.8);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.location-title:hover{
-	color: #dddddd;
-}
-
-.location-listing:hover .location-title {
-	opacity: 1;
-  }
-  
-  .location-listing:hover .location-image img {
-	filter: blur(2px);
-  }
-.banner {
+  .profile-card-2 {
+    max-width: 300px;
+    max-height: 500px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    border-radius: 10px;
+	
 	display: flex;
-	flex-wrap: wrap;
-	margin-top: 80px;
-  }
-  
-  .box {
-	height: 50vh;
-	flex-grow: 1;
-	flex-shrink: 1;
-	flex-basis: 50%;
-	min-width: 300px;
-  }
-  
-  .box1 {
-		  /* The image used */
-		  background-image: url("/assets/images/autos.jpg");
+	align-items: center;
+	justify-content: center;
+}
 
-		  /* Center and scale the image nicely */
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
-  }
-  .box2 {
-		  /* The image used */
-		  background-image: url("/assets/images/pickups");
+.profile-card-2 img {
+    transition: all linear 0.25s;
+	max-width: 900px;
+}
 
-		  /* Center and scale the image nicely */
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
-  }
-  .box3 {
-		  /* The image used */
-		  background-image: url("/assets/images/bicicletas.jpg");
+.profile-card-2 .profile-name {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    font-size: 30px;
+    color: #FFF;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear 0.25s;
+}
 
-		  /* Center and scale the image nicely */
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
-  }
+
+.profile-card-2:hover img {
+    filter: grayscale(100%);
+}
+
+.profile-card-2:hover .profile-name {
+    bottom: 80px;
+}
 
   .close {
 	font-size: 1.5rem;
