@@ -111,12 +111,12 @@ if (!isset($inicio)) {
       </a>
     </div>
 
-    <div class="px-lg-5">
+    <div class="px-lg-5 bg-dark">
       <div class="row py-5">
-        <div class="col-lg-12 mx-auto text-white text-center">
-          <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
-          <p class="lead mb-0">No dudes en contactarnos</p>
-          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
+        <div class="col-lg-12 mx-auto text-center">
+          <h1 class="text-light display-4">¡GRACIAS POR TU VISITA!</h1>
+          <p class="text-light lead mb-0">No dudes en contactarnos</p>
+          <p class="text-light lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
               <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>

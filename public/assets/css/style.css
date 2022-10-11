@@ -4,6 +4,8 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: linear-gradient(-45deg, #f0f0f0, #ffffff, #f3f3f3, #f5f5f5);
+	background-size: 400% 400%;
 }
 
 p {
