@@ -2,3 +2,4 @@
 grasman-auto.sql
 .DS_Store
 /node_modules/
+.env

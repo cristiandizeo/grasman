@@ -67,7 +67,7 @@ if (!isset($inicio)) {
 
             <li class="nav-item"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="/vehiculos?tipo=Bicicleta">Bicicletas</a></li>
+            <li class="nav-item"><a class="nav-link" href="/bicicletas">Bicicletas</a></li>
 
             <li class="nav-item"><a class="nav-link" href="/nosotros">Nosotros</a></li>
 
@@ -78,8 +78,14 @@ if (!isset($inicio)) {
         <?php if ($auth) : ?>
 
           <div class="icon-bar">
+<<<<<<< HEAD
             <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a>
             <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a>
+=======
+            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
+            <a href="/admin/bicicletas" title="Bicicletas"><i class="fa-solid fa-bicycle"></i></a> 
+            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
+>>>>>>> desarrollo
             <a href="/admin/agencia" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
             <a href="/logout" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
           </div>
@@ -91,17 +97,9 @@ if (!isset($inicio)) {
   <?php echo $contenido; ?>
 
   <hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch ($_SERVER['PHP_SELF']) {
-                                                                    case '/index.php/admin':
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php if($auth){
                                                                       echo 'hidden';
-                                                                      break;
-                                                                    case '/index.php/admin/vehiculos/actualizar':
-                                                                      echo 'hidden';
-                                                                      break;
-                                                                    case '/index.php/admin/vehiculos/crear':
-                                                                      echo 'hidden';
-                                                                      break;
-                                                                  } ?>>
+                                                                    }?>>
 
     <div class="wsp-icon">
       <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">
@@ -111,12 +109,12 @@ if (!isset($inicio)) {
       </a>
     </div>
 
-    <div class="px-lg-5">
+    <div class="px-lg-5 bg-dark">
       <div class="row py-5">
-        <div class="col-lg-12 mx-auto text-white text-center">
-          <h1 class="display-4">¡GRACIAS POR TU VISITA!</h1>
-          <p class="lead mb-0">No dudes en contactarnos</p>
-          <p class="lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
+        <div class="col-lg-12 mx-auto text-center">
+          <h1 class="text-light display-4">¡GRACIAS POR TU VISITA!</h1>
+          <p class="text-light lead mb-0">No dudes en contactarnos</p>
+          <p class="text-light lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
               <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
           </p>
         </div>

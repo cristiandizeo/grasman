@@ -4,7 +4,7 @@
        <div class="row">
          <div class="col-md-12">
            <div class="text-content">
-             <h2>Nuestros vehículos</h2>
+             <h2>Nuestras bicicletas</h2>
            </div>
          </div>
        </div>
@@ -16,7 +16,7 @@
        <div class="row">
          <div class="col-md-3">
            <div class="contact-form">
-             <form action="/vehiculos" method="GET" id="formb">
+             <form action="/bicicletas" method="GET" id="formb">
                <?php include __DIR__ . '/buscar.php'; ?>
                <button type="submit" class="filled-button btn-block" id="buscar">Buscar</button>
                <button class="filled-button btn-block bg-danger" id="limpiar">Limpiar</button>
@@ -26,9 +26,9 @@
          <div class="col-md-9">
            <div class="row">
             
-             <div <?php //Si no hay resultados de vehiculos mostrar mensaje
-              if ($consulta != null) echo 'hidden'; ?>>No se encontraron resultados</div>
-             <?php require 'listadov.php'; ?>
+             <div <?php //Si no hay resultados de bicicletas mostrar mensaje
+              if ($consultas != null) echo 'hidden'; ?>>No se encontraron resultados</div>
+             <?php require 'listadob.php'; ?>
              <div class="col-md-12">
                <ul class="pages">
 
@@ -45,18 +45,18 @@
                   $args = http_build_query($args);
                   //si la página es mayor a 1, muestra el link para retroceder 
                    if ($pagina > 1) { ?>
-                   <li><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $pagina - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>
+                   <li><a href="<?php echo "bicicletas?" . $args . "&pagina=" . $pagina - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>
                  <?php } 
                  //links de las páginas
               for ($i = 1; $i <= $paginas; $i++) { ?>
 
-                   <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo "vehiculos?" . $args . "&pagina=" . $i; ?>"><?php echo $i; ?></a></li>
+                   <li class="<?php if ($i == $pagina) echo 'active'; ?>"><a href="<?php echo "bicicletas?" . $args . "&pagina=" . $i; ?>"><?php echo $i; ?></a></li>
 
                  <?php }
                  // Si la página actual es menor al total de páginas, mostramos un botón para ir una página adelante 
                  if ($pagina < $paginas) { ?>
                    <li>
-                     <a href="<?php echo "vehiculos?" . $args . "&pagina=" . $pagina + 1; ?>">
+                     <a href="<?php echo "bicicletas?" . $args . "&pagina=" . $pagina + 1; ?>">
                        <i class="fa fa-angle-double-right"></i>
                      </a>
                    </li>

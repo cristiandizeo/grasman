@@ -3,9 +3,11 @@
 namespace Controllers;
 
 use Classes\Email;
+use Model\Bicicleta;
 use MVC\Router;
 use Model\Vehiculo;
 use Model\File;
+use Model\Fileb;
 use Model\Imagenes;
 
 class PaginasController
@@ -14,14 +16,19 @@ class PaginasController
   {
 
     $vehiculos = Vehiculo::where('visible', 1, 3);
+    $bicicletas = Bicicleta::where('visible', 1, 3);
     $consulta = $vehiculos[0];
+    $consultas = $bicicletas[0];
     $imagenes = File::imgId();
+    $imageness = Fileb::imgbId();
     $imgclientes = Imagenes::all();
 
     $router->render('paginas/index', [
       'inicio' => true,
       'consulta' => $consulta,
+      'consultas' => $consultas,
       'imagenes' => $imagenes,
+      'imageness' => $imageness,
       'imgclientes' => $imgclientes
     ]);
   }
@@ -96,6 +103,72 @@ class PaginasController
     $router->render('paginas/vehiculo', [
       'vehiculo' => $vehiculo,
       'imagenes' => $imagenes,
+      'errores' => $errores,
+      'mail' => $mail,
+      'resultado' => $resultado
+    ]);
+  }
+  public static function bicicletas(Router $router)
+  {
+    
+    //traer las imagenes de agrupadas por vehiculo
+    $imageness = Fileb::imgbId();
+
+    // parametros del buscador
+    $args = [];
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+      // extrae parametros del buscador
+      $args = ($_GET);
+      // fitra resultados
+      $bicicletas = Bicicleta::filtrar($args);
+      //filtra resultados para cada pagina
+    } else {
+      // fitra resultados
+      $bicicletas = Bicicleta::filtrar($args);
+    }
+    $consultas = $bicicletas[0];
+    $paginas = $bicicletas[1];
+    $pagina = $bicicletas[2];
+    //buscador (filtrar)
+    $buscador = Bicicleta::buscador();
+    $router->render('paginas/bicicletas', [
+      'consultas' => $consultas,
+      'paginas' => $paginas,
+      'pagina' => $pagina,
+      'buscador' => $buscador,
+      'args' => $args,
+      'imageness' => $imageness
+    ]);
+  }
+
+  public static function bicicleta(Router $router)
+  {
+    $id = validarORedireccionar('/bicicletas');
+
+    // Obtener los datos de la vehiculo
+    $bicicleta = Bicicleta::find($id);
+    if($_GET['id'] != $bicicleta->id || $bicicleta->visible == '0'){
+      header('Location: /404');
+    }
+    $imageness = Fileb::all();
+    $mail = new Email();
+    $errores = Email::getErrores();
+    $resultado = false;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $mail = new Email($_POST['mail']);
+      $resultado = $mail->nuevoMensaje();
+
+      if ($resultado === false) {
+        $errores[] = '* Revisá tu email';
+      } else {
+        $resultado = true;
+        $mail = new Email();
+      }
+    }
+    $router->render('paginas/bicicleta', [
+      'bicicleta' => $bicicleta,
+      'imageness' => $imageness,
       'errores' => $errores,
       'mail' => $mail,
       'resultado' => $resultado
