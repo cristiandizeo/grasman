@@ -36,7 +36,7 @@
                         <td>$ <?php echo $bicicleta->precio; ?></td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href="bicicleta?id=<?php echo $bicicleta->id; ?>" target="blank" class="mx-3" title="Ver página">
+                                <a href="/bicicleta?id=<?php echo $bicicleta->id; ?>" target="blank" class="mx-3" title="Ver página">
                                     <i class="fa-solid fa-eye"></i>
                                     </i>
                                 </a>

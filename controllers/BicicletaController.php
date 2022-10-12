@@ -4,7 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Bicicleta;
-use Model\File;
+use Model\Fileb;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class BicicletaController
@@ -29,10 +29,10 @@ class BicicletaController
 
         isAuth();
         $bicicleta = new Bicicleta();
-        $imagen = new File();
+        $imagen = new Fileb();
         $errores = Bicicleta::getErrores();
-        $errores = File::getErrores();
-        $imagenes = [];
+        $errores = Fileb::getErrores();
+        $imageness = [];
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             /** Crea una nueva instancia */
@@ -46,21 +46,21 @@ class BicicletaController
                 $lastId = $bicicleta->LastId();
             }
             
-            $imagenes = $_FILES['imagenes']['tmp_name'];
+            $imageness = $_FILES['imagenes']['tmp_name'];
             $imgType = $_FILES['imagenes']['type'];
 
-            $countfiles = count($imagenes);
+            $countfiles = count($imageness);
             for ($i = 0; $i < $countfiles; $i++) {
                 if ($imgType[$i] !== 'image/jpeg' && $imgType[$i] !== 'image/png') {
                     // debuguear($imgType[$i]);
                     continue;
                 }
-                $imagen = new File($imagenes[$i]);
+                $imagen = new Fileb($imageness[$i]);
                 // Generar un nombre único
                 $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 // Realiza un resize a la imagen con intervention
 
-                $image = Image::make($imagenes[$i])->fit(800, 600);
+                $image = Image::make($imageness[$i])->fit(800, 600);
                                 // get file size
                 $image->filesize();
                 // Setear la imagen
@@ -73,7 +73,7 @@ class BicicletaController
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
 
-                $imagen->vehiculoId = $lastId;
+                $imagen->bicicletaId = $lastId;
                 $imagen->guardar();
             }
 
@@ -86,7 +86,7 @@ class BicicletaController
         $router->render('admin/bicicletas/crear', [
             'errores' => $errores,
             'bicicleta' => $bicicleta,
-            'imagenes' => $imagenes
+            'imageness' => $imageness
         ]);
     }
 
@@ -99,7 +99,7 @@ class BicicletaController
 
         // Obtener los datos del bicicleta
         $bicicleta = Bicicleta::find($id);
-        $imagenes = File::all();
+        $imageness = Fileb::all();
 
         // Arreglo con mensajes de errores
         $errores = Bicicleta::getErrores();
@@ -121,19 +121,19 @@ class BicicletaController
                 $resultado = $bicicleta->guardar();
             }
 
-            $imagenes = $_FILES['imagenes']['tmp_name'];
+            $imageness = $_FILES['imagenes']['tmp_name'];
             
             // comprobar si hay imagenes
-            if ($imagenes !== ['']) {
+            if ($imageness !== ['']) {
                 //procesar cada imagen
-                $countfiles = count($imagenes);
+                $countfiles = count($imageness);
                 for ($i = 0; $i < $countfiles; $i++) {
-                    $imagen = new File($imagenes[$i]);
+                    $imagen = new Fileb($imageness[$i]);
                     // Generar un nombre único
                     $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                     // Realiza un resize a la imagen con intervention
 
-                    $image = Image::make($imagenes[$i])->fit(800, 600);
+                    $image = Image::make($imageness[$i])->fit(800, 600);
 
                     // Setear la imagen
                     $imagen->setImagen($nombreImagen);
@@ -145,7 +145,7 @@ class BicicletaController
                     // Guarda la imagen en el servidor
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del bicicleta
-                    $imagen->vehiculoId = $id;
+                    $imagen->bicicletaId = $id;
                     // Guardar en DB
                     $imagen->guardar();
                 }
@@ -158,7 +158,7 @@ class BicicletaController
 
         $router->render('admin/bicicletas/actualizar', [
             'bicicleta' => $bicicleta,
-            'imagenes' => $imagenes,
+            'imageness' => $imageness,
             'errores' => $errores
         ]);
     }
@@ -173,8 +173,8 @@ class BicicletaController
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                $imagenes = File::whereImg('vehiculoId', $id);
-                foreach ($imagenes as $imagen) {
+                $imageness = Fileb::whereImg('bicicletaId', $id);
+                foreach ($imageness as $imagen) {
                     $imagen->setImagen($imagen);
                 }
 
@@ -191,8 +191,8 @@ class BicicletaController
     public static function eliminarImg()
     {
         $imgId = trim($_POST['imgId']);
-        $imagenes = File::whereImg('id', $imgId);
-        foreach ($imagenes as $imagen) {
+        $imageness = Fileb::whereImg('id', $imgId);
+        foreach ($imageness as $imagen) {
             $imagen->eliminar();
         }
 

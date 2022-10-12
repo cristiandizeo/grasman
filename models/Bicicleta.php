@@ -23,7 +23,7 @@ class Bicicleta extends ActiveRecord
         $this->id = $args['id'] ?? null;
         $this->tipo = $args['tipo'] ?? '';
         $this->marca = $args['marca'] ?? '';
-        $this->modelo = $args['rodado'] ?? '';
+        $this->rodado = $args['rodado'] ?? '';
         $this->precio = $args['precio'] ?? '';
         $this->descripcion = $args['descripcion'] ?? '';
         $this->visible = $args['visible'] ?? 0;

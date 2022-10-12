@@ -67,7 +67,7 @@ if (!isset($inicio)) {
 
             <li class="nav-item"><a class="nav-link" href="/vehiculos">Vehiculos</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="/vehiculos?tipo=Bicicleta">Bicicletas</a></li>
+            <li class="nav-item"><a class="nav-link" href="/bicicletas">Bicicletas</a></li>
 
             <li class="nav-item"><a class="nav-link" href="/nosotros">Nosotros</a></li>
 

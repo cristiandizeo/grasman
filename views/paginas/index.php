@@ -34,12 +34,27 @@
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading">
-          <h2>Últimos ingresos</h2>
+          <h2>Últimos ingresos autos y pickups</h2>
           <a href="/vehiculos">Ver todo <i class="fa fa-angle-right"></i></a>
         </div>
       </div>
 
-      <?php require 'listado.php'; ?>
+      <?php require 'listadov.php'; ?>
+    </div>
+  </div>
+</div>
+
+<div class="latest-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>Últimos ingresos bicicletas</h2>
+          <a href="/bicicletas">Ver todo <i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+
+      <?php require 'listadob.php'; ?>
     </div>
   </div>
 </div>

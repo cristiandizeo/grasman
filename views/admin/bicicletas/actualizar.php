@@ -12,6 +12,6 @@
     <form class="needs-validation" method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
         <input type="submit" value="Modificar bicicleta" class="btn btn-primary m-3">
-        <a href="/admin" class="btn btn-danger">Cancelar</a>
+        <a href="/admin/bicicletas" class="btn btn-danger">Cancelar</a>
     </form>
 </main>

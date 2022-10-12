@@ -17,7 +17,7 @@ foreach ($consulta as $vehiculo) : ?>
           <h2><?php echo $vehiculo->marca . " " . $vehiculo->modelo; ?></h2>
           <?php if ($vehiculo->tipo !== 'Bicicleta') { ?>
             <smTodos>
-              <strong title="Year"><i class="fa-solid fa-calendar-days"></i></i> <?php echo $vehiculo->year; ?></strong> &nbsp;&nbsp;
+              <strong title="Year"><i class="fa-solid fa-calendar-days"></i> <?php echo $vehiculo->year; ?></strong> &nbsp;&nbsp;
               <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?> km</strong> &nbsp;&nbsp;
               <strong title="Combustible"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;
             </smTodos>

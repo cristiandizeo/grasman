@@ -122,7 +122,7 @@ class ActiveRecord
         $columnas = static::$columnasDB;
 
         foreach ($columnas as $columna) {
-            if ($columna == 'estado' || $columna == 'tipo' || $columna == 'marca' || $columna == 'caja' || $columna == 'combustible') {
+            if ($columna !== 'id' || $columna !== 'precio' || $columna !== 'descripcion' || $columna !== 'visible' || $columna !== 'patente') {
                 $valores[] = "$columna";
             }
         }
@@ -286,6 +286,18 @@ class ActiveRecord
     {
         foreach (static::$columnasDB as $columna) {
             if ($columna === 'vehiculoId') {
+                $query = "SELECT name," . $columna;
+                $query .= " FROM " . static::$tabla;
+                $query .= " GROUP BY " . $columna;
+                $resultado = self::consultarSQL($query);
+                return $resultado;
+            }
+        }
+    }
+    public static function imgbId()
+    {
+        foreach (static::$columnasDB as $columna) {
+            if ($columna === 'bicicletaId') {
                 $query = "SELECT name," . $columna;
                 $query .= " FROM " . static::$tabla;
                 $query .= " GROUP BY " . $columna;

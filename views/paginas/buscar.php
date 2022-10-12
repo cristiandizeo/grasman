@@ -9,19 +9,6 @@
     <?php endforeach; ?>
   <?php endforeach; ?>
 </select>
-
-<label>Nuevo/usado:</label>
-<select id="myselect" name="estado" id="estado" class="form-control">
-  <option value="">Todos</option>
-  <?php foreach ($buscador as $keys) : ?>
-    <?php foreach ($keys as $data) : ?>
-      <?php if ($data->estado != "") { ?>
-        <option value="<?php echo s($data->estado); ?>" <?php if ($args != null  && isset($args['estado'])) echo s($args['estado']) === s($data->estado) ? 'selected="selected"' : '' ?>><?php echo s($data->estado); ?></option>
-      <?php } ?>
-    <?php endforeach; ?>
-  <?php endforeach; ?>
-</select>
-
 <label>Marca:</label>
 <select id="myselect" name="marca" id="marca" class="form-control">
   <option value="">Todos</option>
@@ -29,6 +16,33 @@
     <?php foreach ($keys as $data) : ?>
       <?php if ($data->marca != "") { ?>
         <option value="<?php echo s($data->marca); ?>" <?php if ($args != null  && isset($args['marca'])) echo s($args['marca']) === s($data->marca) ? 'selected="selected"' : '' ?>><?php echo s($data->marca); ?></option>
+      <?php } ?>
+    <?php endforeach; ?>
+  <?php endforeach; ?>
+</select>
+
+<?php if($_SERVER['PHP_SELF'] === '/index.php/bicicletas'){?>
+<label>Rodado:</label>
+<select id="myselect" name="rodado" id="rodado" class="form-control">
+  <option value="">Todos</option>
+  <?php foreach ($buscador as $keys) : ?>
+    <?php foreach ($keys as $data) : ?>
+      <?php if ($data->rodado != "") { ?>
+        <option value="<?php echo s($data->rodado); ?>" <?php if ($args != null  && isset($args['rodado'])) echo s($args['rodado']) === s($data->rodado) ? 'selected="selected"' : '' ?>><?php echo s($data->rodado); ?></option>
+      <?php } ?>
+    <?php endforeach; ?>
+  <?php endforeach; ?>
+</select>
+<?php }?>
+
+<?php if($_SERVER['PHP_SELF'] === '/index.php/vehiculos'){?>
+<label>Nuevo/usado:</label>
+<select id="myselect" name="estado" id="estado" class="form-control">
+  <option value="">Todos</option>
+  <?php foreach ($buscador as $keys) : ?>
+    <?php foreach ($keys as $data) : ?>
+      <?php if ($data->estado != "") { ?>
+        <option value="<?php echo s($data->estado); ?>" <?php if ($args != null  && isset($args['estado'])) echo s($args['estado']) === s($data->estado) ? 'selected="selected"' : '' ?>><?php echo s($data->estado); ?></option>
       <?php } ?>
     <?php endforeach; ?>
   <?php endforeach; ?>
@@ -58,3 +72,4 @@
     <?php endforeach; ?>
   <?php endforeach; ?>
 </select>
+<?php }?>
