@@ -8,6 +8,7 @@ use Controllers\PaginasController;
 use Controllers\LoginController;
 use Controllers\ImagenesController;
 use Classes\Email;
+use Controllers\BicicletaController;
 
 $router = new Router();
 
@@ -19,9 +20,19 @@ $router->get('/admin/vehiculos/actualizar', [VehiculoController::class, 'actuali
 $router->post('/admin/vehiculos/actualizar', [VehiculoController::class, 'actualizar']);
 $router->post('/admin/vehiculos/actualizar/eliminarimg', [VehiculoController::class, 'eliminarImg']);
 $router->post('/admin/vehiculos/eliminar', [VehiculoController::class, 'eliminar']);
+
+$router->get('/admin/bicicletas', [BicicletaController::class, 'index']);
+$router->get('/admin/bicicletas/crear', [BicicletaController::class, 'crear']);
+$router->post('/admin/bicicletas/crear', [BicicletaController::class, 'crear']);
+$router->get('/admin/bicicletas/actualizar', [BicicletaController::class, 'actualizar']);
+$router->post('/admin/bicicletas/actualizar', [BicicletaController::class, 'actualizar']);
+$router->post('/admin/bicicletas/actualizar/eliminarimg', [BicicletaController::class, 'eliminarImg']);
+$router->post('/admin/bicicletas/eliminar', [BicicletaController::class, 'eliminar']);
+
 $router->get('/admin/clientes-felices', [ImagenesController::class, 'clientesfelices']);
 $router->post('/admin/clientes-felices', [ImagenesController::class, 'clientesfelices']);
 $router->post('/admin/clientes-felices/eliminarimg', [ImagenesController::class, 'eliminarImg']);
+
 $router->get('/admin/agencia', [ImagenesController::class, 'agencia']);
 $router->post('/admin/agencia', [ImagenesController::class, 'agencia']);
 $router->post('/admin/agencia/eliminarimg', [ImagenesController::class, 'eliminarImg']);

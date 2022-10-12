@@ -79,6 +79,7 @@ if (!isset($inicio)) {
          
           <div class="icon-bar">
             <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
+            <a href="/admin/bicicletas" title="Bicicletas"><i class="fa-solid fa-bicycle"></i></a> 
             <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
             <a href="/admin/agencia" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
             <a href="/logout" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
@@ -91,17 +92,9 @@ if (!isset($inicio)) {
   <?php echo $contenido; ?>
 
   <hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php switch ($_SERVER['PHP_SELF']) {
-                                                                    case '/index.php/admin':
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php if($auth){
                                                                       echo 'hidden';
-                                                                      break;
-                                                                    case '/index.php/admin/vehiculos/actualizar':
-                                                                      echo 'hidden';
-                                                                      break;
-                                                                    case '/index.php/admin/vehiculos/crear':
-                                                                      echo 'hidden';
-                                                                      break;
-                                                                  } ?>>
+                                                                    }?>>
 
     <div class="wsp-icon">
       <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">

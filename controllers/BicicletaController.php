@@ -18,7 +18,7 @@ class BicicletaController
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
-        $router->render('admin/index', [
+        $router->render('admin/bicicletas/index', [
             'bicicletas' => $bicicletas,
             'resultado' => $resultado
         ]);
@@ -45,7 +45,7 @@ class BicicletaController
                 $resultado = $bicicleta->guardar();
                 $lastId = $bicicleta->LastId();
             }
-
+            
             $imagenes = $_FILES['imagenes']['tmp_name'];
             $imgType = $_FILES['imagenes']['type'];
 
@@ -73,13 +73,13 @@ class BicicletaController
                 // Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
 
-                $imagen->bicicletaId = $lastId;
+                $imagen->vehiculoId = $lastId;
                 $imagen->guardar();
             }
 
 
             if ($resultado) {
-                header('location: /admin');
+                header('location: /admin/bicicletas');
             }
         }
 
@@ -145,14 +145,14 @@ class BicicletaController
                     // Guarda la imagen en el servidor
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del bicicleta
-                    $imagen->bicicletaId = $id;
+                    $imagen->vehiculoId = $id;
                     // Guardar en DB
                     $imagen->guardar();
                 }
             }
 
             if ($resultado) {
-                header('location: /admin');
+                header('location: /admin/bicicletas');
             }
         }
 
@@ -173,7 +173,7 @@ class BicicletaController
                 $id = $_POST['id'];
                 $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                $imagenes = File::whereImg('bicicletaId', $id);
+                $imagenes = File::whereImg('vehiculoId', $id);
                 foreach ($imagenes as $imagen) {
                     $imagen->setImagen($imagen);
                 }
@@ -183,7 +183,7 @@ class BicicletaController
                 $resultado = $bicicleta->eliminar();
                 // Redireccionar
                 if ($resultado) {
-                    header('location: /admin');
+                    header('location: /admin/bicicletas');
                 }
         }
     }
