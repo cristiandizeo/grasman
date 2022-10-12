@@ -1,4 +1,4 @@
-<label>Tipo vehiculo:</label>
+<label>Tipo:</label>
 <select id="myselect" name="tipo" id="tipo" class="form-control">
   <option value="">Todos</option>
   <?php foreach ($buscador as $keys) : ?>
@@ -46,9 +46,6 @@
       <?php } ?>
     <?php endforeach; ?>
   <?php endforeach; ?>
-<<<<<<< HEAD
-</select>
-=======
 </select>
 
 <label>Caja:</label>
@@ -76,4 +73,3 @@
   <?php endforeach; ?>
 </select>
 <?php }?>
->>>>>>> desarrollo
