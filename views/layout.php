@@ -134,7 +134,7 @@ if (!isset($inicio)) {
             <li class="mb-2"><a href="/" class="text-muted">Home</a></li>
             <li class="mb-2"><a href="/nosotros" class="text-muted">Nosotros</a></li>
             <li class="mb-2"><a href="/vehiculos" class="text-muted">Vehiculos</a></li>
-            <li class="mb-2"><a href="/vehiculos?tipo=Bicicleta" class="text-muted">Bicicletas</a></li>
+            <li class="mb-2"><a href="/bicicletas" class="text-muted">Bicicletas</a></li>
             <li class="mb-2"><a href="/contacto" class="text-muted">Contacto</a></li>
           </ul>
         </div>

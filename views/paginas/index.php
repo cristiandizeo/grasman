@@ -15,7 +15,7 @@
       </a>
     </div>
     <div class="col-md-4">
-      <a href="/vehiculos?tipo=bicicleta">
+      <a href="/bicicletas">
       <div class="profile-card-2"><img src="assets/images/bicicletas.jpg" class="img img-responsive">
         <div class="profile-name">BICICLETAS</div>
       </div>
