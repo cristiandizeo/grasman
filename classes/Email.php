@@ -42,14 +42,15 @@ class Email extends ActiveRecord
                 try {
                     //Crear el objeto de email
                     $mail->isSMTP();
-                    $mail->Host = 'smtp.mailtrap.io';
+                    $mail->Host = $_ENV['MAIL_HOST'];
                     $mail->SMTPAuth = true;
-                    $mail->Port = 2525;
-                    $mail->Username = '5faeaa31a7ab36';
-                    $mail->Password = 'b169c323834b2a';
+                    $mail->SMTPSecure = $_ENV['MAIL_SECURE'];
+                    $mail->Port = $_ENV['MAIL_PORT'];
+                    $mail->Username = $_ENV['MAIL_USERNAME'];
+                    $mail->Password = $_ENV['MAIL_PASSWORD'];
 
                     $mail->setFrom($msj->email, $msj->nombre);
-                    $mail->addAddress('grasmanautomotores@gmail.com', 'Grasman Autos');
+                    $mail->addAddress('dizeoc@gmail.com', 'Grasman Autos');
                     $mail->Subject = 'Mensaje desde la web';
 
                     //Set HTML

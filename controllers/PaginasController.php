@@ -186,6 +186,8 @@ class PaginasController
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
+    $page = 'contacto';
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $mail = new Email($_POST['mail']);
       $resultado = $mail->nuevoMensaje();
@@ -201,6 +203,7 @@ class PaginasController
     $router->render('paginas/contacto', [
       'errores' => $errores,
       'mail' => $mail,
+      'page' => $page,
       'resultado' => $resultado
     ]);
   }
