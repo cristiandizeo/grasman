@@ -17,10 +17,11 @@ class BicicletaController
 
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
-
+        $page = 'index';
         $router->render('admin/bicicletas/index', [
             'bicicletas' => $bicicletas,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'page' => $page
         ]);
     }
 
