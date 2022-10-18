@@ -63,6 +63,7 @@ class PaginasController
     $consulta = $vehiculos[0];
     $paginas = $vehiculos[1];
     $pagina = $vehiculos[2];
+    $page = 'vehiculos';
     //buscador (filtrar)
     $buscador = Vehiculo::buscador();
     $router->render('paginas/vehiculos', [
@@ -71,7 +72,8 @@ class PaginasController
       'pagina' => $pagina,
       'buscador' => $buscador,
       'args' => $args,
-      'imagenes' => $imagenes
+      'imagenes' => $imagenes,
+      'page' => $page
     ]);
   }
 
@@ -88,6 +90,7 @@ class PaginasController
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
+    $page = 'vehiculo';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $mail = new Email($_POST['mail']);
@@ -105,7 +108,8 @@ class PaginasController
       'imagenes' => $imagenes,
       'errores' => $errores,
       'mail' => $mail,
-      'resultado' => $resultado
+      'resultado' => $resultado,
+      'page' => $page
     ]);
   }
   public static function bicicletas(Router $router)
@@ -129,6 +133,7 @@ class PaginasController
     $consultas = $bicicletas[0];
     $paginas = $bicicletas[1];
     $pagina = $bicicletas[2];
+    $page = 'bicicletas';
     //buscador (filtrar)
     $buscador = Bicicleta::buscador();
     $router->render('paginas/bicicletas', [
@@ -137,7 +142,8 @@ class PaginasController
       'pagina' => $pagina,
       'buscador' => $buscador,
       'args' => $args,
-      'imageness' => $imageness
+      'imageness' => $imageness,
+      'page' => $page
     ]);
   }
 
@@ -204,6 +210,7 @@ class PaginasController
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
+    $page = 'quiero-vender';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $mail = new Email($_POST['mail']);
       $resultado = $mail->nuevoMensaje();
@@ -219,7 +226,8 @@ class PaginasController
     $router->render('paginas/quiero-vender', [
       'errores' => $errores,
       'mail' => $mail,
-      'resultado' => $resultado
+      'resultado' => $resultado,
+      'page' => $page,
     ]);
   }
 

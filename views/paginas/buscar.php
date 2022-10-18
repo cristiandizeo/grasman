@@ -21,7 +21,7 @@
   <?php endforeach; ?>
 </select>
 
-<?php if($_SERVER['PHP_SELF'] === '/index.php/bicicletas'){?>
+<?php if($page === 'bicicletas'){?>
 <label>Rodado:</label>
 <select id="myselect" name="rodado" id="rodado" class="form-control">
   <option value="">Todos</option>
@@ -35,7 +35,7 @@
 </select>
 <?php }?>
 
-<?php if($_SERVER['PHP_SELF'] === '/index.php/vehiculos'){?>
+<?php if($page === 'vehiculos'){?>
 <label>Nuevo/usado:</label>
 <select id="myselect" name="estado" id="estado" class="form-control">
   <option value="">Todos</option>
