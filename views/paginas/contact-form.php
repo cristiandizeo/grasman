@@ -42,7 +42,7 @@
   <?php } ?>
   <div class="col-lg-12">
     <fieldset>
-      <textarea name="mail[mensaje]" rows="6" class="form-control" id="mensaje" placeholder="Tu mensaje" required=""><?php if ($page === 'vehiculo'){ echo 'Hola, quería saber más información sobre ' . $vehiculo->marca . ' ' . $vehiculo->modelo . ' ' . $vehiculo->year;}?><?php echo s($mail->mensaje); ?></textarea>
+      <textarea name="mail[mensaje]" rows="6" class="form-control" id="mensaje" placeholder="Tu mensaje" required><?php if ($page === 'vehiculo'){ echo 'Hola, quería saber más información sobre ' . $vehiculo->marca . ' ' . $vehiculo->modelo . ' ' . $vehiculo->year;}else if ($page === 'bicicleta'){ echo 'Hola, quería saber más información sobre ' . $bicicleta->marca . ' ' . $bicicleta->rodado;}?><?php echo s($mail->mensaje); ?></textarea>
     </fieldset>
   </div>
   <div class="col-lg-12">

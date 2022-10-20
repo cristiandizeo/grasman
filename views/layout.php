@@ -15,21 +15,22 @@ if (!isset($inicio)) {
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Venta de autos nuevos y usados">
+  <meta name="author" content="Cristian Dizeo">
+  <meta name="keywords" content="Grasman, Automotores, autos, pick up, camionetas, bicicletas, venta de autos, concesionaria, agencia de autos, santa rosa, la pampa">
   <link rel="icon" href="/assets/images/logo.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
   <title>Grasman Autos</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/owl.css">
-
+  
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -50,8 +51,14 @@ if (!isset($inicio)) {
       <div class="container p-0">
         <div class="row">
           <a class="navbar-brand" href="/" title="Grasman Autos">
-            <img src="/assets/images/logo.png" alt="">
-
+            <picture>
+              <!-- <source type="image/webp"
+              srcset="/assets/images/logo.webp"
+              > -->
+            <img src="/assets/images/logo.png" 
+            alt="Logo Grasman Autos"
+            loading="eager">
+            </picture>
             <h2 class="d-flex align-items-center">Grasman <em>Autos</em></h2>
 
           </a>
@@ -122,10 +129,10 @@ if (!isset($inicio)) {
 
 
   <!-- Footer -->
-  <footer class="bg-white">
+  <footer>
     <div class="container py-5">
       <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="" width="180" class="mb-3">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="Logo Grasman Autos" width="180" class="mb-3">
           <p class="lead"><strong>Grasman Autos</strong></p>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
@@ -159,8 +166,7 @@ if (!isset($inicio)) {
   <!-- End -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Additional Scripts -->
   <script src="/assets/js/custom.js"></script>

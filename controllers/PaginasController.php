@@ -86,7 +86,8 @@ class PaginasController
     if($_GET['id'] != $vehiculo->id || $vehiculo->visible == '0'){
       header('Location: /404');
     }
-    $imagenes = File::all();
+    
+    $imagenes = File::whereImg('vehiculoId', $vehiculo->id);
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
@@ -160,6 +161,7 @@ class PaginasController
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
+    $page = 'bicicleta';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $mail = new Email($_POST['mail']);
@@ -177,6 +179,7 @@ class PaginasController
       'imageness' => $imageness,
       'errores' => $errores,
       'mail' => $mail,
+      'page' => $page,
       'resultado' => $resultado
     ]);
   }

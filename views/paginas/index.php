@@ -2,22 +2,31 @@
   <div class="row mt-5">
     <div class="col-md-4">
       <a href="/vehiculos?tipo=auto">
-      <div class="profile-card-2"><img src="assets/images/autos.jpg" class="img img-responsive">
-        <div class="profile-name">AUTOS</div>
+      <div class="profile-card-2">
+        <picture>
+          <img src="assets/images/autos.jpg" class="img img-responsive" alt="Autos" loading="eager">
+          </picture>
+          <div class="profile-name">AUTOS</div>
       </div>
       </a>
     </div>
     <div class="col-md-4">
       <a href="/vehiculos?tipo=pickup">
-      <div class="profile-card-2"><img src="assets/images/pickups.jpeg" class="img img-responsive">
-        <div class="profile-name">PICK UPs</div>
+      <div class="profile-card-2">
+      <picture> 
+        <img src="assets/images/pickups.jpeg" class="img img-responsive" alt="Pickups" loading="eager">
+      </picture>
+      <div class="profile-name">PICK UPs</div>
       </div>
       </a>
     </div>
     <div class="col-md-4">
       <a href="/bicicletas">
-      <div class="profile-card-2"><img src="assets/images/bicicletas.jpg" class="img img-responsive">
-        <div class="profile-name">BICICLETAS</div>
+      <div class="profile-card-2">
+      <picture>  
+      <img src="assets/images/bicicletas.jpg" class="img img-responsive" alt="Bicicletas" loading="eager">
+      </picture>
+      <div class="profile-name">BICICLETAS</div>
       </div>
       </a>
     </div>
@@ -73,7 +82,9 @@
           <?php foreach ($imgclientes as $imgcliente) : ?>
             <?php if ($imgcliente->seccion == 1) { ?>
               <div class="service-item">
-                <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid">
+                <picture>
+                <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid" alt="clientes">
+                </picture>
               </div>
             <?php } ?>
           <?php endforeach; ?>
