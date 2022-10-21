@@ -22,7 +22,11 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
+      <picture>
+              <source type="image/webp" srcset="/assets/images/frentelocal.webp"> 
               <img src="assets/images/frentelocal.jpeg" alt="">
+              
+  </picture>
             </div>
           </div>
           <div class="col-md-6">

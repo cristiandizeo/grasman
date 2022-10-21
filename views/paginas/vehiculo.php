@@ -1,14 +1,3 @@
-<!-- The Modal -->
-<div id="myModal" class="modal1">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-
-</div>
-
     <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-banner.jpg);">
       <div class="container">
@@ -29,24 +18,18 @@
           <div class="col-md-6">
             <div id="sync1" class="owl-carousel owl-theme">
               <?php foreach ($imagenes as $imagen) : ?>
-                <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
                   <div class="item">
                     <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
                   </div>
-                <?php
-                } ?>
               <?php endforeach; ?>
             </div>
             <div class="row">
 
               <div id="sync2" class="owl-carousel owl-theme">
                 <?php foreach ($imagenes as $imagen) : ?>
-                  <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
                     <div class="item">
                       <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
                     </div>
-                  <?php
-                  } ?>
                 <?php endforeach; ?>
               </div>
             </div>

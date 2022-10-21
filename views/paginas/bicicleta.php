@@ -1,14 +1,3 @@
-<!-- The Modal -->
-<div id="myModal" class="modal1">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-
-</div>
-
     <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-banner.jpg);">
       <div class="container">
