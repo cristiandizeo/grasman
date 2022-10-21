@@ -1,7 +1,7 @@
 <?php // consulta trae el arr de los bicicletas 
 foreach ($consultas as $bicicleta) : ?>
   <div class="<?php //depende la pagina mostrar cada clase
-   echo $page === 'index' ? 'col-md-6' : 'col-md-4' ?>">
+   echo $page === 'index' ? 'col-md-4' : 'col-md-6' ?>">
     <div class="product-item">
     <a href="/bicicleta?id=<?php echo $bicicleta->id; ?>">
         <?php foreach ($imageness as $imagen) : ?>

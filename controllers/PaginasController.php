@@ -22,6 +22,7 @@ class PaginasController
     $imagenes = File::imgId();
     $imageness = Fileb::imgbId();
     $imgclientes = Imagenes::all();
+    $page = 'index';
 
     $router->render('paginas/index', [
       'inicio' => true,
@@ -29,7 +30,8 @@ class PaginasController
       'consultas' => $consultas,
       'imagenes' => $imagenes,
       'imageness' => $imageness,
-      'imgclientes' => $imgclientes
+      'imgclientes' => $imgclientes,
+      'page' => $page
     ]);
   }
 

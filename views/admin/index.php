@@ -10,7 +10,7 @@
             <h2>Vehiculos</h2>
         </div>
         <hr>
-        <a href="admin/vehiculos/crear" class="btn btn-lg btn-floating" title="Agregar vehículo">
+        <a href="admin/vehiculos/crear" class="btn btn-lg btn-floating text-secondary" title="Agregar vehículo">
             <i class="fa-solid fa-car"></i>
             <i class="fa-solid fa-circle-plus"></i>
         </a>
@@ -33,15 +33,15 @@
                         <td scope="row"><?php echo $vehiculo->id; ?></td>
                         <td><?php echo $vehiculo->patente; ?></td>
                         <td> <?php echo $vehiculo->marca . " " . $vehiculo->modelo . " " . $vehiculo->year ?> </td>
-                        <td>$ <?php echo $vehiculo->precio; ?></td>
+                        <td>$ <?php echo number_format($vehiculo->precio,0,null,'.'); ?></td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href="vehiculo?id=<?php echo $vehiculo->id; ?>" target="blank" class="mx-3" title="Ver página">
+                                <a href="vehiculo?id=<?php echo $vehiculo->id; ?>" target="blank" class="mx-3 text-secondary" title="Ver página">
                                     <i class="fa-solid fa-eye"></i>
                                     </i>
                                 </a>
 
-                                <a href="admin/vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="mx-3" title="Modificar">
+                                <a href="admin/vehiculos/actualizar?id=<?php echo $vehiculo->id; ?>" class="mx-3 text-secondary" title="Modificar">
                                     <i class="fa-solid fa-pen-to-square">
                                     </i>
                                 </a>

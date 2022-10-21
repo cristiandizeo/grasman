@@ -1,7 +1,7 @@
 <?php // consulta trae el arr de los vehiculos 
 foreach ($consulta as $vehiculo) : ?>
   <div class="<?php //depende la pagina mostrar cada clase
-   echo $page === 'index' ? 'col-md-6' : 'col-md-4' ?>">
+   echo $page === 'index' ? 'col-md-4' : 'col-md-6' ?>">
     <div class="product-item">
       <?php if($vehiculo->km == 0){?>
     <div class="d-inline-flex p-2 mb-2 bg-danger text-white font-weight-bold position-absolute"><i class="fa-solid fa-gift"></i>&nbsp;0 km</div>
@@ -18,11 +18,11 @@ foreach ($consulta as $vehiculo) : ?>
           <?php if ($vehiculo->tipo !== 'Bicicleta') { ?>
             <smTodos>
               <strong title="Year"><i class="fa-solid fa-calendar-days"></i> <?php echo $vehiculo->year; ?></strong> &nbsp;&nbsp;
-              <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo $vehiculo->km; ?> km</strong> &nbsp;&nbsp;
+              <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo number_format($vehiculo->km,0,null,'.'); ?> km</strong> &nbsp;&nbsp;
               <strong title="Combustible"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;
             </smTodos>
           <?php } ?>
-          <p><?php echo $vehiculo->descripcion; ?></p>
+          <p><?php echo substr($vehiculo->descripcion,0,75); ?></p>
         </div>
       </a>
     </div>
