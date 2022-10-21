@@ -23,16 +23,14 @@ if (!isset($inicio)) {
 
   <title>Grasman Autos</title>
 
-  
+
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/owl.css">
-  
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
 
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <body>
 
   <!-- ***** Preloader Start ***** -->
@@ -52,12 +50,8 @@ if (!isset($inicio)) {
         <div class="row">
           <a class="navbar-brand" href="/" title="Grasman Autos">
             <picture>
-              <!-- <source type="image/webp"
-              srcset="/assets/images/logo.webp"
-              > -->
-            <img src="/assets/images/logo.png" 
-            alt="Logo Grasman Autos"
-            loading="eager">
+              <source type="image/webp" srcset="/assets/images/logo.webp">
+              <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
             </picture>
             <h2 class="d-flex align-items-center">Grasman <em>Autos</em></h2>
 
@@ -83,14 +77,14 @@ if (!isset($inicio)) {
           </ul>
         </div>
         <?php if ($auth) : ?>
-         
+
           <div class="icon-bar">
-            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a> 
-            <a href="/admin/bicicletas" title="Bicicletas"><i class="fa-solid fa-bicycle"></i></a> 
-            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a> 
+            <a href="/admin" title="Vehiculos"><i class="fa-solid fa-car"></i></a>
+            <a href="/admin/bicicletas" title="Bicicletas"><i class="fa-solid fa-bicycle"></i></a>
+            <a href="/admin/clientes-felices" title="Clientes felices"><i class="fa-solid fa-users"></i></a>
             <a href="/admin/agencia" title="Agencia"><i class="fa-solid fa-house-flag"></i></a>
             <a href="/logout" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket text-danger"></i></a>
-</div>
+          </div>
         <?php endif; ?>
       </div>
     </nav>
@@ -99,9 +93,9 @@ if (!isset($inicio)) {
   <?php echo $contenido; ?>
 
   <hr>
-  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php if($auth){
-                                                                      echo 'hidden';
-                                                                    }?>>
+  <div class="container-fluid flex-grow-1 flex-shrink-0 bg-light" <?php if ($auth) {
+                                                                    echo 'hidden';
+                                                                  } ?>>
 
     <div class="wsp-icon">
       <a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" target="blank">
@@ -116,8 +110,8 @@ if (!isset($inicio)) {
         <div class="col-lg-12 mx-auto text-center">
           <h1 class="text-light display-4">¡GRACIAS POR TU VISITA!</h1>
           <p class="text-light lead mb-0">No dudes en contactarnos</p>
-          <p class="text-light lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
-              <u>Hacé click acá y escribinos</u> <i class="fa-brands fa-whatsapp"></i></a>
+          <p class=" lead"><a href="https://api.whatsapp.com/send?phone=5492954581527&text=¡Hola%20Grasman%20Autos!" class="text-primary" target="blank">
+              <u class="text-light">Hacé click acá y escribinos</u> <i class="text-light fa-brands fa-whatsapp"></i></a>
           </p>
         </div>
       </div>
@@ -132,7 +126,11 @@ if (!isset($inicio)) {
   <footer>
     <div class="container py-5">
       <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="/assets/images/logo.png" alt="Logo Grasman Autos" width="180" class="mb-3">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <picture>
+              <source type="image/webp" srcset="/assets/images/logo.webp">
+              <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
+            </picture>
           <p class="lead"><strong>Grasman Autos</strong></p>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
@@ -166,10 +164,8 @@ if (!isset($inicio)) {
   <!-- End -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Additional Scripts -->
-  <script src="/assets/js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  <script src="/assets/js/custom.js"></script>
   <script src="/assets/js/owl.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js" integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

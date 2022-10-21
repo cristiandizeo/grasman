@@ -4,7 +4,8 @@
       <a href="/vehiculos?tipo=auto">
       <div class="profile-card-2">
         <picture>
-          <img src="assets/images/autos.jpg" class="img img-responsive" alt="Autos" loading="eager">
+              <source type="image/webp" srcset="/assets/images/autos.webp">
+          <img srcset="assets/images/autos.jpg" class="img img-responsive" alt="Autos" loading="eager">
           </picture>
           <div class="profile-name">AUTOS</div>
       </div>
@@ -13,8 +14,9 @@
     <div class="col-md-4">
       <a href="/vehiculos?tipo=pickup">
       <div class="profile-card-2">
-      <picture> 
-        <img src="assets/images/pickups.jpeg" class="img img-responsive" alt="Pickups" loading="eager">
+      <picture>
+              <source type="image/webp" srcset="/assets/images/pickups.webp"> 
+        <img srcset="assets/images/pickups.jpeg" class="img img-responsive" alt="Pickups" loading="eager">
       </picture>
       <div class="profile-name">PICK UPs</div>
       </div>
@@ -23,8 +25,9 @@
     <div class="col-md-4">
       <a href="/bicicletas">
       <div class="profile-card-2">
-      <picture>  
-      <img src="assets/images/bicicletas.jpg" class="img img-responsive" alt="Bicicletas" loading="eager">
+      <picture>
+              <source type="image/webp" srcset="/assets/images/bicicletas.webp">  
+      <img srcset="assets/images/bicicletas.jpg" class="img img-responsive" alt="Bicicletas" loading="eager">
       </picture>
       <div class="profile-name">BICICLETAS</div>
       </div>
@@ -95,7 +98,7 @@
   </div>
 </div>
 
-<div class="services" style="background-image: url(assets/images/banner-agencia.png);">
+<div class="services" style="background-image: url(assets/images/banner-agencia.webp);">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

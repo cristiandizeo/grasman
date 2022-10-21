@@ -59,7 +59,11 @@
             </div>
           </div>
           <div class="col-md-4">
+      <picture>
+              <source type="image/webp" srcset="/assets/images/tarjeta-nosotros.webp"> 
             <img src="assets/images/tarjeta-nosotros.jpeg" class="img-fluid" alt="">
+            
+              </picture>
           </div>
         </div>
       </div>
