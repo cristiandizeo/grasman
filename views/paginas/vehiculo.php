@@ -126,7 +126,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="section-heading">
+          <div class="section-heading container-fluid">
             <h2>Consultanos por este vehículo</h2>
           </div>
 

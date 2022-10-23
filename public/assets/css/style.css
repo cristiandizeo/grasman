@@ -284,7 +284,7 @@ header {
 
 .navbar .navbar-brand h2 em {
 	font-style: normal;
-	color: #ced4da;
+	color: #e9ecef;
 }
 
 #navbarResponsive {
@@ -1479,12 +1479,6 @@ footer .inner-content p a {
   padding: 0;
   list-style-type: none;
   }
-  #imageListId div
-  {
-	  margin: 0 4px 4px 4px;
-	  padding: 0.4em;			
-	  display: inline-block;
-  }
 
   /* Output order styling */
   #outputvalues{
@@ -1495,11 +1489,7 @@ footer .inner-content p a {
   border: 2px solid dark-green;
   background : gray;
   }
-  .listitemClass
-  {
-	  border: 1px solid #006400;
-	  width: 350px;	
-  }
+
   .height{
 	  height: 10px;
   }

@@ -1,5 +1,5 @@
 <div class="loginBox">
-    <picture>
+    <picture class="d-flex justify-content-center">
         <source type="image/webp" srcset="/assets/images/logo.webp">
         <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
     </picture>

@@ -31,8 +31,8 @@ if (!isset($inicio)) {
 
   <!-- Bootstrap core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<body>
 	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<body>
 
   <!-- ***** Preloader Start ***** -->
   <div id="preloader">

@@ -76,6 +76,7 @@ class VehiculoController
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
 
                 $imagen->vehiculoId = $lastId;
+                $imagen->orden = $i;
                 $imagen->guardar();
             }
 
@@ -106,7 +107,6 @@ class VehiculoController
         // Arreglo con mensajes de errores
         $errores = Vehiculo::getErrores();
 
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Asignar los atributos
@@ -131,10 +131,12 @@ class VehiculoController
                 $countfiles = count($imagenes);
                 for ($i = 0; $i < $countfiles; $i++) {
                     $imagen = new File($imagenes[$i]);
+                    $date =  date("Ymd-hisa");
                     // Generar un nombre único
-                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                    $nombreImagen =  $date . ".webp";
+                    
                     // Realiza un resize a la imagen con intervention
-
+                    
                     $image = Image::make($imagenes[$i])->fit(800, 600);
 
                     // Setear la imagen
@@ -148,6 +150,8 @@ class VehiculoController
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del vehiculo
                     $imagen->vehiculoId = $id;
+                    $imagen->orden = $i;
+
                     // Guardar en DB
                     $imagen->guardar();
                 }

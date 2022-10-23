@@ -92,7 +92,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="section-heading">
+          <div class="section-heading container-fluid">
             <h2>Consultanos por esta bicicleta</h2>
           </div>
 

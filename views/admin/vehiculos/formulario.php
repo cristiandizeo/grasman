@@ -112,13 +112,16 @@
         <label for="imagen">Imagenes</label>
         <div class="form-group">
           <input type="file" accept="image/jpeg, image/png" class="form-control-file" id="imagen" name="imagenes[]" multiple="">
-          <?php foreach ($imagenes as $imagen) : ?>
+          
+          <div id="imageListId">
+            <?php foreach ($imagenes as $imagen) : ?>
             <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
-              <div class="mini-img">
+              <div class="listitemClass mini-img" id="<?php echo 'imageNo'.$imagen->id;?>">
               <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
               </div>
               <?php } ?>
-          <?php endforeach; ?>
+              <?php endforeach; ?>
+            </div>
         </div>
         <div class="valid-feedback"><i class="fa-solid fa-check"></i></div>
         <div class="invalid-feedback">Agregá imágenes</div>

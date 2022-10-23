@@ -289,6 +289,7 @@ class ActiveRecord
                 $query = "SELECT name," . $columna;
                 $query .= " FROM " . static::$tabla;
                 $query .= " GROUP BY " . $columna;
+                $query .= " ORDER BY orden DESC";
                 $resultado = self::consultarSQL($query);
                 return $resultado;
             }
