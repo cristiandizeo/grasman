@@ -349,18 +349,15 @@ async function borrarImg(imgId) {
 }
 $(function() {
   $( "#imageListId" ).sortable({
-  update: function(event, ui) {
-    getIdsOfImages();
-  }//end update		
+    update: function(event, ui) {
+      updItems();
+    }//end update		
   });
 });
 
-function getIdsOfImages() {
-  var values = [];
+function updItems() {
   $('.listitemClass').each(function (index) {
-    values.push($(this).attr("id")
-        .replace("imageNo", ""));
+    $(this).val(index);
+    console.log(index);
   });
-  
-  $('#outputvalues').val(values);
-}
+} ;

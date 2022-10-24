@@ -18,7 +18,8 @@
           <?php } ?>
           <div id="imageListId">
           <?php foreach ($imagenes as $imagen) : ?>
-                <div class="listitemClass mini-img" id="<?php echo 'imageNo'.$imagen->id;?>">
+                <div class="listitemClass mini-img">
+                  <input type="text" value="" hidden>
               <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> 
               <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
               </div>

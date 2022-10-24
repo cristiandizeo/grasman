@@ -24,8 +24,11 @@ class ImagenesController
                     continue;
                 }
                 $imagen = new Imagenes($imagenes[$i]);
+                
+                $date =  date("Ymd-hisa");
                 // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                $nombreImagen =  $date . uniqid() . ".webp";
+
                 // Realiza un resize a la imagen con intervention
                 $image = Image::make($imagenes[$i])->fit(800, 600);
                 // get file size
@@ -68,8 +71,11 @@ class ImagenesController
                     continue;
                 }
                 $imagen = new Imagenes($imagenes[$i]);
+                
+                $date =  date("Ymd-hisa");
                 // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                $nombreImagen =  $date . uniqid() . ".webp";
+
                 // Realiza un resize a la imagen con intervention
                 $image = Image::make($imagenes[$i])->fit(800, 600);
                 // get file size

@@ -58,12 +58,14 @@ class VehiculoController
                     continue;
                 }
                 $imagen = new File($imagenes[$i]);
-                // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                // Realiza un resize a la imagen con intervention
 
+                $date =  date("Ymd-hisa");
+                // Generar un nombre único
+                $nombreImagen =  $date . uniqid() . ".webp";
+
+                // Realiza un resize a la imagen con intervention
                 $image = Image::make($imagenes[$i])->fit(800, 600);
-                                // get file size
+                // get file size
                 $image->filesize();
                 // Setear la imagen
                 $imagen->setImagen($nombreImagen);
@@ -107,6 +109,13 @@ class VehiculoController
         // Arreglo con mensajes de errores
         $errores = Vehiculo::getErrores();
 
+        $orden = 0;
+        foreach ($imagenes as $imagen) {
+            if ($imagen->vehiculoId === $vehiculo->id) {
+                $orden++;
+            }
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Asignar los atributos
@@ -124,19 +133,20 @@ class VehiculoController
             }
 
             $imagenes = $_FILES['imagenes']['tmp_name'];
-            
+
             // comprobar si hay imagenes
             if ($imagenes !== ['']) {
                 //procesar cada imagen
                 $countfiles = count($imagenes);
                 for ($i = 0; $i < $countfiles; $i++) {
+
                     $imagen = new File($imagenes[$i]);
+
                     $date =  date("Ymd-hisa");
                     // Generar un nombre único
-                    $nombreImagen =  $date . ".webp";
-                    
+                    $nombreImagen =  $date . uniqid() . ".webp";
+
                     // Realiza un resize a la imagen con intervention
-                    
                     $image = Image::make($imagenes[$i])->fit(800, 600);
 
                     // Setear la imagen
@@ -150,7 +160,7 @@ class VehiculoController
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del vehiculo
                     $imagen->vehiculoId = $id;
-                    $imagen->orden = $i;
+                    $imagen->orden = $orden;
 
                     // Guardar en DB
                     $imagen->guardar();
@@ -161,7 +171,11 @@ class VehiculoController
                 header('location: /admin');
             }
         }
-
+        foreach ($imagenes as $imagen) {
+            if ($imagen->orden === $vehiculo->id) {
+                $orden++;
+            }
+        }
         $router->render('admin/vehiculos/actualizar', [
             'vehiculo' => $vehiculo,
             'imagenes' => $imagenes,
@@ -175,22 +189,22 @@ class VehiculoController
         isAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Leer el id
-                $id = $_POST['id'];
-                $id = filter_var($id, FILTER_VALIDATE_INT);
+            // Leer el id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                $imagenes = File::whereImg('vehiculoId', $id);
-                foreach ($imagenes as $imagen) {
-                    $imagen->setImagen($imagen);
-                }
+            $imagenes = File::whereImg('vehiculoId', $id);
+            foreach ($imagenes as $imagen) {
+                $imagen->setImagen($imagen);
+            }
 
-                // encontrar y eliminar el vehiculo
-                $vehiculo = Vehiculo::find($id);
-                $resultado = $vehiculo->eliminar();
-                // Redireccionar
-                if ($resultado) {
-                    header('location: /admin');
-                }
+            // encontrar y eliminar el vehiculo
+            $vehiculo = Vehiculo::find($id);
+            $resultado = $vehiculo->eliminar();
+            // Redireccionar
+            if ($resultado) {
+                header('location: /admin');
+            }
         }
     }
 

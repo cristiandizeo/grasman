@@ -8,7 +8,7 @@ foreach ($consulta as $vehiculo) : ?>
     <?php } ?>
     <a href="/vehiculo?id=<?php echo $vehiculo->id; ?>">
         <?php foreach ($imagenes as $imagen) : ?>
-          <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
+          <?php if ($imagen->vehiculoId === $vehiculo->id && $imagen->orden == '0') { ?>
             <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" alt="anuncio">
           <?php break;
           } ?>

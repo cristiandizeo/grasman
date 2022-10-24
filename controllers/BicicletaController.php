@@ -57,10 +57,12 @@ class BicicletaController
                     continue;
                 }
                 $imagen = new Fileb($imageness[$i]);
+                
+                $date =  date("Ymd-hisa");
                 // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                // Realiza un resize a la imagen con intervention
+                $nombreImagen =  $date . uniqid() . ".webp";
 
+                // Realiza un resize a la imagen con intervention
                 $image = Image::make($imageness[$i])->fit(800, 600);
                                 // get file size
                 $image->filesize();
@@ -130,10 +132,12 @@ class BicicletaController
                 $countfiles = count($imageness);
                 for ($i = 0; $i < $countfiles; $i++) {
                     $imagen = new Fileb($imageness[$i]);
-                    // Generar un nombre único
-                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                    // Realiza un resize a la imagen con intervention
 
+                    $date =  date("Ymd-hisa");
+                    // Generar un nombre único
+                    $nombreImagen =  $date . uniqid() . ".webp";
+                    
+                    // Realiza un resize a la imagen con intervention
                     $image = Image::make($imageness[$i])->fit(800, 600);
 
                     // Setear la imagen
