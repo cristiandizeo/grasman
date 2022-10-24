@@ -115,12 +115,11 @@
           
           <div id="imageListId">
             <?php foreach ($imagenes as $imagen) : ?>
-            <?php if ($imagen->vehiculoId === $vehiculo->id) { ?>
               <div class="mini-img">
-              <input type="text" value="" class="listitemClass" name="imagenes[orden]">
-              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
+              <input type="text" id="orden<?php echo s($imagen->id); ?>" value="<?php echo s($imagen->orden); ?>" class="listitemClass" name="imagen[orden]">
+              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> 
+              <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
               </div>
-              <?php } ?>
               <?php endforeach; ?>
             </div>
         </div>

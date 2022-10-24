@@ -104,20 +104,21 @@ class VehiculoController
 
         // Obtener los datos del vehiculo
         $vehiculo = Vehiculo::find($id);
-        $imagenes = File::all();
-
+        $imagenes = File::whereImg('vehiculoId', $id);
+        
         // Arreglo con mensajes de errores
-        $errores = Vehiculo::getErrores();
+            $errores = Vehiculo::getErrores();
 
-        $orden = 0;
+        $ordenc = 0;
         foreach ($imagenes as $imagen) {
-            if ($imagen->vehiculoId === $vehiculo->id) {
-                $orden++;
-            }
+                $ordenc++;
         }
-
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            foreach($imagenes as $imagen){
+            debuguear($_POST['imagen']['orden']);
+        }
             // Asignar los atributos
             $args = $_POST['vehiculo'];
             // Mostrar publicacion en el sitio
@@ -132,6 +133,7 @@ class VehiculoController
                 $resultado = $vehiculo->guardar();
             }
 
+            
             $imagenes = $_FILES['imagenes']['tmp_name'];
 
             // comprobar si hay imagenes
@@ -160,7 +162,7 @@ class VehiculoController
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del vehiculo
                     $imagen->vehiculoId = $id;
-                    $imagen->orden = $orden;
+                    $imagen->orden = $ordenc;
 
                     // Guardar en DB
                     $imagen->guardar();
@@ -171,11 +173,7 @@ class VehiculoController
                 header('location: /admin');
             }
         }
-        foreach ($imagenes as $imagen) {
-            if ($imagen->orden === $vehiculo->id) {
-                $orden++;
-            }
-        }
+
         $router->render('admin/vehiculos/actualizar', [
             'vehiculo' => $vehiculo,
             'imagenes' => $imagenes,
