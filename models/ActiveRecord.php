@@ -68,6 +68,7 @@ class ActiveRecord
     public static function whereImg($columna, $valor)
     {
         $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
+        $query .= "ORDER BY orden";
         $resultado = self::consultarSQL($query);
         return $resultado;
         // Buscar registros 
@@ -282,27 +283,18 @@ class ActiveRecord
             $this->name = $imagen;
         }
     }
-    public static function imgId()
+    public static function imgId($col)
     {
         foreach (static::$columnasDB as $columna) {
-            if ($columna === 'vehiculoId') {
-                $query = "SELECT name," . $columna;
-                $query .= " FROM " . static::$tabla;
+            if ($columna === $col) {
+                $query = "SELECT * FROM " . static::$tabla;
                 $query .= " GROUP BY " . $columna;
-                $query .= " ORDER BY orden DESC";
+                $query .= " ORDER BY orden," . $columna;
+                $query .= " LIMIT 1";
+                
+                // debuguear($query);
                 $resultado = self::consultarSQL($query);
-                return $resultado;
-            }
-        }
-    }
-    public static function imgbId()
-    {
-        foreach (static::$columnasDB as $columna) {
-            if ($columna === 'bicicletaId') {
-                $query = "SELECT name," . $columna;
-                $query .= " FROM " . static::$tabla;
-                $query .= " GROUP BY " . $columna;
-                $resultado = self::consultarSQL($query);
+                
                 return $resultado;
             }
         }

@@ -1437,6 +1437,11 @@ footer .inner-content p a {
 .mini-img img{
 	width: 80px;
 }
+#orden {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
 #close-btn{
 	position: absolute;
     top: 0px;

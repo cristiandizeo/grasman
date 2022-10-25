@@ -77,6 +77,7 @@ class BicicletaController
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
 
                 $imagen->bicicletaId = $lastId;
+                $imagen->orden = $i;
                 $imagen->guardar();
             }
 
@@ -102,13 +103,20 @@ class BicicletaController
 
         // Obtener los datos del bicicleta
         $bicicleta = Bicicleta::find($id);
-        $imageness = Fileb::all();
+        $imageness = Fileb::whereImg('bicicletaId', $id);
 
         // Arreglo con mensajes de errores
         $errores = Bicicleta::getErrores();
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
+            $iargs = $_POST['imagen'];
+            foreach($iargs as $iarg){
+                $imagen = Fileb::find($iarg['id']); 
+                $imagen->sincronizar($iarg);
+                $imagen->guardar();
+            }
 
             // Asignar los atributos
             $args = $_POST['bicicleta'];

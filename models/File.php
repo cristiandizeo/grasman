@@ -14,7 +14,7 @@ class File extends ActiveRecord {
     {
         $this->id = $args['id'] ?? null;
         $this->name = $args['name'] ?? '';
-        $this->orden = $args['orden'] ?? '';
+        $this->orden = $args['orden'] ?? null;
         $this->vehiculoId = $args['vehiculoId'] ?? null;
     }
 

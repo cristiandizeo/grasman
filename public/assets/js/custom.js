@@ -358,6 +358,6 @@ $(function() {
 function updItems() {
   $('.listitemClass').each(function (index) {
     $(this).val(index);
-    console.log(index);
+    console.log($(this).attr('id')+" "+index);
   });
 } ;

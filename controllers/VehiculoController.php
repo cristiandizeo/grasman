@@ -115,10 +115,14 @@ class VehiculoController
         }
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-            foreach($imagenes as $imagen){
-            debuguear($_POST['imagen']['orden']);
-        }
+            
+            $iargs = $_POST['imagen'];
+            foreach($iargs as $iarg){
+                $imagen = File::find($iarg['id']); 
+                $imagen->sincronizar($iarg);
+                $imagen->guardar();
+            }
+            
             // Asignar los atributos
             $args = $_POST['vehiculo'];
             // Mostrar publicacion en el sitio
