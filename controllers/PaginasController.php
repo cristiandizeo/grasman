@@ -88,7 +88,7 @@ class PaginasController
       header('Location: /404');
     }
     
-    $imagenes = File::whereImg('vehiculoId', $vehiculo->id);
+    $imagenes = File::whereImg('vehiculoId', $vehiculo->id, null, 'orden');
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
@@ -158,7 +158,7 @@ class PaginasController
     if($_GET['id'] != $bicicleta->id || $bicicleta->visible == '0'){
       header('Location: /404');
     }
-    $imageness = Fileb::all();
+    $imageness = Fileb::whereImg('bicicletaId', $bicicleta->id, null, 'orden');
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;

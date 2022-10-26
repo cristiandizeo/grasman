@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="max-width: 960px">
   <div class="row mt-5">
     <div class="col-md-4">
       <a href="/vehiculos?tipo=auto">
