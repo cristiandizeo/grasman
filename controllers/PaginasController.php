@@ -21,7 +21,8 @@ class PaginasController
     $consultas = $bicicletas[0];
     $imagenes = File::whereImg('orden', 0, 'vehiculoId');
     $imageness = Fileb::whereImg('orden', 0, 'bicicletaId');
-    $imgclientes = Imagenes::all();
+    $imgclientes = Imagenes::whereImg('seccion', 1, null, 'orden');
+    $imgagencias = Imagenes::whereImg('seccion', 2, null, 'orden');
     $page = 'index';
     // debuguear($imagenes);
     $router->render('paginas/index', [
@@ -31,6 +32,7 @@ class PaginasController
       'imagenes' => $imagenes,
       'imageness' => $imageness,
       'imgclientes' => $imgclientes,
+      'imgagencias' => $imgagencias,
       'page' => $page
     ]);
   }

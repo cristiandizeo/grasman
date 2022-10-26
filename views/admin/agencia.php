@@ -18,18 +18,15 @@
           <?php } ?>
           <div id="imageListId">
           <?php foreach ($imagenes as $imagen) : ?>
-                <div class="listitemClass mini-img">
-                  <input type="text" value="" hidden>
-              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> 
-              <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
+                <div class="mini-img">
+                <input type="text" id="id" value="<?php echo s($imagen->id); ?>" name="imagen[img<?php echo s($imagen->id); ?>][id]" hidden>
+                <input type="text" id="orden" value="<?php echo s($imagen->orden); ?>" class="listitemClass" name="imagen[img<?php echo s($imagen->id); ?>][orden]" hidden>
+              <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="m-2"> <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
+                <a type="submit" class="eliminarImg" data-id="<?php echo trim($imagen->id);?>"><i id="close-btn" class="fa-regular fa-circle-xmark"></i></a>  
               </div>
               <?php endforeach; ?>
             </div>
         </div>
-        <div id="outputDiv">
-        <b>Output of ID's of images : </b>
-        <input id="outputvalues" type="text" value="" />
-    </div>
         <input type="submit" value="Subir imágenes" class="btn btn-primary m-3">
         </form>
       </div>

@@ -12,9 +12,16 @@ class ImagenesController
     {
 
         isAuth();
-        $imagenes = Imagenes::whereImg('seccion', 1);
+        $imagenes = Imagenes::whereImg('seccion', 1, null, 'orden');
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        
+            $iargs = $_POST['imagen'];
+            foreach($iargs as $iarg){
+                $imagen = Imagenes::find($iarg['id']); 
+                $imagen->sincronizar($iarg);
+                $imagen->guardar();
+            }
             $imagenes = $_FILES['imagenes']['tmp_name'];
             $imgType = $_FILES['imagenes']['type'];
             
@@ -59,9 +66,17 @@ class ImagenesController
     {
 
         isAuth();
-        $imagenes = Imagenes::whereImg('seccion', 2);
+        $imagenes = Imagenes::whereImg('seccion', 2, null, 'orden');
         // Ejecutar el código después de que el usuario envia el formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
+            $iargs = $_POST['imagen'];
+            foreach($iargs as $iarg){
+                $imagen = Imagenes::find($iarg['id']); 
+                $imagen->sincronizar($iarg);
+                $imagen->guardar();
+            }
+
             $imagenes = $_FILES['imagenes']['tmp_name'];
             $imgType = $_FILES['imagenes']['type'];
             

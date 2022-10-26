@@ -14,7 +14,7 @@ foreach ($consultas as $bicicleta) : ?>
             <smTodos>
               <strong title="Rodado"><i class="fa-solid fa-person-biking"></i> Rodado <?php echo $bicicleta->rodado; ?></strong> &nbsp;&nbsp;
             </smTodos>
-          <p><?php echo $bicicleta->descripcion; ?></p>
+          <p><?php echo substr($bicicleta->descripcion,0,80); ?>...</p>
         </div>
       </a>
     </div>

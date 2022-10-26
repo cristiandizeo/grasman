@@ -19,7 +19,7 @@ foreach ($consulta as $vehiculo) : ?>
               <strong title="Kms"><i class="fa fa-dashboard"></i> <?php echo number_format($vehiculo->km,0,null,'.'); ?> km</strong> &nbsp;&nbsp;
               <strong title="Combustible"><i class="fa fa-cube"></i> <?php echo $vehiculo->combustible; ?></strong>&nbsp;&nbsp;
             </smTodos>
-          <p><?php echo substr($vehiculo->descripcion,0,75); ?></p>
+          <p><?php echo substr($vehiculo->descripcion,0,80); ?>...</p>
         </div>
       </a>
     </div>

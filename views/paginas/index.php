@@ -83,13 +83,11 @@
       <div class="col-md-12">
         <div class="owl-clients owl-carousel text-center">
           <?php foreach ($imgclientes as $imgcliente) : ?>
-            <?php if ($imgcliente->seccion == 1) { ?>
               <div class="service-item">
                 <picture>
                 <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid" alt="clientes">
                 </picture>
               </div>
-            <?php } ?>
           <?php endforeach; ?>
 
         </div>
@@ -111,12 +109,10 @@
     </div>
     <div class="col-md-12">
       <div class="owl-agencia owl-carousel text-center">
-        <?php foreach ($imgclientes as $imgcliente) : ?>
-          <?php if ($imgcliente->seccion == 2) { ?>
+        <?php foreach ($imgagencias as $imgagencia) : ?>
             <div class="service-item">
-              <img loading="lazy" src="/imagenes/<?php echo trim($imgcliente->name); ?>" class="img-fluid">
+              <img loading="lazy" src="/imagenes/<?php echo trim($imgagencia->name); ?>" class="img-fluid">
             </div>
-          <?php } ?>
         <?php endforeach; ?>
 
       </div>
