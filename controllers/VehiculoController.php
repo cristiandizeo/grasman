@@ -58,12 +58,14 @@ class VehiculoController
                     continue;
                 }
                 $imagen = new File($imagenes[$i]);
-                // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                // Realiza un resize a la imagen con intervention
 
+                $date =  date("Ymd-hisa");
+                // Generar un nombre único
+                $nombreImagen =  $date . uniqid() . ".webp";
+
+                // Realiza un resize a la imagen con intervention
                 $image = Image::make($imagenes[$i])->fit(800, 600);
-                                // get file size
+                // get file size
                 $image->filesize();
                 // Setear la imagen
                 $imagen->setImagen($nombreImagen);
@@ -76,6 +78,7 @@ class VehiculoController
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
 
                 $imagen->vehiculoId = $lastId;
+                $imagen->orden = $i;
                 $imagen->guardar();
             }
 
@@ -101,14 +104,25 @@ class VehiculoController
 
         // Obtener los datos del vehiculo
         $vehiculo = Vehiculo::find($id);
-        $imagenes = File::all();
-
+        $imagenes = File::whereImg('vehiculoId', $id, null, 'orden');
+        
         // Arreglo con mensajes de errores
-        $errores = Vehiculo::getErrores();
+            $errores = Vehiculo::getErrores();
 
-
+        $ordenc = 0;
+        foreach ($imagenes as $imagen) {
+                $ordenc++;
+        }
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            
+            $iargs = $_POST['imagen'];
+            foreach($iargs as $iarg){
+                $imagen = File::find($iarg['id']); 
+                $imagen->sincronizar($iarg);
+                $imagen->guardar();
+            }
+            
             // Asignar los atributos
             $args = $_POST['vehiculo'];
             // Mostrar publicacion en el sitio
@@ -123,18 +137,22 @@ class VehiculoController
                 $resultado = $vehiculo->guardar();
             }
 
-            $imagenes = $_FILES['imagenes']['tmp_name'];
             
+            $imagenes = $_FILES['imagenes']['tmp_name'];
+
             // comprobar si hay imagenes
             if ($imagenes !== ['']) {
                 //procesar cada imagen
                 $countfiles = count($imagenes);
                 for ($i = 0; $i < $countfiles; $i++) {
-                    $imagen = new File($imagenes[$i]);
-                    // Generar un nombre único
-                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                    // Realiza un resize a la imagen con intervention
 
+                    $imagen = new File($imagenes[$i]);
+
+                    $date =  date("Ymd-hisa");
+                    // Generar un nombre único
+                    $nombreImagen =  $date . uniqid() . ".webp";
+
+                    // Realiza un resize a la imagen con intervention
                     $image = Image::make($imagenes[$i])->fit(800, 600);
 
                     // Setear la imagen
@@ -148,6 +166,8 @@ class VehiculoController
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                     // Le asigna el id del vehiculo
                     $imagen->vehiculoId = $id;
+                    $imagen->orden = $ordenc;
+
                     // Guardar en DB
                     $imagen->guardar();
                 }
@@ -171,22 +191,22 @@ class VehiculoController
         isAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Leer el id
-                $id = $_POST['id'];
-                $id = filter_var($id, FILTER_VALIDATE_INT);
+            // Leer el id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                $imagenes = File::whereImg('vehiculoId', $id);
-                foreach ($imagenes as $imagen) {
-                    $imagen->setImagen($imagen);
-                }
+            $imagenes = File::whereImg('vehiculoId', $id);
+            foreach ($imagenes as $imagen) {
+                $imagen->setImagen($imagen);
+            }
 
-                // encontrar y eliminar el vehiculo
-                $vehiculo = Vehiculo::find($id);
-                $resultado = $vehiculo->eliminar();
-                // Redireccionar
-                if ($resultado) {
-                    header('location: /admin');
-                }
+            // encontrar y eliminar el vehiculo
+            $vehiculo = Vehiculo::find($id);
+            $resultado = $vehiculo->eliminar();
+            // Redireccionar
+            if ($resultado) {
+                header('location: /admin');
+            }
         }
     }
 

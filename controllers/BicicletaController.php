@@ -57,10 +57,12 @@ class BicicletaController
                     continue;
                 }
                 $imagen = new Fileb($imageness[$i]);
+                
+                $date =  date("Ymd-hisa");
                 // Generar un nombre único
-                $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                // Realiza un resize a la imagen con intervention
+                $nombreImagen =  $date . uniqid() . ".webp";
 
+                // Realiza un resize a la imagen con intervention
                 $image = Image::make($imageness[$i])->fit(800, 600);
                                 // get file size
                 $image->filesize();
@@ -75,6 +77,7 @@ class BicicletaController
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
 
                 $imagen->bicicletaId = $lastId;
+                $imagen->orden = $i;
                 $imagen->guardar();
             }
 
@@ -100,13 +103,20 @@ class BicicletaController
 
         // Obtener los datos del bicicleta
         $bicicleta = Bicicleta::find($id);
-        $imageness = Fileb::all();
+        $imageness = Fileb::whereImg('bicicletaId', $id, null, 'orden');
 
         // Arreglo con mensajes de errores
         $errores = Bicicleta::getErrores();
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
+            $iargs = $_POST['imagen'];
+            foreach($iargs as $iarg){
+                $imagen = Fileb::find($iarg['id']); 
+                $imagen->sincronizar($iarg);
+                $imagen->guardar();
+            }
 
             // Asignar los atributos
             $args = $_POST['bicicleta'];
@@ -130,10 +140,12 @@ class BicicletaController
                 $countfiles = count($imageness);
                 for ($i = 0; $i < $countfiles; $i++) {
                     $imagen = new Fileb($imageness[$i]);
-                    // Generar un nombre único
-                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-                    // Realiza un resize a la imagen con intervention
 
+                    $date =  date("Ymd-hisa");
+                    // Generar un nombre único
+                    $nombreImagen =  $date . uniqid() . ".webp";
+                    
+                    // Realiza un resize a la imagen con intervention
                     $image = Image::make($imageness[$i])->fit(800, 600);
 
                     // Setear la imagen

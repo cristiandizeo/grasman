@@ -102,7 +102,7 @@
                   <div class="clearfix">
                     <span class="pull-left">Kilometraje</span>
 
-                    <strong class="pull-right"><?php echo $vehiculo->km; ?> km</strong>
+                    <strong class="pull-right"><?php echo number_format($vehiculo->km,0,null,'.'); ?> km</strong>
                   </div>
                 </li>
 
@@ -129,7 +129,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="section-heading">
+          <div class="section-heading container-fluid">
             <h2>Consultanos por este vehículo</h2>
           </div>
 

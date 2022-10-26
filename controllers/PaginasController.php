@@ -19,17 +19,19 @@ class PaginasController
     $bicicletas = Bicicleta::where('visible', 1, 3);
     $consulta = $vehiculos[0];
     $consultas = $bicicletas[0];
-    $imagenes = File::imgId();
-    $imageness = Fileb::imgbId();
+    $imagenes = File::whereImg('orden', 0, 'vehiculoId');
+    $imageness = Fileb::whereImg('orden', 0, 'bicicletaId');
     $imgclientes = Imagenes::all();
-
+    $page = 'index';
+    // debuguear($imagenes);
     $router->render('paginas/index', [
       'inicio' => true,
       'consulta' => $consulta,
       'consultas' => $consultas,
       'imagenes' => $imagenes,
       'imageness' => $imageness,
-      'imgclientes' => $imgclientes
+      'imgclientes' => $imgclientes,
+      'page' => $page
     ]);
   }
 
@@ -46,8 +48,7 @@ class PaginasController
   {
     
     //traer las imagenes de agrupadas por vehiculo
-    $imagenes = File::imgId();
-
+    $imagenes = File::whereImg('orden', 0, 'vehiculoId');
     // parametros del buscador
     $args = [];
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -87,7 +88,7 @@ class PaginasController
       header('Location: /404');
     }
     
-    $imagenes = File::whereImg('vehiculoId', $vehiculo->id);
+    $imagenes = File::whereImg('vehiculoId', $vehiculo->id, null, 'orden');
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;
@@ -117,8 +118,8 @@ class PaginasController
   {
     
     //traer las imagenes de agrupadas por vehiculo
-    $imageness = Fileb::imgbId();
-
+    $imageness = Fileb::whereImg('orden', 0, 'bicicletaId');
+    // debuguear($imageness);
     // parametros del buscador
     $args = [];
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -157,7 +158,7 @@ class PaginasController
     if($_GET['id'] != $bicicleta->id || $bicicleta->visible == '0'){
       header('Location: /404');
     }
-    $imageness = Fileb::all();
+    $imageness = Fileb::whereImg('bicicletaId', $bicicleta->id, null, 'orden');
     $mail = new Email();
     $errores = Email::getErrores();
     $resultado = false;

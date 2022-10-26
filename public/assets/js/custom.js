@@ -347,7 +347,24 @@ async function borrarImg(imgId) {
     // Handle errors here
   }
 }
+<<<<<<< HEAD
 
 if(window.location.pathname == '/quiero-vender'){
   document.getElementById('vender').style.display = 'block';
 }
+=======
+$(function() {
+  $( "#imageListId" ).sortable({
+    update: function(event, ui) {
+      updItems();
+    }//end update		
+  });
+});
+
+function updItems() {
+  $('.listitemClass').each(function (index) {
+    $(this).val(index);
+    console.log($(this).attr('id')+" "+index);
+  });
+} ;
+>>>>>>> desarrollo

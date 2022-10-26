@@ -65,9 +65,21 @@ class ActiveRecord
         return $resultado;
         // Buscar registros 
     }
-    public static function whereImg($columna, $valor)
+    public static function whereImg($columna = null, $valor = null, $group = null, $orden = null, $limit = null)
     {
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE ${columna} = '${valor}'";
+        $query = "SELECT * FROM " . static::$tabla;
+        if (!is_null($columna) && !is_null($valor))
+            $query .= " WHERE ${columna} = '${valor}'";
+        if (!is_null($group)) {
+            $query .= " GROUP BY " . $group;
+        }
+        if (!is_null($orden)) {
+            $query .= " ORDER BY " . $orden;
+        }
+        if (!is_null($limit)) {
+            $query .= " LIMIT " . $limit;
+        }
+        // debuguear($query);
         $resultado = self::consultarSQL($query);
         return $resultado;
         // Buscar registros 
@@ -280,30 +292,6 @@ class ActiveRecord
         // Asignar al atributo de imagen el nombre de la imagen
         if ($imagen) {
             $this->name = $imagen;
-        }
-    }
-    public static function imgId()
-    {
-        foreach (static::$columnasDB as $columna) {
-            if ($columna === 'vehiculoId') {
-                $query = "SELECT name," . $columna;
-                $query .= " FROM " . static::$tabla;
-                $query .= " GROUP BY " . $columna;
-                $resultado = self::consultarSQL($query);
-                return $resultado;
-            }
-        }
-    }
-    public static function imgbId()
-    {
-        foreach (static::$columnasDB as $columna) {
-            if ($columna === 'bicicletaId') {
-                $query = "SELECT name," . $columna;
-                $query .= " FROM " . static::$tabla;
-                $query .= " GROUP BY " . $columna;
-                $resultado = self::consultarSQL($query);
-                return $resultado;
-            }
         }
     }
 

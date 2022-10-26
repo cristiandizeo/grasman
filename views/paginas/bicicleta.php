@@ -30,12 +30,9 @@
 
               <div id="sync2" class="owl-carousel owl-theme">
                 <?php foreach ($imageness as $imagen) : ?>
-                  <?php if ($imagen->bicicletaId === $bicicleta->id) { ?>
                     <div class="item">
                       <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" class="img-fluid">
                     </div>
-                  <?php
-                  } ?>
                 <?php endforeach; ?>
               </div>
             </div>
@@ -92,7 +89,7 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="section-heading">
+          <div class="section-heading container-fluid">
             <h2>Consultanos por esta bicicleta</h2>
           </div>
 

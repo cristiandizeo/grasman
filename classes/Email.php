@@ -65,7 +65,9 @@ class Email extends ActiveRecord
                     
                     if(isset($imagenes)){
                 foreach ($imagenes as $imagen){
-                    $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+                    $date =  date("Ymd-hisa");
+                    // Generar un nombre único
+                    $nombreImagen =  $date . uniqid() . ".webp";
                     $mail->AddAttachment($imagen, $nombreImagen);
                 }
             }

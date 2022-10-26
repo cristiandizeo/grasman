@@ -10,7 +10,7 @@
             <h2>Bicicletas</h2>
         </div>
         <hr>
-        <a href="bicicletas/crear" class="btn btn-lg btn-floating" title="Agregar bicicleta">
+        <a href="bicicletas/crear" class="btn btn-lg btn-floating text-secondary" title="Agregar bicicleta">
             <i class="fa-solid fa-bicycle"></i>
             <i class="fa-solid fa-circle-plus"></i>
         </a>
@@ -36,12 +36,12 @@
                         <td>$ <?php echo $bicicleta->precio; ?></td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href="/bicicleta?id=<?php echo $bicicleta->id; ?>" target="blank" class="mx-3" title="Ver página">
+                                <a href="/bicicleta?id=<?php echo $bicicleta->id; ?>" target="blank" class="mx-3 text-secondary" title="Ver página">
                                     <i class="fa-solid fa-eye"></i>
                                     </i>
                                 </a>
 
-                                <a href="/admin/bicicletas/actualizar?id=<?php echo $bicicleta->id; ?>" class="mx-3" title="Modificar">
+                                <a href="/admin/bicicletas/actualizar?id=<?php echo $bicicleta->id; ?>" class="mx-3 text-secondary" title="Modificar">
                                     <i class="fa-solid fa-pen-to-square">
                                     </i>
                                 </a>

@@ -31,6 +31,7 @@ if (!isset($inicio)) {
 
   <!-- Bootstrap core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <body>
 
   <!-- ***** Preloader Start ***** -->
@@ -147,8 +148,8 @@ if (!isset($inicio)) {
         <div class="col-lg-4 col-md-6 mb-lg-0">
           <p class="font-italic text-muted">Seguinos en nuestras redes</p>
           <ul class="list-inline mt-4 display-4">
-            <li class="list-inline-item"><a href="https://www.facebook.com/Grasman-Autos-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/grasmanautos/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
+            <li class="list-inline-item"><a class="text-secondary" href="https://www.facebook.com/Grasman-Autos-103164144977354" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></i></a></li>
+            <li class="list-inline-item"><a class="text-secondary" href="https://www.instagram.com/grasmanautos/" target="_blank" title="instagram"><i class="fa-brands fa-instagram"></i></i></a></li>
           </ul>
         </div>
       </div>
@@ -168,6 +169,7 @@ if (!isset($inicio)) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  <script src="/assets/js/custom.js"></script>
   <script src="/assets/js/owl.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js" integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
 </body>
 
 </html>
