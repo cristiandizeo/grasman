@@ -19,11 +19,11 @@ class PaginasController
     $bicicletas = Bicicleta::where('visible', 1, 3);
     $consulta = $vehiculos[0];
     $consultas = $bicicletas[0];
-    $imagenes = File::imgId('vehiculoId');
-    $imageness = Fileb::imgId('bicicletaId');
+    $imagenes = File::whereImg('orden', 0, 'vehiculoId');
+    $imageness = Fileb::whereImg('orden', 0, 'bicicletaId');
     $imgclientes = Imagenes::all();
     $page = 'index';
-    debuguear($imagenes);
+    // debuguear($imagenes);
     $router->render('paginas/index', [
       'inicio' => true,
       'consulta' => $consulta,
@@ -48,7 +48,7 @@ class PaginasController
   {
     
     //traer las imagenes de agrupadas por vehiculo
-    $imagenes = File::imgId('vehiculoId');
+    $imagenes = File::whereImg('orden', 0, 'vehiculoId');
     // parametros del buscador
     $args = [];
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -118,8 +118,8 @@ class PaginasController
   {
     
     //traer las imagenes de agrupadas por vehiculo
-    $imageness = Fileb::imgId('bicicletaId');
-
+    $imageness = Fileb::whereImg('orden', 0, 'bicicletaId');
+    // debuguear($imageness);
     // parametros del buscador
     $args = [];
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {

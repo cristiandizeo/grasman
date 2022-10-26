@@ -5,8 +5,10 @@ foreach ($consultas as $bicicleta) : ?>
     <div class="product-item">
     <a href="/bicicleta?id=<?php echo $bicicleta->id; ?>">
         <?php foreach ($imageness as $imagen) : ?>
+          <?php if ($bicicleta->id == $imagen->bicicletaId){?>
             <img loading="lazy" src="/imagenes/<?php echo trim($imagen->name); ?>" alt="anuncio">
-        <?php endforeach; ?>
+          <?php } ?>
+            <?php endforeach; ?>
         <div class="down-content">
           <h2><?php echo $bicicleta->marca; ?></h2>
             <smTodos>

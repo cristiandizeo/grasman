@@ -103,7 +103,7 @@ class BicicletaController
 
         // Obtener los datos del bicicleta
         $bicicleta = Bicicleta::find($id);
-        $imageness = Fileb::whereImg('bicicletaId', $id);
+        $imageness = Fileb::whereImg('bicicletaId', $id, null, 'orden');
 
         // Arreglo con mensajes de errores
         $errores = Bicicleta::getErrores();

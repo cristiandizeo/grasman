@@ -104,7 +104,7 @@ class VehiculoController
 
         // Obtener los datos del vehiculo
         $vehiculo = Vehiculo::find($id);
-        $imagenes = File::whereImg('vehiculoId', $id);
+        $imagenes = File::whereImg('vehiculoId', $id, null, 'orden');
         
         // Arreglo con mensajes de errores
             $errores = Vehiculo::getErrores();
