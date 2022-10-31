@@ -1,6 +1,6 @@
-<div class="banner-body">
+
 <div class="containerbanner">
-        <div class="box">
+       <a href="/vehiculos?tipo=Auto"> <div class="box">
             <div class="imgBox">
             <picture>
               <source type="image/webp" srcset="/assets/images/autos.webp">
@@ -8,10 +8,10 @@
           </picture>            </div>
             <div class="content">
                 <h2>Autos</br>
-                <span>Graphic Designer</span></h2>
             </div>
         </div>
-        <div class="box">
+        </a>
+       <a href="/vehiculos?tipo=Pickup"> <div class="box">
             <div class="imgBox">
             <picture>
               <source type="image/webp" srcset="/assets/images/pickups.webp">
@@ -19,10 +19,10 @@
           </picture>            </div>
             <div class="content">
                 <h2>Pickups</br>
-                <span>Digital Marketing</span></h2>
             </div>
         </div>
-        <div class="box">
+        </a>
+       <a href="/bicicletas"> <div class="box">
             <div class="imgBox">
             <picture>
               <source type="image/webp" srcset="/assets/images/bicicletas.webp">
@@ -30,10 +30,9 @@
           </picture>            </div>
             <div class="content">
                 <h2>Bicicletas</br>
-                <span>Chartered Accountant C.A</span></h2>
             </div>
         </div>
-    </div>
+        </a>
     </div>
 
 
