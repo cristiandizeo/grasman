@@ -1,40 +1,40 @@
-<div class="container" style="max-width: 960px">
-  <div class="row mt-5">
-    <div class="col-md-4">
-      <a href="/vehiculos?tipo=auto">
-      <div class="profile-card-2">
-        <picture>
+<div class="banner-body">
+<div class="containerbanner">
+        <div class="box">
+            <div class="imgBox">
+            <picture>
               <source type="image/webp" srcset="/assets/images/autos.webp">
           <img srcset="assets/images/autos.jpg" class="img img-responsive" alt="Autos" loading="eager">
-          </picture>
-          <div class="profile-name">AUTOS</div>
-      </div>
-      </a>
+          </picture>            </div>
+            <div class="content">
+                <h2>Autos</br>
+                <span>Graphic Designer</span></h2>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/pickups.webp">
+          <img srcset="assets/images/pickups.jpg" class="img img-responsive" alt="Pickups" loading="eager">
+          </picture>            </div>
+            <div class="content">
+                <h2>Pickups</br>
+                <span>Digital Marketing</span></h2>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/bicicletas.webp">
+          <img srcset="assets/images/bicicletas.jpg" class="img img-responsive" alt="Bicicletas" loading="eager">
+          </picture>            </div>
+            <div class="content">
+                <h2>Bicicletas</br>
+                <span>Chartered Accountant C.A</span></h2>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-      <a href="/vehiculos?tipo=pickup">
-      <div class="profile-card-2">
-      <picture>
-              <source type="image/webp" srcset="/assets/images/pickups.webp"> 
-        <img srcset="assets/images/pickups.jpeg" class="img img-responsive" alt="Pickups" loading="eager">
-      </picture>
-      <div class="profile-name">PICK UPs</div>
-      </div>
-      </a>
     </div>
-    <div class="col-md-4">
-      <a href="/bicicletas">
-      <div class="profile-card-2">
-      <picture>
-              <source type="image/webp" srcset="/assets/images/bicicletas.webp">  
-      <img srcset="assets/images/bicicletas.jpg" class="img img-responsive" alt="Bicicletas" loading="eager">
-      </picture>
-      <div class="profile-name">BICICLETAS</div>
-      </div>
-      </a>
-    </div>
-  </div>
-</div>
 
 
 <a href="/quiero-vender">
