@@ -18,6 +18,11 @@ if (!isset($inicio)) {
   <meta name="description" content="Venta de autos nuevos y usados">
   <meta name="author" content="Cristian Dizeo">
   <meta name="keywords" content="Grasman, Automotores, autos, pick up, camionetas, bicicletas, venta de autos, concesionaria, agencia de autos, santa rosa, la pampa">
+  <?php
+  header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+  header("Cache-Control: post-check=0, pre-check=0", false);
+  header("Pragma: no-cache");
+  ?>
   <link rel="icon" href="/assets/images/logo.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -31,7 +36,8 @@ if (!isset($inicio)) {
 
   <!-- Bootstrap core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
 <body>
 
   <!-- ***** Preloader Start ***** -->
@@ -128,10 +134,10 @@ if (!isset($inicio)) {
     <div class="container py-5">
       <div class="row py-4">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <picture>
-              <source type="image/webp" srcset="/assets/images/logo.webp">
-              <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
-            </picture>
+          <picture>
+            <source type="image/webp" srcset="/assets/images/logo.webp">
+            <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
+          </picture>
           <p class="lead"><strong>Grasman Autos</strong></p>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
@@ -166,7 +172,8 @@ if (!isset($inicio)) {
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  <script src="/assets/js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script src="/assets/js/custom.js"></script>
   <script src="/assets/js/owl.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js" integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
