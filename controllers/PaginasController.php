@@ -48,7 +48,7 @@ class PaginasController
 
   public static function vehiculos(Router $router)
   {
-    
+    $vehiculos = Vehiculo::where('visible', 1, 3);
     //traer las imagenes de agrupadas por vehiculo
     $imagenes = File::whereImg('orden', 0, 'vehiculoId');
     // parametros del buscador

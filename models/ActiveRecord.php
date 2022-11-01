@@ -93,6 +93,7 @@ class ActiveRecord
                 $valores[] = "{$key}='{$value}'";
             }
         }
+        $valores[] = "visible='1'";
 
         //pagina seteada o pagina 1 por defecto
         if (isset($args['pagina'])) {
