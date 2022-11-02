@@ -18,6 +18,7 @@ p {
 
 a {
   text-decoration: none !important;
+  color: #6c757d !important;
 }
 
 a:hover {
@@ -1560,11 +1561,15 @@ transition: 1s ease;
 }
 
 @media (max-width: 600px) {
-  .containerbanner .box:hover .content {
+  .containerbanner .content {
     transform: translate(0, 3.5rem);
   }
-  .containerbanner .box:hover .imgBox {
+  .containerbanner .imgBox {
     transform: translate(0, -3.5rem);
+  }
+
+  .imgBox img {
+    filter: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
