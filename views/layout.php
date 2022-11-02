@@ -53,7 +53,7 @@ if (!isset($inicio)) {
         <div class="row">
           <a class="navbar-brand" href="/" title="Grasman Autos">
             <picture>
-              <source type="image/webp" srcset="/assets/images/logo.webp">
+              <source type="image/webp" srcset="/assets/images/logo.webp?v=<?php echo(rand()); ?>">
               <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
             </picture>
             <h2 class="d-flex align-items-center">Grasman <em>Autos</em></h2>
@@ -131,7 +131,7 @@ if (!isset($inicio)) {
       <div class="row py-4">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
           <picture>
-            <source type="image/webp" srcset="/assets/images/logo.webp">
+            <source type="image/webp" srcset="/assets/images/logo.webp?v=<?php echo(rand()); ?>">
             <img src="/assets/images/logo.png" alt="Logo Grasman Autos" loading="eager">
           </picture>
           <p class="lead"><strong>Grasman Autos</strong></p>
