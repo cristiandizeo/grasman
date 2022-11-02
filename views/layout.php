@@ -18,11 +18,7 @@ if (!isset($inicio)) {
   <meta name="description" content="Venta de autos nuevos y usados">
   <meta name="author" content="Cristian Dizeo">
   <meta name="keywords" content="Grasman, Automotores, autos, pick up, camionetas, bicicletas, venta de autos, concesionaria, agencia de autos, santa rosa, la pampa">
-  <?php
-  header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-  header("Cache-Control: post-check=0, pre-check=0", false);
-  header("Pragma: no-cache");
-  ?>
+
   <link rel="icon" href="/assets/images/logo.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -31,7 +27,7 @@ if (!isset($inicio)) {
 
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css?1">
   <link rel="stylesheet" href="/assets/css/owl.css">
 
   <!-- Bootstrap core CSS -->
