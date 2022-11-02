@@ -3,8 +3,8 @@
        <a href="/vehiculos?tipo=Auto"> <div class="box">
             <div class="imgBox">
             <picture>
-              <source type="image/webp" srcset="/assets/images/autos.webp">
-          <img srcset="assets/images/autos.jpg" class="img img-responsive" alt="Autos" loading="eager">
+              <source type="image/webp" srcset="/assets/images/autos.webp?v=<?php echo(rand()); ?>">
+          <img srcset="assets/images/autos.jpg?v=<?php echo(rand()); ?>" class="img img-responsive" alt="Autos" loading="eager">
           </picture>            </div>
             <div class="content">
                 <h2>Autos</br>
@@ -14,8 +14,8 @@
        <a href="/vehiculos?tipo=Pickup"> <div class="box">
             <div class="imgBox">
             <picture>
-              <source type="image/webp" srcset="/assets/images/pickups.webp">
-          <img srcset="assets/images/pickups.jpg" class="img img-responsive" alt="Pickups" loading="eager">
+              <source type="image/webp" srcset="/assets/images/pickups.webp?v=<?php echo(rand()); ?>">
+          <img srcset="assets/images/pickups.jpg?v=<?php echo(rand()); ?>" class="img img-responsive" alt="Pickups" loading="eager">
           </picture>            </div>
             <div class="content">
                 <h2>Pickups</br>
@@ -25,8 +25,8 @@
        <a href="/bicicletas"> <div class="box">
             <div class="imgBox">
             <picture>
-              <source type="image/webp" srcset="/assets/images/bicicletas.webp">
-          <img srcset="assets/images/bicicletas.jpg" class="img img-responsive" alt="Bicicletas" loading="eager">
+              <source type="image/webp" srcset="/assets/images/bicicletas.webp?v=<?php echo(rand()); ?>">
+          <img srcset="assets/images/bicicletas.jpg?v=<?php echo(rand()); ?>" class="img img-responsive" alt="Bicicletas" loading="eager">
           </picture>            </div>
             <div class="content">
                 <h2>Bicicletas</br>
@@ -95,7 +95,7 @@
   </div>
 </div>
 
-<div class="services" style="background-image: url(assets/images/banner-agencia.webp);">
+<div class="services" style="background-image: url(assets/images/banner-agencia.webp?v=<?php echo(rand()); ?>);">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
